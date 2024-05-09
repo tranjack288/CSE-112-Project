@@ -1,0 +1,612 @@
+/* landing page animation styling */
+
+/* Noodle Container is built upon the work of Copyright (c) 2023 by Fehrenbach Baptiste (https://codepen.io/medrupaloscil/pen/wLKgNg) */
+
+/* Flying noodle box text styling */
+#message-output {
+	text-align: center;
+	color: #eee;
+	font-size: 1.4rem;
+	font-weight: normal;
+	margin-top: 20px;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	text-shadow: 3px 2px 2px #000;
+}
+
+@media screen and (min-width: 801px) {
+	main {
+		background-image: url('../img/landing-background.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	.chat-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		font-family: cursive;
+	}
+
+	.noodles-container {
+		position: relative;
+		top: -20%;
+		left: -30%;
+	}
+
+	.user-input {
+		display: flex;
+	}
+
+	.noodles-container.fly-to-center {
+		animation: 1s fly-to-center linear;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes fly-to-center {
+		0% {
+			transform: translate(0, 0);
+		}
+		100% {
+			transform: translate(10vh, 5vh);
+		}
+	}
+	@keyframes fly-out {
+		0% {
+			opacity: 1;
+			transform: translate(0, 0) rotate(0);
+		}
+		100% {
+			opacity: 0;
+			transform: translate(100px, 100px) rotate(-360deg);
+		}
+	}
+
+	.flying-noodle {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 50px; /* Adjust the image width as needed */
+		height: auto;
+	}
+}
+@media screen and (max-width: 800px) {
+	main {
+		background-image: url('../img/landing-background.jpg');
+	}
+	.chat-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		font-family: cursive;
+	}
+
+	.noodles-container {
+		position: relative;
+		top: -20%;
+		left: -30%;
+	}
+
+	.user-input {
+		display: flex;
+	}
+
+	#user-input-button {
+		padding: 10px 20px;
+		background-color: #da0b0b;
+		color: white;
+		border: none;
+		cursor: pointer;
+		font-family: cursive;
+		transition: background-color 0.3s ease;
+	}
+
+	#user-input-button:hover {
+		background-color: #da0b0b77;
+	}
+
+	.noodles-container.fly-to-center {
+		animation: 1s fly-to-center linear;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes fly-to-center {
+		0% {
+			transform: translate(0, 0);
+		}
+		100% {
+			transform: translate(100px, 100px);
+		}
+	}
+	@keyframes fly-out {
+		0% {
+			opacity: 1;
+			transform: translate(0, 0) rotate(0);
+		}
+		100% {
+			opacity: 0;
+			transform: translate(100px, 100px) rotate(-360deg);
+		}
+	}
+
+	.flying-noodle {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 50px; /* Adjust the image width as needed */
+		height: auto;
+	}
+}
+
+/* Flying noodle box animation styling */
+@media screen and (min-width: 801px) {
+	.noodles {
+		position: relative;
+		animation: 0.6s dance linear infinite;
+		transform: rotateX(-10deg) rotateY(25deg);
+		transform-style: preserve-3d;
+	}
+	.noodles * {
+		position: absolute;
+		transform-style: preserve-3d;
+	}
+
+	/*
+	* Bottom part of cup
+	*/
+	.side {
+		--main: #fff;
+		width: 250px;
+		height: 250px;
+		background-color: var(--main);
+		border: solid #cac4c6;
+		border-width: 2px 0;
+		transform: rotateX(-5deg);
+		top: -175px;
+		left: -75px;
+	}
+	.side.front {
+		transform: translateZ(69px) rotateX(-5deg);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.side.left {
+		--main: #f6e2e3;
+		transform: translateZ(-69px) translateX(-135px) rotateY(90deg) rotateX(5deg);
+	}
+	.side.right,
+	.side.back {
+		--main: #df807b;
+	}
+	.side.right {
+		transform: translateZ(-69px) translateX(135px) rotateY(90deg) rotateX(-5deg);
+	}
+	.side.back {
+		transform: translateZ(-205px) rotateX(5deg);
+	}
+	.side:before,
+	.side:after {
+		content: '';
+		height: 100%;
+		width: 30px;
+		background-color: var(--main);
+		position: absolute;
+		top: -2px;
+		left: -12px;
+		transform: skewX(5deg);
+		border: solid #cac4c6;
+		border-width: 2px 0 2px 2px;
+	}
+	.side:after {
+		left: initial;
+		right: -12px;
+		transform: skewX(-5deg);
+		border-width: 2px 2px 2px 0;
+	}
+	.eyes-container {
+		position: absolute;
+		top: 150px;
+		left: 65px;
+		width: 110px;
+		height: 20px;
+		overflow: hidden;
+	}
+
+	.eyes {
+		height: 20px;
+		width: 20px;
+		border-radius: 20%;
+		background-color: #312d2a;
+		box-shadow: 55px 0 #312d2a;
+		animation: 4s eyes 1s linear infinite;
+	}
+	.mouth {
+		background-color: #312d2a;
+		overflow: hidden;
+		width: 50px;
+		height: 20px;
+		left: 105px;
+		top: 165px;
+		border-radius: 5px 5px 50% 50%;
+	}
+	.mouth:after {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		background-color: #de5c65;
+		left: 17px;
+		bottom: -8px;
+	}
+
+	/*
+	* Top part of cup
+	*/
+	.cap {
+		--main: #fff;
+		width: 290px;
+		height: 100px;
+		background-color: var(--main);
+		border: solid #cac4c6;
+		border-width: 0 2px;
+		top: -274px;
+		left: -97px;
+		transform-origin: bottom;
+		animation: 0.3s ease-out cap infinite alternate;
+	}
+	.cap:before,
+	.cap:after {
+		content: '';
+		height: 50px;
+		width: 180px;
+		position: absolute;
+		top: -52px;
+	}
+	.cap:before {
+		left: 84px;
+		background-color: var(--main);
+		border: solid #cac4c6;
+		border-width: 2px 2px 0 0;
+		transform: skewX(45deg);
+	}
+	.cap:after {
+		right: 84px;
+		background-color: var(--main);
+		border: solid #cac4c6;
+		border-width: 2px 0 0 2px;
+		transform: skewX(-45deg);
+	}
+	.cap.front {
+		--rotate: translateZ(80px) rotateX(-85deg);
+		transform: translateZ(80px) rotateX(-125deg);
+	}
+	.cap.back {
+		--main: #f6e2e3;
+		--rotate: translateZ(-216px) rotateX(85deg);
+		transform: translateZ(-216px) rotateX(125deg);
+	}
+	.cap.left {
+		--rotate: translateZ(-60px) translateX(-150px) rotateY(-90deg)
+			rotateX(-115deg);
+		top: -305px;
+		height: 130px;
+		transform: translateZ(-60px) translateX(-150px) rotateY(-90deg)
+			rotateX(-125deg);
+	}
+	.cap.right {
+		--rotate: translateZ(-60px) translateX(148px) rotateY(90deg)
+			rotateX(-115deg);
+		--main: #f6e2e3;
+		top: -305px;
+		height: 130px;
+		transform: translateZ(-60px) translateX(148px) rotateY(90deg)
+			rotateX(-125deg);
+	}
+
+	/*
+	* Noodles inside
+	*/
+	.noodle {
+		border-radius: 50%;
+		height: 170px;
+		width: 140px;
+		animation: 0.3s noodles linear infinite alternate;
+		--top: -190px;
+	}
+	.noodles-1 {
+		background-color: #f7d897;
+		top: -180px;
+		transform: translateX(10px) translateZ(20px);
+		box-shadow: 0 0 0 1px #d3b87f, 0 0 0 15px #f7d897, 0 0 0 16px #d3b87f,
+			0 0 0 28px #f5c86b, 0 0 0 29px #d3b87f, 0 0 0 40px #f7d897,
+			0 0 0 41px #d3b87f;
+	}
+	.noodles-2 {
+		background-color: #f7d380;
+		top: -190px;
+		transform: translateX(-10px) translateZ(-80px);
+		box-shadow: 0 0 0 1px #d3b87f, 0 0 0 15px #f7d380, 0 0 0 16px #d3b87f,
+			0 0 0 28px #f7d897, 0 0 0 29px #d3b87f, 0 0 0 40px #f7d380,
+			0 0 0 41px #d3b87f;
+		--top: -195px;
+	}
+	.noodles-3 {
+		background-color: #f5c86b;
+		top: -170px;
+		transform: translateX(-40px) translateZ(-160px);
+		box-shadow: 0 0 0 1px #d3b87f, 0 0 0 15px #f5c86b, 0 0 0 16px #d3b87f,
+			0 0 0 28px #f7d897, 0 0 0 29px #d3b87f;
+		--top: -180px;
+	}
+
+	@keyframes eyes {
+		2% {
+		}
+		4% {
+			height: 4px;
+			transform: translateY(8px);
+		}
+		6% {
+			height: 20px;
+			transform: initial;
+		}
+	}
+	@keyframes noodles {
+		to {
+			top: var(--top);
+		}
+	}
+	@keyframes cap {
+		to {
+			transform: var(--rotate);
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.noodles {
+		position: relative;
+		animation: 0.6s dance linear infinite;
+		transform: rotateX(-10deg) rotateY(25deg);
+		transform-style: preserve-3d;
+	}
+
+	.noodles * {
+		position: absolute;
+		transform-style: preserve-3d;
+	}
+
+	.side {
+		--main: #fff;
+		width: 26vw;
+		height: 26vw;
+		background-color: var(--main);
+		border: solid #cac4c6;
+		border-width: 0.21vw 0;
+		transform: rotateX(-5deg);
+		top: -18vw;
+		left: -7.8vw;
+	}
+
+	.side.front {
+		transform: translateZ(6vw) rotateX(-5deg);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.side.left {
+		--main: #f6e2e3;
+		transform: translateZ(-9vw) translateX(-14vw) rotateY(90deg) rotateX(5deg);
+	}
+
+	.side.right,
+	.side.back {
+		--main: #df807b;
+	}
+
+	.side.right {
+		transform: translateZ(-9vw) translateX(14vw) rotateY(90deg) rotateX(-5deg);
+	}
+
+	.side.back {
+		transform: translateZ(-21vw) rotateX(5deg);
+	}
+
+	.side:before,
+	.side:after {
+		content: '';
+		height: 100%;
+		width: 3vw;
+		background-color: var(--main);
+		position: absolute;
+		top: -0.21vw;
+		left: -1.25vw;
+		transform: skewX(5deg);
+		border: solid #cac4c6;
+		border-width: 0.21vw 0 0.21vw 0.21vw;
+	}
+
+	.side:after {
+		left: initial;
+		right: -1.25vw;
+		transform: skewX(-5deg);
+		border-width: 0.21vw 0.21vw 0.21vw 0;
+	}
+
+	.eyes-container {
+		position: absolute;
+		top: 14vw;
+		left: 6.8vw;
+		width: 11vw;
+		height: 2vw;
+		overflow: hidden;
+	}
+
+	.eyes {
+		height: 2vw;
+		width: 2vw;
+		border-radius: 20%;
+		background-color: #312d2a;
+		box-shadow: 5.7vw 0 #312d2a;
+		animation: 4s eyes 1s linear infinite;
+	}
+
+	.mouth {
+		background-color: #312d2a;
+		overflow: hidden;
+		width: 5vw;
+		height: 2vw;
+		left: 11vw;
+		top: 17vw;
+		border-radius: 5px 5px 50% 50%;
+	}
+
+	.mouth:after {
+		content: '';
+		position: absolute;
+		width: 1.45vw;
+		height: 1.45vw;
+		border-radius: 50%;
+		background-color: #de5c65;
+		left: 1.77vw;
+		bottom: -0.8vw;
+	}
+
+	.cap {
+		--main: #fff;
+		width: 30vw;
+		height: 10vw;
+		background-color: var(--main);
+		border: solid #cac4c6;
+		border-width: 0 0.21vw;
+		top: -28vw;
+		left: -10vw;
+		transform-origin: bottom;
+		animation: 0.3s ease-out cap infinite alternate;
+	}
+
+	.cap:before,
+	.cap:after {
+		content: '';
+		height: 5vw;
+		width: 18.7vw;
+		position: absolute;
+		top: -5.4vw;
+	}
+
+	.cap:before {
+		left: 8.7vw;
+		background-color: var(--main);
+		border: solid #cac4c6;
+		border-width: 0.21vw 0.21vw 0 0;
+		transform: skewX(45deg);
+	}
+
+	.cap:after {
+		right: 8.7vw;
+		background-color: var(--main);
+		border: solid #cac4c6;
+		border-width: 0.21vw 0 0 0.21vw;
+		transform: skewX(-45deg);
+	}
+
+	.cap.front {
+		--rotate: translateZ(8.3vw) rotateX(-85deg);
+		transform: translateZ(8.3vw) rotateX(-125deg);
+	}
+
+	.cap.back {
+		--main: #f6e2e3;
+		--rotate: translateZ(-22.4vw) rotateX(85deg);
+		transform: translateZ(-22.4vw) rotateX(125deg);
+	}
+
+	.cap.left {
+		--rotate: translateZ(-6.2vw) translateX(-15.5vw) rotateY(-90deg)
+			rotateX(-115deg);
+		top: -31.6vw;
+		height: 13.5vw;
+		transform: translateZ(-6.2vw) translateX(-15.5vw) rotateY(-90deg)
+			rotateX(-125deg);
+	}
+
+	.cap.right {
+		--rotate: translateZ(-6.2vw) translateX(15.4vw) rotateY(90deg)
+			rotateX(-115deg);
+		--main: #f6e2e3;
+		top: -31.6vw;
+		height: 13.5vw;
+		transform: translateZ(-6.2vw) translateX(15.4vw) rotateY(90deg)
+			rotateX(-125deg);
+	}
+
+	.noodle {
+		border-radius: 50%;
+		height: 17.6vw;
+		width: 14.5vw;
+		animation: 0.3s noodles linear infinite alternate;
+		--top: -19.7vw;
+	}
+
+	.noodles-1 {
+		background-color: #f7d897;
+		top: -18.7vw;
+		transform: translateX(1vw) translateZ(2vw);
+		box-shadow: 0 0 0 0.1vw #d3b87f, 0 0 0 1.5vw #f7d897, 0 0 0 1.6vw #d3b87f,
+			0 0 0 2.9vw #f5c86b, 0 0 0 3vw #d3b87f, 0 0 0 4.15vw #f7d897,
+			0 0 0 4.25vw #d3b87f;
+	}
+
+	.noodles-2 {
+		background-color: #f7d380;
+		top: -19.7vw;
+		transform: translateX(-1vw) translateZ(-8.3vw);
+		box-shadow: 0 0 0 0.1vw #d3b87f, 0 0 0 1.5vw #f7d380, 0 0 0 1.6vw #d3b87f,
+			0 0 0 2.9vw #f7d897, 0 0 0 3vw #d3b87f, 0 0 0 4.15vw #f7d380,
+			0 0 0 4.25vw #d3b87f;
+		--top: -20.2vw;
+	}
+
+	.noodles-3 {
+		background-color: #f5c86b;
+		top: -17.6vw;
+		transform: translateX(-4.1vw) translateZ(-16.6vw);
+		box-shadow: 0 0 0 0.1vw #d3b87f, 0 0 0 1.5vw #f5c86b, 0 0 0 1.6vw #d3b87f,
+			0 0 0 2.9vw #f7d897, 0 0 0 3vw #d3b87f;
+		--top: -18.7vw;
+	}
+
+	@keyframes eyes {
+		2% {
+		}
+		4% {
+			height: 0.41vw;
+			transform: translateY(0.3vw);
+		}
+		6% {
+			height: 2vw;
+			transform: initial;
+		}
+	}
+
+	@keyframes noodles {
+		to {
+			top: var(--top);
+		}
+	}
+
+	@keyframes cap {
+		to {
+			transform: var(--rotate);
+		}
+	}
+}

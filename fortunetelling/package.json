@@ -1,0 +1,59 @@
+{
+	"name": "fortunetelling",
+	"version": "1.0.0",
+	"description": "## Development",
+	"main": "main.js",
+	"scripts": {
+		"prepare": "cd .. && npx husky install fortunetelling/.husky",
+		"test": "npm run test:e2e; npm run test:unit",
+		"format": "npm run fix:prettier && npm run fix:stylelint && npm run fix:eslint",
+		"docgen": "npx jsdoc -c jsdoc.json",
+		"test:unit": "node --no-warnings --experimental-json-modules ./src/__test__/unit/testAll.js",
+		"test:e2e": "jest",
+		"dry:stylelint": "npx stylelint .",
+		"fix:prettier": "npx prettier --write './**/*.{js,jsx,ts,tsx,html,json}'",
+		"fix:stylelint": "npx stylelint './**/*.{css,scss}' --fix",
+		"fix:eslint": "npx eslint './**/*.{js,jsx,ts,tsx}' --fix",
+		"dry:eslint": "npx eslint './**/*.{js,jsx,ts,tsx}'"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.21.8",
+		"@babel/eslint-parser": "^7.21.8",
+		"@babel/plugin-syntax-import-assertions": "^7.20.0",
+		"@babel/preset-env": "^7.21.5",
+		"babel-jest": "^29.5.0",
+		"eslint": "^8.40.0",
+		"eslint-config-google": "^0.14.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-jest": "^27.2.1",
+		"eslint-plugin-prettier": "^4.2.1",
+		"husky": "^8.0.3",
+		"jest": "^29.5.0",
+		"jest-puppeteer": "^8.0.6",
+		"jsdoc": "^4.0.2",
+		"lint-staged": "^13.2.2",
+		"puppeteer": "^20.2.1",
+		"stylelint": "^15.6.2",
+		"stylelint-config-standard": "^33.0.0",
+		"stylelint-prettier": "^3.0.0",
+		"webdriverio": "^8.10.2"
+	},
+	"jest": {
+		"preset": "jest-puppeteer",
+		"verbose": true
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx,html,json}": "npx prettier --write",
+		"*.{css,scss}": "npx stylelint --fix",
+		"*.{js,jsx,ts,tsx}": "npx eslint --fix"
+	},
+	"type": "module",
+	"dependencies": {
+		"expect": "^29.5.0",
+		"expect-webdriverio": "^4.2.3",
+		"jstat": "^1.9.6"
+	}
+}

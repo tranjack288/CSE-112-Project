@@ -1,0 +1,42 @@
+[
+	{
+		"id": 0,
+		"description": "The main course is my favorite part of a three-course meal."
+	},
+	{
+		"id": 1,
+		"description": "I like preparing/cooking my own meals."
+	},
+	{
+		"id": 2,
+		"description": "Yellow is one of my favorite colors."
+	},
+	{
+		"id": 3,
+		"description": "I enjoy drinking caffeinated beverages."
+	},
+	{
+		"id": 4,
+		"description": "I like staying indoors and relaxing at home."
+	},
+	{
+		"id": 5,
+		"description": "I play video games on a regular basis."
+	},
+	{
+		"id": 6,
+		"description": "I don't mind overspending on new experiences."
+	},
+	{
+		"id": 7,
+		"description": "I enjoy eating fruits and/or vegetables."
+	},
+	{
+		"id": 8,
+		"description": "When making a bowl of cereal, I pour milk first, then cereal."
+	},
+	{
+		"id": 9,
+		"description": "Grades are very important to me, and consider “B's” bad."
+	}
+]

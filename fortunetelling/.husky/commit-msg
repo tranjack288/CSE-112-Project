@@ -1,0 +1,51 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+if ! (head -1 "$1" | grep -qE "^(feat|fix|ci|chore|docs|test|style|refactor|perf|build|revert)(\(.+?\))?(!)?: .{1,}$" || head -1 "$1" | grep -qE "^Merge branch.+"); then
+	message="
+    <type>(<scope>): <subject>
+
+    <type>          (required) The type of commit:
+
+      - build       Changes that affect the build system or external dependencies (example scopes: npm, broccoli, npm)
+      - chore       Other changes that don't modify src or test files
+      - ci          Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+      - docs        Documentation only changes
+      - feat        A new feature
+      - fix         A bug fix
+      - perf        A code change that improves performance
+      - refactor    A code change that neither fixes a bug nor adds a feature
+      - revert      Reverts a previous commit
+      - style       Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+      - test        Adding missing tests or correcting existing tests
+
+    NOTE: Adding a '!' after the type/scope indicates a breaking change.
+
+    <scope>         (optional) Scope of the commit:
+
+      - frontend    Frontend code
+      - backend     Backend code
+      - db          Database code
+      - admin       Admin documents
+
+    Example commits:
+
+      1.  feat: add new mobile touch feature
+      2.  fix: fix database bug
+      3.  feat(frontend): add new horoscope generator class
+      4.  test(backend): add unit tests for genHoroscope.js
+      5.  docs: update README about workflow
+      6.  docs(admin): add meeting notes for 05/25/2023
+      6.  refactor!: breaking changes to the API
+      7.  revert(backend)!: revert commit 123456
+
+    See https://www.conventionalcommits.org/en/v1.0.0/ for more details.
+    "
+
+	echo "$message" >&2
+	echo "${RED}Aborting commit. Please follow conventional commits. See above examples. Thanks!${NC}" >&2
+	exit 1
+fi

@@ -1,0 +1,52 @@
+/* index.html css styling */
+
+/*Ramen Icon in the middle of the landing page*/
+#ramen {
+	padding-top: 20vh;
+	width: 195px;
+	height: 194px;
+}
+
+#flavorProf {
+	color: #eee;
+	font-size: 2rem;
+	margin-bottom: 5px;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	text-shadow: 3px 2px 2px #bb1212;
+}
+
+#description {
+	margin-top: 10px;
+	padding-bottom: 30px;
+	padding-left: 5vw;
+	padding-right: 5vw;
+}
+
+/*removes underline of buttons*/
+.chat-box a {
+	text-decoration: none;
+}
+
+/*button to navigate to the questionaire page*/
+#fortuneButton,
+#toQuestions {
+	transform: scale(1);
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 #bb1212;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}

@@ -1,0 +1,328 @@
+/* questionnaire.html css styling */
+
+#questionnaire {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* Center at the screen */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+h2.question-prompt {
+	font-size: 1.3em;
+	margin-bottom: 20px;
+	text-shadow: 0px 2px 3px #eee;
+}
+
+.question {
+	background-color: #ffff97;
+	border-radius: 10px;
+	padding: 30px;
+	box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+}
+
+.question:after {
+	content: var(--question-percent);
+	position: absolute;
+	bottom: 90%;
+	left: 92%;
+	font-size: 1.3em;
+}
+
+#buttons {
+	margin-top: 20px;
+}
+
+.button {
+	margin: 10px;
+}
+
+#progressBar {
+	position: relative;
+	width: 100%;
+	height: 5px;
+	background-color: #ddd;
+	border: none;
+	border-radius: 10px;
+}
+
+#barStatus {
+	position: absolute;
+	width: 1%;
+	height: 100%;
+	background-color: #da0b0b;
+	border: none;
+	border-radius: 10px;
+}
+
+input {
+	background-color: white;
+	margin: 3px 6px 3px 6px;
+}
+
+form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.negative {
+	/*remove default appearance*/
+	appearance: none;
+	-webkit-appearance: none;
+
+	/*custom styling*/
+	height: 30px;
+	width: 30px;
+	border: 4px solid rgb(237, 169, 169);
+	border-radius: 50%;
+}
+
+.slightlyNegative {
+	/*remove default appearance*/
+	appearance: none;
+	-webkit-appearance: none;
+
+	/*custom styling*/
+	position: static;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	border: 4px solid rgb(237, 169, 169);
+}
+
+.negative:hover,
+.slightlyNegative:hover {
+	border: 4px solid rgb(243, 72, 72);
+	background-color: rgb(243, 72, 72);
+}
+
+.negative:checked,
+.slightlyNegative:checked {
+	background-color: red;
+	border: 4px solid red;
+}
+
+.positive {
+	/*remove default appearance*/
+	appearance: none;
+	-webkit-appearance: none;
+
+	/*custom styling*/
+	height: 30px;
+	width: 30px;
+	border: 4px solid rgb(123, 230, 123);
+	border-radius: 50%;
+}
+
+.slightlyPositive {
+	/*remove default appearance*/
+	appearance: none;
+	-webkit-appearance: none;
+
+	/*custom styling*/
+	top: 0;
+	left: 0;
+	height: 30px;
+	width: 30px;
+	border: 4px solid rgb(123, 230, 123);
+	border-radius: 50%;
+}
+
+.positive:hover,
+.slightlyPositive:hover {
+	background-color: rgb(120, 202, 120);
+	border: 4px solid rgb(120, 202, 120);
+}
+
+.positive:checked,
+.slightlyPositive:checked {
+	background-color: rgb(72, 165, 72);
+	border: 4px solid rgb(72, 165, 72);
+}
+.neutral {
+	/*remove default appearance*/
+	appearance: none;
+	-webkit-appearance: none;
+
+	/*custom styling*/
+	top: 0;
+	left: 0;
+	height: 30px;
+	width: 30px;
+	border: 4px solid #a7a7a7;
+	border-radius: 50%;
+}
+
+/*change color to grey on hover*/
+.neutral:hover {
+	background-color: #a7a7a7;
+	border: 3px solid #a7a7a7;
+}
+
+.neutral:checked {
+	background-color: #828282;
+	border: 3px solid #828282;
+}
+
+a.agree {
+	font-size: large;
+	padding-left: 2%;
+}
+
+a.disagree {
+	font-size: large;
+	padding-right: 2%;
+}
+
+@media (min-width: 700px) {
+	input {
+		background-color: white;
+		margin: 10px 20px 10px 20px;
+	}
+	a.agree {
+		font-size: x-large;
+		padding-left: 2%;
+	}
+
+	a.disagree {
+		font-size: x-large;
+		padding-right: 2%;
+	}
+
+	.negative {
+		/*remove default appearance*/
+		appearance: none;
+		-webkit-appearance: none;
+
+		/*custom styling*/
+		height: 60px;
+		width: 60px;
+		border: 4px solid rgb(237, 169, 169);
+		border-radius: 50%;
+	}
+
+	.slightlyNegative {
+		/*remove default appearance*/
+		appearance: none;
+		-webkit-appearance: none;
+
+		/*custom styling*/
+		position: static;
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+		border: 4px solid rgb(237, 169, 169);
+	}
+
+	.negative:hover,
+	.slightlyNegative:hover {
+		border: 4px solid rgb(243, 72, 72);
+		background-color: rgb(243, 72, 72);
+	}
+
+	.negative:checked,
+	.slightlyNegative:checked {
+		background-color: red;
+		border: 4px solid red;
+	}
+
+	.positive {
+		/*remove default appearance*/
+		appearance: none;
+		-webkit-appearance: none;
+
+		/*custom styling*/
+		height: 60px;
+		width: 60px;
+		border: 4px solid rgb(123, 230, 123);
+		border-radius: 50%;
+	}
+
+	.slightlyPositive {
+		/*remove default appearance*/
+		appearance: none;
+		-webkit-appearance: none;
+
+		/*custom styling*/
+		top: 0;
+		left: 0;
+		height: 45px;
+		width: 45px;
+		border: 4px solid rgb(123, 230, 123);
+		border-radius: 50%;
+	}
+
+	.positive:hover,
+	.slightlyPositive:hover {
+		background-color: rgb(120, 202, 120);
+		border: 4px solid rgb(120, 202, 120);
+	}
+
+	.positive:checked,
+	.slightlyPositive:checked {
+		background-color: rgb(72, 165, 72);
+		border: 4px solid rgb(72, 165, 72);
+	}
+	.neutral {
+		/*remove default appearance*/
+		appearance: none;
+		-webkit-appearance: none;
+
+		/*custom styling*/
+		top: 0;
+		left: 0;
+		height: 40px;
+		width: 40px;
+		border: 4px solid #a7a7a7;
+		border-radius: 50%;
+	}
+
+	/*change color to grey on hover*/
+	.neutral:hover {
+		background-color: #a7a7a7;
+		border: 3px solid #a7a7a7;
+	}
+
+	.neutral:checked {
+		background-color: #828282;
+		border: 3px solid #828282;
+	}
+}
+
+/* fade animations for questions and remove from display after */
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.fade-out {
+	animation-name: fadeOut;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.fade-in {
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}

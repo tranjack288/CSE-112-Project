@@ -1,0 +1,142 @@
+/* about.html css styling */
+
+/* styling for the about us carousel */
+.carousel-container {
+	display: none; /* Hide the carousel by default */
+}
+
+.member-menu {
+	margin: 50px;
+}
+
+.member-menu img {
+	width: 12%;
+	height: auto;
+	border: solid;
+}
+
+#current-member-dt {
+	width: 30%;
+	border: solid;
+}
+
+#member-noodle-dt {
+	display: block;
+	width: 100px;
+	height: 100px;
+	margin: 20px auto;
+}
+
+#member-name-dt {
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+.description {
+	width: auto;
+	max-width: 800px;
+	margin: auto;
+	padding: 2rem;
+	background-color: transparent;
+	background-image: linear-gradient(
+			-45deg,
+			transparent,
+			transparent 2%,
+			white 2%,
+			white 85%,
+			transparent,
+			85%,
+			transparent
+		),
+		linear-gradient(to bottom right, #da0b0b, #da0b0b 90%, transparent 90%);
+	background-position: top left, 0.2em 0.2em;
+	background-repeat: no-repeat;
+	filter: drop-shadow(0 0 15px #0005);
+}
+
+.description p {
+	margin-block-end: 1rem;
+	margin-block-start: 1rem;
+	text-indent: 2ch;
+}
+
+.description::before,
+.description::after {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	width: 3rem;
+	height: 4rem;
+	content: '';
+	z-index: 0;
+	font-size: 6rem;
+	font-family: Georgia, Times, Garamond, serif;
+	text-shadow: -2px 2px #fff, -1.5px 1.5px #fff, -1px 1px #fff,
+		-0.5px 0.5px #fff;
+}
+
+.description::before {
+	top: -2rem;
+	left: 1rem;
+	content: open-quote;
+}
+
+.description::after {
+	bottom: -1rem;
+	right: 1rem;
+	content: close-quote;
+}
+
+@media (max-width: 767px) {
+	.carousel-container {
+		display: block; /* Show the carousel on mobile devices */
+	}
+
+	.desktop-container {
+		display: none;
+	}
+
+	.carousel {
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	#member-name {
+		font-size: 3rem;
+		font-weight: bold;
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+
+	#current-member {
+		width: 200px;
+		height: 200px;
+		margin-top: 30px;
+		margin-bottom: 10px;
+		border: solid;
+	}
+
+	#member-noodle {
+		display: block;
+		width: 150px;
+		height: 150px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.carousel-control {
+		position: absolute;
+		bottom: 30%;
+		width: 50px;
+		font-size: 25px;
+	}
+
+	.carousel-control.prev {
+		left: 25px;
+	}
+
+	.carousel-control.next {
+		right: 25px;
+	}
+}

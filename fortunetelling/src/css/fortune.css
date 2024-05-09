@@ -1,0 +1,155 @@
+/* fortune.html css styling */
+
+.name,
+.subtitle {
+	text-align: center;
+}
+
+.name {
+	/* Hero H1 */
+
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 56px;
+	line-height: 80px;
+	/* or 143% */
+
+	letter-spacing: -0.015em;
+
+	color: #ae3131;
+}
+
+.subtitle {
+	text-shadow: 0px 1px 1px rgb(111, 105, 105);
+	/* margin: 50px; */
+	padding-bottom: 10px;
+}
+
+#fortune {
+	/* Body P Large */
+
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 50px;
+	/* or 139% */
+
+	display: flex;
+	align-items: center;
+	text-align: center;
+	letter-spacing: -0.015em;
+
+	color: #000000;
+
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	padding-right: 25%;
+	padding-left: 25%;
+	min-width: 50%;
+}
+
+.controls .dropbtn {
+	width: 192px;
+	height: 52px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	font-family: 'Montserrat';
+	font-size: 18px;
+	border-radius: 8px;
+	background-color: #da0b0b;
+	color: white;
+}
+
+.dropdown-content {
+	margin: auto;
+	width: 184px;
+	border: none;
+	display: none;
+}
+
+.dropdown-content .noodleButton {
+	margin: auto;
+	width: 7vw;
+	margin-left: 4px;
+	margin-right: 4px;
+	cursor: pointer;
+	display: block;
+	transition: width 0.3s ease;
+}
+
+.dropdown-content .noodleButton:hover {
+	width: 8vw;
+}
+
+.carousel-caption {
+	font-size: 15px;
+}
+
+.arrowButton {
+	display: none;
+}
+
+.show {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#noodle-image {
+	width: 96px;
+	height: auto;
+	border-radius: 8px;
+	margin: auto;
+	display: block;
+}
+
+@media screen and (max-width: 600px) {
+	#fortune {
+		padding-right: 10%;
+		padding-left: 10%;
+		min-width: 80%;
+		font-size: 24px;
+	}
+
+	.dropdown-content .noodleButton {
+		display: none;
+	}
+
+	.carousel-caption {
+		display: none;
+	}
+
+	.arrowButton {
+		display: inline-block;
+		width: 50px;
+		font-size: 25px;
+	}
+
+	#leftArrow {
+		margin-right: 50px;
+	}
+
+	#rightArrow {
+		margin-left: 50px;
+	}
+
+	#dropbtn {
+		display: none;
+	}
+}
+
+.smokeAnimation {
+	width: 100%;
+	height: auto;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+	#fortune {
+		padding-right: 20%;
+		padding-left: 20%;
+		min-width: 60%;
+		font-size: 30px;
+	}
+}

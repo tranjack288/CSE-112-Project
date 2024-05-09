@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>About</title>
+		<link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+
+		<!-- Prefetch asset files -->
+		<link rel="prefetch" href="../img/aaron-icon.jpg" />
+		<link rel="prefetch" href="../img/anthony-icon.jpg" />
+		<link rel="prefetch" href="../img/beef-noodle-soup-icon-1.png" />
+		<link rel="prefetch" href="../img/bread-icon-1.png" />
+		<link rel="prefetch" href="../img/chicken-noodle-soup-icon-1.png" />
+		<link rel="prefetch" href="../img/darren-icon.jpg" />
+		<link rel="prefetch" href="../img/favicon.ico" />
+		<link rel="prefetch" href="../img/hanson-icon.png" />
+		<link rel="prefetch" href="../img/henry-icon.jpg" />
+		<link rel="prefetch" href="../img/hieu-icon.jpeg" />
+		<link rel="prefetch" href="../img/holly-icon.png" />
+		<link rel="prefetch" href="../img/icon.png" />
+		<link rel="prefetch" href="../img/instant-noodles-icon-1.png" />
+		<link rel="prefetch" href="../img/landing-background.jpg" />
+		<link rel="prefetch" href="../img/lasagna-icon-1.png" />
+		<link rel="prefetch" href="../img/mac-and-cheese-icon-1.png" />
+		<link rel="prefetch" href="../img/mark-icon.jpeg" />
+		<link rel="prefetch" href="../img/noodle1.jpg" />
+		<link rel="prefetch" href="../img/noodle2.jpg" />
+		<link rel="prefetch" href="../img/noodle3.jpg" />
+		<link rel="prefetch" href="../img/pad-thai-icon-1.png" />
+		<link rel="prefetch" href="../img/pho-icon-1.png" />
+		<link rel="prefetch" href="../img/ramen-icon-1.png" />
+		<link rel="prefetch" href="../img/ravioli-icon-1.png" />
+		<link rel="prefetch" href="../img/smokeAnimation.gif" />
+		<link rel="prefetch" href="../img/spaghetti-icon-1.png" />
+		<link rel="prefetch" href="../img/steve-icon.jpg" />
+		<link rel="prefetch" href="../img/udon-icon-1.png" />
+		<link rel="prefetch" href="../sounds/bg-music.wav" />
+		<link rel="prefetch" href="../sounds/congratulations.wav" />
+
+		<!-- Stylesheets -->
+		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
+		<!-- main.css. Page-specific styles should be in profiles.css. -->
+		<link href="../css/main.css" rel="stylesheet" type="text/css" />
+		<link href="../css/navbar.css" rel="stylesheet" type="text/css" />
+		<link href="../css/profiles.css" rel="stylesheet" type="text/css" />
+		<!-- Font Awesome -->
+		<link
+			href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+			rel="stylesheet"
+			integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+			crossorigin="anonymous"
+		/>
+	</head>
+
+	<body>
+		<audio id="bg-music" loop>
+			<source src="../sounds/bg-music.wav" type="audio/mpeg" />
+		</audio>
+
+		<!-- Single page view -->
+		<div id="singlePageContent" style="display: block">
+			<!-- Navigation bar -->
+			<nav id="navbar">
+				<ul class="menu">
+					<a href="../../index.html">
+						<img id="icon" src="../img/icon.png" />
+					</a>
+					<li class="logo">
+						<a id="noodleText" href="../../index.html"> Tasty Noodles </a>
+					</li>
+					<li class="item current">
+						<a href="./profiles.html">Noodle Profiles</a>
+					</li>
+					<li class="item"><a href="./about.html">About Us</a></li>
+					<li class="item"><a href="./questionnaire.html">Take a Quiz!</a></li>
+					<li class="item accessibility-container">
+						<label class="switch">
+							<input name="accessibility" type="checkbox" />
+							<span class="slider round">
+								<i class="fas fa-assistive-listening-systems fa-lg"></i>
+							</span>
+						</label>
+					</li>
+					<li class="item button bg-music-toggle" id="bg-music-toggle">
+						<i class="fas fa-lg" id="bg-music-toggle-icon"></i>
+					</li>
+					<li class="toggle">
+						<input id="toggle" type="checkbox" />
+						<label class="hamburger" for="toggle">
+							<div class="top"></div>
+							<div class="middle"></div>
+							<div class="bottom"></div>
+						</label>
+					</li>
+				</ul>
+			</nav>
+
+			<main>
+				<div id="selected-noodle">
+					<img
+						id="selected-noodle-img"
+						src="../img/beef-noodle-soup-icon-1.png"
+						alt="Selected Noodle"
+					/>
+				</div>
+				<div id="name" class="name speechify speechify-onload"></div>
+				<div
+					id="description"
+					class="description speechify speechify-onload"
+				></div>
+				<div class="buttons">
+					<a href="fortune.html">
+						<button class="button fortune-button">Reveal my Fortune</button>
+					</a>
+				</div>
+				<div id="carousel" class="carousel">
+					<div>
+						<img
+							src="../img/ravioli-icon-1.png"
+							alt="Ravioli"
+							onclick="selectNoodle(0)"
+						/>
+						<p class="carousel-caption">Ravioli</p>
+					</div>
+					<div>
+						<img
+							src="../img/pho-icon-1.png"
+							alt="Pho"
+							onclick="selectNoodle(1)"
+						/>
+						<p class="carousel-caption">Pho</p>
+					</div>
+					<div>
+						<img
+							src="../img/mac-and-cheese-icon-1.png"
+							alt="Mac and Cheese"
+							onclick="selectNoodle(2)"
+						/>
+						<p class="carousel-caption">Mac and Cheese</p>
+					</div>
+					<div>
+						<img
+							src="../img/instant-noodles-icon-1.png"
+							alt="Instant Noodles"
+							onclick="selectNoodle(3)"
+						/>
+						<p class="carousel-caption">Instant Noodles</p>
+					</div>
+					<div>
+						<img
+							src="../img/pad-thai-icon-1.png"
+							alt="Pad Thai"
+							onclick="selectNoodle(4)"
+						/>
+						<p class="carousel-caption">Pad Thai</p>
+					</div>
+					<div>
+						<img
+							src="../img/chicken-noodle-soup-icon-1.png"
+							alt="Chicken Noodle Soup"
+							onclick="selectNoodle(5)"
+						/>
+						<p class="carousel-caption">Chicken Noodle Soup</p>
+					</div>
+					<div>
+						<img
+							src="../img/udon-icon-1.png"
+							alt="Udon"
+							onclick="selectNoodle(6)"
+						/>
+						<p class="carousel-caption">Udon</p>
+					</div>
+					<div>
+						<img
+							src="../img/ramen-icon-1.png"
+							alt="Ramen"
+							onclick="selectNoodle(7)"
+						/>
+						<p class="carousel-caption">Ramen</p>
+					</div>
+					<div>
+						<img
+							src="../img/spaghetti-icon-1.png"
+							alt="Spaghetti"
+							onclick="selectNoodle(8)"
+						/>
+						<p class="carousel-caption">Spaghetti</p>
+					</div>
+					<div>
+						<img
+							src="../img/lasagna-icon-1.png"
+							alt="Lasagna"
+							onclick="selectNoodle(9)"
+						/>
+						<p class="carousel-caption">Lasagna</p>
+					</div>
+					<div>
+						<img
+							src="../img/beef-noodle-soup-icon-1.png"
+							alt="Beef Noodle Soup"
+							onclick="selectNoodle(10)"
+						/>
+						<p class="carousel-caption">Beef Noodle Soup</p>
+					</div>
+					<div>
+						<img
+							src="../img/bread-icon-1.png"
+							alt="Bread"
+							onclick="selectNoodle(11)"
+						/>
+						<p class="carousel-caption">Bread</p>
+					</div>
+				</div>
+			</main>
+
+			<!-- Footer -->
+		</div>
+
+		<!-- Double page view -->
+		<div id="doublePageContent" style="display: none">
+			<!-- Navigation bar -->
+			<nav id="navbar">
+				<ul class="menu">
+					<a href="../../index.html">
+						<img id="icon" src="../img/icon.png" />
+					</a>
+					<li class="logo">
+						<a id="noodleText" href="../../index.html"> Tasty Noodles </a>
+					</li>
+					<li class="item current">
+						<a href="./profiles.html">Noodle Profiles</a>
+					</li>
+					<li class="item"><a href="./about.html">About Us</a></li>
+					<li class="item"><a href="./questionnaire.html">Take a Quiz!</a></li>
+					<li class="item accessibility-container">
+						<label class="switch">
+							<input name="accessibility" type="checkbox" />
+							<span class="slider round">
+								<i class="fas fa-assistive-listening-systems fa-lg"></i>
+							</span>
+						</label>
+					</li>
+					<li class="item button bg-music-toggle" id="bg-music-toggle">
+						<i class="fas fa-lg" id="bg-music-toggle-icon"></i>
+					</li>
+					<li class="toggle">
+						<input id="toggle" type="checkbox" />
+						<label class="hamburger" for="toggle">
+							<div class="top"></div>
+							<div class="middle"></div>
+							<div class="bottom"></div>
+						</label>
+					</li>
+				</ul>
+			</nav>
+
+			<!-- Main content -->
+			<main>
+				<div id="name-double" class="name speechify speechify-onload"></div>
+				<div id="carousel" class="carousel">
+					<img
+						id="carousel-image"
+						src="../img/beef-noodle-soup-icon-1.png"
+						alt="Noodle 1"
+					/>
+				</div>
+				<div class="buttons">
+					<a href="fortune.html">
+						<button class="button fortune-button">Reveal my Fortune</button>
+					</a>
+				</div>
+				<div
+					id="description-double"
+					class="description speechify speechify-onload"
+				>
+					<p>Description for Noodle</p>
+				</div>
+				<div class="controls">
+					<div>
+						<img
+							id="prev-noodle"
+							src="../img/udon-icon-1.png"
+							alt="Previous Noodle"
+							onclick="prevNoodle()"
+						/>
+						<p class="see-prev">See Prev:</p>
+					</div>
+					<div>
+						<img
+							id="next-noodle"
+							src="../img/bread-icon-1.png"
+							alt="Next Noodle"
+							onclick="nextNoodle()"
+						/>
+						<p id="see-next">See Next:</p>
+					</div>
+				</div>
+			</main>
+
+			<!-- Footer -->
+		</div>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<p>© Tasty Noodles</p>
+		</footer>
+
+		<!-- Scripts -->
+
+		<!-- NOTE: main.js is a module that runs after the page is loaded. Also main.js -->
+		<!-- applies to all pages. Page specific scripts should be in index.js which runs -->
+		<!-- before the page is loaded. -->
+
+		<!-- NOTE: If you need to import from another script, e.g. utils.js, then you -->
+		<!-- need the script tag to have the type="module" attribute. However, module -->
+		<!-- scripts are deferred, so they don't run until the page is loaded. If you -->
+		<!-- want to run your script codes before the page is loaded, then you need to -->
+		<!-- remove the type="module" attribute. -->
+		<script src="../js/main.js" type="module"></script>
+		<script src="../js/settings.js" type="module"></script>
+		<script src="../js/profiles.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
+	</body>
+</html>
