@@ -14,6 +14,11 @@
 	text-shadow: 3px 2px 2px #000;
 }
 
+.noodles-container{
+	width: 300px;
+	height: 300px;
+}
+
 @media screen and (min-width: 801px) {
 	main {
 		background-image: url('../img/landing-background.jpg');
@@ -32,27 +37,27 @@
 
 	.noodles-container {
 		position: relative;
-		top: -20%;
-		left: -30%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
-
 	.user-input {
 		display: flex;
 	}
 
-	.noodles-container.fly-to-center {
+	/* .noodles-container.fly-to-center {
 		animation: 1s fly-to-center linear;
-		animation-fill-mode: forwards;
-	}
+		animation-fill-mode: forwards; 
+	} */
 
-	@keyframes fly-to-center {
+	/* @keyframes fly-to-center {
 		0% {
 			transform: translate(0, 0);
 		}
 		100% {
 			transform: translate(10vh, 5vh);
 		}
-	}
+	} */
 	@keyframes fly-out {
 		0% {
 			opacity: 1;
@@ -68,7 +73,7 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		/* transform: translate(-50%, -50%); */
 		width: 50px; /* Adjust the image width as needed */
 		height: auto;
 	}
@@ -87,9 +92,6 @@
 	}
 
 	.noodles-container {
-		position: relative;
-		top: -20%;
-		left: -30%;
 	}
 
 	.user-input {

@@ -35,6 +35,17 @@ main {
 	padding: 25px;
 }
 
+#frontpage-container{
+	display: grid;
+	grid-template-columns: 0.74fr 1fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+.frontpage-container{
+
+}
+
 #icon {
 	width: 61px;
 	height: 55px;

@@ -37,7 +37,6 @@
 		<link rel="prefetch" href="src/img/udon-icon-1.png" />
 		<link rel="prefetch" href="src/sounds/bg-music.wav" />
 		<link rel="prefetch" href="src/sounds/congratulations.wav" />
-
 		<!-- Stylesheets -->
 		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
 		<!-- main.css. Page-specific styles should be in index.css. -->
@@ -66,14 +65,11 @@
 					<img id="icon" src="src/img/icon.png" />
 				</a>
 				<li class="logo">
-					<a id="noodleText" href="."> Tasty Noodles </a>
-				</li>
-				<li class="item">
-					<a href="./src/pages/profiles.html">Noodle Profiles</a>
+					<a id="noodleText" href="."> Noodle Craft </a>
 				</li>
 				<li class="item"><a href="./src/pages/about.html">About Us</a></li>
 				<li class="item">
-					<a href="./src/pages/questionnaire.html">Take a Quiz!</a>
+					<a href="./src/pages/myRecipes.html">My Recipes</a>
 				</li>
 				<li class="item accessibility-container">
 					<label class="switch">
@@ -99,51 +95,43 @@
 
 		<!-- Main content -->
 		<main>
-			<div class="chat-box">
-				<div class="noodles-container">
-					<div class="noodles">
-						<div class="cap right"></div>
-						<div class="cap back"></div>
-						<div class="side right"></div>
-						<div class="side back"></div>
-						<div class="noodle noodles-1"></div>
-						<div class="noodle noodles-2"></div>
-						<div class="noodle noodles-3"></div>
-						<div class="side left"></div>
-						<div class="side front">
-							<div class="eyes-container">
-								<div class="eyes"></div>
+			<div id = "frontpage-container">
+				<section class="chat-box">
+					<div class="noodles-container">
+						<div class="noodles">
+							<div class="cap right"></div>
+							<div class="cap back"></div>
+							<div class="side right"></div>
+							<div class="side back"></div>
+							<div class="noodle noodles-1"></div>
+							<div class="noodle noodles-2"></div>
+							<div class="noodle noodles-3"></div>
+							<div class="side left"></div>
+							<div class="side front">
+								<div class="eyes-container">
+									<div class="eyes"></div>
+								</div>
+								<div class="mouth"></div>
 							</div>
-							<div class="mouth"></div>
+							<div class="cap left"></div>
+							<div class="cap front"></div>
 						</div>
-						<div class="cap left"></div>
-						<div class="cap front"></div>
 					</div>
-				</div>
-				<h4
-					id="flavorProf"
-					class="speechify speechify-onload"
-					style="display: none"
-				>
-					Unlock your flavor profile
-				</h4>
-				<div class="user-input">
-					<button id="user-input-button">Start Conversation</button>
-				</div>
-				<a href="src/pages/questionnaire.html">
-					<button class="button" id="toQuestions" style="display: none">
-						Grab me a bowl!
-					</button>
-				</a>
-				<br />
-				<a href="src/pages/fortune.html" id="fortuneLink">
-					<button id="fortuneButton" style="display: none" class="button">
-						Reveal my Fortune
-					</button>
-				</a>
-				<h1 id="message-output" class="speechify">
-					Welcome to the Noodle Shop!
-				</h1>
+					<h2 id="message-output" class="speechify">
+						Welcome to the Noodle Shop!
+					</h2>
+					<div class="user-input">
+						<button id="user-input-button">Start Conversation</button>
+					</div>
+					
+				</section>
+				<section class = "page">
+					<h1>Don't Know <br>
+						What Noodle to Cook?
+					</h1>
+					<p>Answer a few questions, and Noodle Craft will generate the best noodle recipe for you!</p>
+					<button>Generate My Recipe</button>
+				</section>
 			</div>
 		</main>
 
