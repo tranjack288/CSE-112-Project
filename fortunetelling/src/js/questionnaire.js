@@ -5,9 +5,15 @@
 // - https://jsdoc.app/howto-es2015-modules.html
 // - https://jsdoc.app/howto-es2015-classes.html
 
+// import the scoretracker to be able to keep a running score and calculate noodle similarity at the end
+
 // upon loading, call updatenoodle, passing in the noodleIndex from local storage
+import { currentScore } from './scoretracker.js';
+
+console.log('scoretracker is ' + currentScore);
+
 document.addEventListener('DOMContentLoaded', init);
-const QUESTIONS = 10; // Questionnaire Length
+const QUESTIONS = 7; // Questionnaire Length
 
 /** On load function */
 function init() {
@@ -81,6 +87,9 @@ function questionsHandler() {
 			input.addEventListener('click', function () {
 				question.classList.add('fade-out');
 				question.style.display = 'none';
+				// trigger the function to increment scorecount in the other file
+				console.log(' name is ' + question.name);
+				console.log(' val is ' + question.value);
 
 				// Incrementally update progress bar for the questionnaire after each question is answered with animation.
 				const progress = document.querySelector('#barStatus');
@@ -88,7 +97,7 @@ function questionsHandler() {
 				let progressWidthNum = parseInt(
 					progressWidth.substring(0, progressWidth.length - 1)
 				);
-				const newWidth = progressWidthNum + 10;
+				const newWidth = progressWidthNum + Math.floor((1 / QUESTIONS) * 100);
 
 				const id = setInterval(function () {
 					if (progressWidthNum >= newWidth) {
@@ -132,7 +141,32 @@ function questionsHandler() {
 		});
 	}
 }
-
+/**
+ * Keeps a running tally of a user's preferences to match them to a noodle at the end. activates after a radio button is clicked.
+ * @param {Int} questionID
+ * @param {Int} valuePicked
+ * @return {null}
+ */
+function trackScore(questionID, valuePicked) {
+	switch (questionID) {
+		case 0:
+			setBudget(valuePicked);
+		case 1:
+			setTime(valuePicked);
+		case 2:
+			setMeat(valuePicked);
+		case 3:
+			setSpice(valuePicked);
+		case 4:
+			setDifficulty(valuePicked);
+		case 5:
+			setCustomizable(valuePicked);
+		case 6:
+			setOrigin(valuePicked);
+		default:
+			return 'Invalid choice';
+	}
+}
 /**
  * Grades the quiz and returns the closest personality.
  */
