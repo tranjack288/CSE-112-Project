@@ -191,10 +191,9 @@ function closestNoodleMatch() {
 	});
 
 	return smallestItemsJSON;
-}
+};
 
-export {
-	currentScore,
+export { currentScore,
 	setBudget,
 	setDifficulty,
 	setMeat,

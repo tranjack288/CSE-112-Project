@@ -8,7 +8,9 @@
 // import the scoretracker to be able to keep a running score and calculate noodle similarity at the end
 
 // upon loading, call updatenoodle, passing in the noodleIndex from local storage
-import { currentScore } from './scoretracker.js';
+import { currentScore,setBudget,setMeat,setDifficulty,setOrigin,setSpice,setCustomizable,setTime,
+	closestNoodleMatch,noodelDIFF
+ } from './scoretracker.js';
 
 console.log('scoretracker is ' + currentScore);
 
