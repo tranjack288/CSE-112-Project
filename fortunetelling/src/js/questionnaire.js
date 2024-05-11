@@ -12,7 +12,6 @@ import { currentScore,setBudget,setMeat,setDifficulty,setOrigin,setSpice,setCust
 	closestNoodleMatch,noodelDIFF
  } from './scoretracker.js';
 
-console.log('scoretracker is ' + currentScore);
 
 document.addEventListener('DOMContentLoaded', init);
 const QUESTIONS = 7; // Questionnaire Length
@@ -89,9 +88,17 @@ function questionsHandler() {
 			input.addEventListener('click', function () {
 				question.classList.add('fade-out');
 				question.style.display = 'none';
-				// trigger the function to increment scorecount in the other file
-				console.log(' name is ' + question.name);
-				console.log(' val is ' + question.value);
+				
+				//all formNames end with the question number so we just grab that as a parameter for trackscore
+				let formName =  input.parentElement.parentElement.parentElement.id; 
+				let formNumber = parseInt(formName[formName.length - 1]) - 1; 
+				//which radio button the user selected for that question
+				let buttonIndex = input.value;
+				// trigger the function to increment scorecount in the other file (trackscore)
+				trackScore(formNumber,buttonIndex);
+
+				
+
 
 				// Incrementally update progress bar for the questionnaire after each question is answered with animation.
 				const progress = document.querySelector('#barStatus');
@@ -153,20 +160,28 @@ function trackScore(questionID, valuePicked) {
 	switch (questionID) {
 		case 0:
 			setBudget(valuePicked);
+			break;
 		case 1:
 			setTime(valuePicked);
+			break;
 		case 2:
 			setMeat(valuePicked);
+			break;
 		case 3:
 			setSpice(valuePicked);
+			break;
 		case 4:
 			setDifficulty(valuePicked);
+			break;
 		case 5:
 			setCustomizable(valuePicked);
+			break;
 		case 6:
 			setOrigin(valuePicked);
+			break;
 		default:
 			return 'Invalid choice';
+			break;
 	}
 }
 /**
@@ -178,40 +193,23 @@ function gradeQuiz() {
 	submitButton.addEventListener('click', function () {
 		const link = document.querySelector('#next');
 		const answers = document.getElementsByName('qRadio');
-		let answerCnt = 0;
-		let pnts = 0;
-
-		// Go through each question and tally up the points.
-		for (let i = 0; i < answers.length; i++) {
-			if (answers[i].checked) {
-				const response = answers[i].className;
-
-				if (response == 'negative') {
-					pnts += 1;
-					answerCnt++;
-				} else if (response == 'slightlyNegative') {
-					pnts += 2;
-					answerCnt++;
-				} else if (response == 'neutral') {
-					pnts += 3;
-					answerCnt++;
-				} else if (response == 'slightlyPositive') {
-					pnts += 4;
-					answerCnt++;
-				} else if (response == 'positive') {
-					pnts += 5;
-					answerCnt++;
-				}
-			}
-		}
+		let answered = true;
 
 		// Makes sure the user has answered all the questions.
-		if (answerCnt != QUESTIONS) {
+		for (let i = 0; i < currentScore.length; i++){
+			if (currentScore[i] === 0) {
+				answered = false;
+			}
+		}
+		if (answered === false) {
 			alert('You have not answered all the questions.');
 		} else {
-			const hash = pnts % 12;
-			localStorage.setItem('myNoodleIndex', hash);
-			link.setAttribute('href', './noodlesResults.html');
+			
+			const surveyResults = closestNoodleMatch();
+			console.log(surveyResults);
+			//localStorage.setItem('surveyResults', surveyResults); we may use localstorage for currentscore later depending on architecture
+			
+			// link.setAttribute('href', './noodlesResults.html'); <-- use this after rework of noodleResultsPage.
 		}
 	});
 }
