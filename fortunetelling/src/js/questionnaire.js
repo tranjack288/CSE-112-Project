@@ -9,7 +9,7 @@
 
 // upon loading, call updatenoodle, passing in the noodleIndex from local storage
 import { currentScore,setBudget,setMeat,setDifficulty,setOrigin,setSpice,setCustomizable,setTime,
-	closestNoodleMatch,noodelDIFF
+	closestNoodleMatch,noodleDIFF
  } from './scoretracker.js';
 
 

@@ -59,7 +59,7 @@ function setOrigin(number) {
  * @param {Array} cat1 list of categories
  * @param {Array} cat2 list of categories
  */
-function noodelDIFF(cat1, cat2) {
+function noodleDIFF(cat1, cat2) {
 	let diff = 0;
 	for (let i = 0; i < QUESTIONS; i++) {
 		diff += Math.abs(cat1[i] - cat2[i]);
@@ -173,7 +173,7 @@ function closestNoodleMatch() {
 	];
 
 	noodles.forEach((element) => {
-		const diff = noodelDIFF(currentScore, element.categories);
+		const diff = noodleDIFF(currentScore, element.categories);
 		allNoodles.push([element.noodleID, diff]);
 	});
 
@@ -201,6 +201,6 @@ export { currentScore,
 	setTime,
 	setCustomizable,
 	setOrigin,
-	noodelDIFF,
+	noodleDIFF,
 	closestNoodleMatch
 };
