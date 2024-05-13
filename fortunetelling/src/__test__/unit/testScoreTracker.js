@@ -4,16 +4,10 @@ import { strictEqual, ok } from 'node:assert';
 import { it } from './helper.js';
 
 // Import functions to test
-import { setBudget,
-	setDifficulty,
-	setMeat,
-	setSpice,
-	setTime,
-	setCustomizable,
-	setOrigin,
+import { 
 	closestNoodleMatch,
     noodleDIFF,
-    currentScore} from '../../js/scoretracker.js';
+    } from '../../js/scoretracker.js';
 
 //Test noodleDIFF
 
