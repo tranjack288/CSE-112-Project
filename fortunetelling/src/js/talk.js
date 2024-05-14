@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	const noodlesContainer = document.querySelector('.noodles-container');
 	const userInputButton = document.getElementById('user-input-button');
 	const messageOutput = document.getElementById('message-output');
-	const toQuestions = document.getElementById('toQuestions');
-	const fortuneButton = document.getElementById('fortuneButton');
-	const flavorProfile = document.getElementById('flavorProf');
+	// const toQuestions = document.getElementById('toQuestions');
+	// const fortuneButton = document.getElementById('fortuneButton');
+	// const flavorProfile = document.getElementById('flavorProf');
 	let isFirstClick = true;
 
 	userInputButton.addEventListener('click', startConversation);
@@ -190,19 +190,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Get the container element for the eyes
 	const eyesContainer = document.querySelector('.eyes-container');
-
-	// Get the front side element of the box
-	const frontSide = document.querySelector('.side.front');
-
-	// Calculate the maximum x position within the boundary
-	const maxX =
-		frontSide.offsetLeft + frontSide.offsetWidth - eyesContainer.offsetWidth;
-
-	// Calculate the maximum y position within the boundary
-	const maxY =
-		frontSide.offsetTop + frontSide.offsetHeight - eyesContainer.offsetHeight;
-
 	
+	/**
+	 * Shift the position of the eyes
+	 * @param {object} image - html object that will be shift.
+	 * @param {Number} maxTranslation - the multiplier to the distances shifted
+	 * @param {Number} rangeX - horizontal shift distance 
+	 * @param {Number} rangeY - vertical shift distance 
+	 */
 	function shift(image, maxTranslation, rangeX, rangeY) {		
 		const currentTranslation = `${maxTranslation * rangeX}% ${maxTranslation * rangeY}%`;
 		
