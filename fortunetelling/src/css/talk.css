@@ -8,15 +8,19 @@
 	color: #eee;
 	font-size: 1.4rem;
 	font-weight: normal;
-	margin-top: 20px;
+	/* margin-top: 20px;
 	padding-left: 2vw;
-	padding-right: 2vw;
-	text-shadow: 3px 2px 2px #000;
+	padding-right: 2vw; */
+	text-shadow: 2px 2px 2px #000;
+	padding: 0px 15px 0px 15px;
+	margin: 0px 15px 0px 15px;
+	border-radius: 25px;
+	background-color: #00000020;
 }
 
 .noodles-container{
-	width: 300px;
-	height: 300px;
+	width: 120px;
+	height: 120px;
 }
 
 @media screen and (min-width: 801px) {
@@ -25,14 +29,18 @@
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+
+		display: flex;
 	}
 	.chat-box {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
+		/* height: 100vh; */
 		font-family: cursive;
+
+		background-color: #5151512b;
 	}
 
 	.noodles-container {
@@ -71,8 +79,8 @@
 
 	.flying-noodle {
 		position: absolute;
-		top: 50%;
-		left: 50%;
+		top: 40%;
+		left: 80%;
 		/* transform: translate(-50%, -50%); */
 		width: 50px; /* Adjust the image width as needed */
 		height: auto;
@@ -151,7 +159,7 @@
 	.noodles {
 		position: relative;
 		animation: 0.6s dance linear infinite;
-		transform: rotateX(-10deg) rotateY(25deg);
+		transform: scale(0.8) rotateX(-10deg) rotateY(25deg);
 		transform-style: preserve-3d;
 	}
 	.noodles * {
@@ -214,11 +222,16 @@
 	}
 	.eyes-container {
 		position: absolute;
-		top: 150px;
-		left: 65px;
-		width: 110px;
-		height: 20px;
+		/* top: 150px;
+		left: 65px; */
+		right: 50px;
+		width: 200px;
+		height: 200px;
 		overflow: hidden;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.eyes {

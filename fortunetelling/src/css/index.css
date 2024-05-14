@@ -46,9 +46,82 @@
 	}
 }
 
-.page{
+
+main{
+	padding: 0;
+}
+#frontpage-container{
+	display: grid;
+	grid-template-columns: 0.74fr 1fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+
+	width:100%;
+}
+
+/* chat-box section */
+#chat-box-content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+	height: 100%;
+    max-height: 270px;
+	margin-top: 30px;
+}
+#user-input-button{
+	border: 2.5px #DA0B0B solid;
+	background-color: #bb121254;
+	backdrop-filter: blur(2px);
+	border-radius: 25px 25px 0px 25px;
+	text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+
+	/* transition: 0.3s ease; */
+}
+#user-input-button:hover{
+	background-color: #bb1212ab;
+}
+
+/* Intro section */
+.intro{
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
-	justify-items: center;
+	align-items: center;
+
+	text-align: left;
+	background-color: #00000040;
+	backdrop-filter: blur(8px);
+	padding: 20px;
+}
+#intro-content-container{
+	max-width: 600px;
+	min-height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+	margin-top: 30px;
+}
+.intro h1{	
+	color: #eee;
+	font-size: 60px;
+	text-shadow: 3px 2px 2px #000;
+	line-height: 40px;
+
+}
+.intro p{
+	color: #eee;
+	text-shadow: 3px 2px 2px #000;
+	line-height: 25px;
+	margin-top: 20px;
+
+	font-size: 1.5rem;
+}
+#generate-recipe{
+	padding-left: 40px;
+	padding-right: 40px;
+	animation: 3.2s ease 0s infinite normal none running pulse;
 }

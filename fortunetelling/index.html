@@ -97,47 +97,56 @@
 		<main>
 			<div id = "frontpage-container">
 				<section class="chat-box">
-					<div class="noodles-container">
-						<div class="noodles">
-							<div class="cap right"></div>
-							<div class="cap back"></div>
-							<div class="side right"></div>
-							<div class="side back"></div>
-							<div class="noodle noodles-1"></div>
-							<div class="noodle noodles-2"></div>
-							<div class="noodle noodles-3"></div>
-							<div class="side left"></div>
-							<div class="side front">
-								<div class="eyes-container">
-									<div class="eyes"></div>
+					<div id="chat-box-content-container">
+						<div class="noodles-container">
+							<div class="noodles">
+								<div class="cap right"></div>
+								<div class="cap back"></div>
+								<div class="side right"></div>
+								<div class="side back"></div>
+								<div class="noodle noodles-1"></div>
+								<div class="noodle noodles-2"></div>
+								<div class="noodle noodles-3"></div>
+								<div class="side left"></div>
+								<div class="side front">
+									<div class="eyes-container">
+										<div class="eyes"></div>
+									</div>
+									<div class="mouth"></div>
 								</div>
-								<div class="mouth"></div>
+								<div class="cap left"></div>
+								<div class="cap front"></div>
 							</div>
-							<div class="cap left"></div>
-							<div class="cap front"></div>
 						</div>
-					</div>
-					<h2 id="message-output" class="speechify">
-						Welcome to the Noodle Shop!
-					</h2>
-					<div class="user-input">
-						<button id="user-input-button">Start Conversation</button>
-					</div>
-					
+						<h2 id="message-output" class="speechify">
+							Welcome to the Noodle Shop!
+						</h2>
+						<div class="user-input">
+							<button id="user-input-button">Start Conversation</button>
+						</div>	
+					</div>									
 				</section>
-				<section class = "page">
-					<h1>Don't Know <br>
-						What Noodle to Cook?
-					</h1>
-					<p>Answer a few questions, and Noodle Craft will generate the best noodle recipe for you!</p>
-					<button>Generate My Recipe</button>
+
+				<section class = "intro">
+					<div id="intro-content-container">
+						<div>
+							<h1>Don't Know <br>
+								What Noodle to Cook?
+							</h1>
+							<p>Answer a few questions, and Noodle Craft will generate the best noodle recipe for you!</p>	
+						</div>
+						<a href="src/pages/questionnaire.html">
+							<button id="generate-recipe">Generate My Recipe</button>	
+						</a>
+						
+					</div>
 				</section>
 			</div>
 		</main>
 
 		<!-- Footer -->
 		<footer class="footer">
-			<p>© Tasty Noodles</p>
+			<p>© Noodle Craft</p>
 		</footer>
 
 		<!-- Scripts -->
