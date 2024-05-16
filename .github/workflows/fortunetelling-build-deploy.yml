@@ -71,7 +71,6 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - run: firebase deploy --only hosting:noodlecraft 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
