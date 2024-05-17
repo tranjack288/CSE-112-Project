@@ -209,7 +209,7 @@ function gradeQuiz() {
 			console.log(surveyResults);
 			localStorage.setItem('surveyResults', surveyResults); //we may use localstorage for currentscore later depending on architecture
 			
-			// link.setAttribute('href', './noodlesResults.html'); <-- use this after rework of noodleResultsPage.
+			link.setAttribute('href', './noodleOptions.html'); 
 		}
 	});
 }
