@@ -7,6 +7,8 @@
     width: 150px; /* Adjust as needed */
     height: 150px; /* Adjust as needed */
     border: 1px solid #ccc; /* Add border for better visualization */
+    background-color: #ffffff;
+    border-radius: 10px;
 }
 .grid-item img {
     width: 100%;
