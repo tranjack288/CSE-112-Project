@@ -28,6 +28,7 @@
 		<link href="../css/navbar.css" rel="stylesheet" type="text/css" />
 		<link href="../css/questionnaire.css" rel="stylesheet" type="text/css" />
         <link href="../css/noodleOptions.css" rel="stylesheet" type="text/css" />
+        <link href="../css/contentPage.css" rel="stylesheet" type="text/css" />
 
         <link
             href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -38,23 +39,82 @@
     </head>
 
     <body>
-        <div class="grid-container" id ="noodleGridContainer">
-            <div class="grid-item" id="grid-item1">
-              <!--  <img src="path/to/your/image1.jpg" alt="Image 1"> -->
-            </div>
-            <div class="grid-item" id="grid-item2">
-              <!--   <img src="path/to/your/image2.jpg" alt="Image 2"> -->
-            </div>
-            <div class="grid-item" id="grid-item3">
-             <!--    <img src="path/to/your/image3.jpg" alt="Image 3"> -->
-            </div>
-            <div class="grid-item" id="grid-item4">
-              <!--   <img src="path/to/your/image4.jpg" alt="Image 4"> -->
-            </div>
-        </div>
+        
+        <audio id="bg-music" loop>
+            <source src="../sounds/bg-music.wav" type="audio/mpeg" />
+        </audio>
+
+        <!-- Main content -->
+        <main id= "page-content-container">
+            <section id = "instructions">
+                <div id = "top-logo">
+                    <a href="../../index.html">
+                        <img id="icon" src="../img/icon.png" />
+                    </a>
+                    <a id="logoText" href="../../index.html"> 
+                        Noodle Craft 
+                    </a>
+                </div>
+                <div id = "instruction-text">
+                    <h2> Choose </br> Your Noodle</h2>
+                    <p>im a place holde rdddsssss sssf aiu hfqiqwu rfqiw uefhiqweuf hqiweu fhqwi eufhqiw eufhqw ieufhqw ieu fhqwi eufh</p>
+                </div>
+            </section>
+            <section id = "main-content">
+                <nav id="navbar">
+                    <ul class="menu">
+                        <a>
+                        </a>
+                        <li class="logo">
+                        </li>
+                        <li class="item current"><a href="./about.html">About Us</a></li>
+                        <li class="item"><a href="./myRecipes.html">my Recipes</a></li>
+                        <li class="item accessibility-container">
+                            <label class="switch">
+                                <input name="accessibility" type="checkbox" />
+                                <span class="slider round">
+                                    <i class="fas fa-assistive-listening-systems fa-lg"></i>
+                                </span>
+                            </label>
+                        </li>
+                        <li class="item button bg-music-toggle" id="bg-music-toggle">
+                            <i class="fas fa-lg" id="bg-music-toggle-icon"></i>
+                        </li>
+                        <li class="toggle">
+                            <input id="toggle" type="checkbox" />
+                            <label class="hamburger" for="toggle">
+                                <div class="top"></div>
+                                <div class="middle"></div>
+                                <div class="bottom"></div>
+                            </label>
+                        </li>
+                    </ul>
+                </nav>
+    
+                <div class="grid-container" id ="noodleGridContainer">
+                    <div class="grid-item" id="grid-item1">
+                      <!--  This is where image 1 will be -->
+                    </div>
+                    <div class="grid-item" id="grid-item2">
+                      <!--   This is where image 2 will be-->
+                    </div>
+                    <div class="grid-item" id="grid-item3">
+                     <!--    This is where image 3 will be -->
+                    </div>
+                    <div class="grid-item" id="grid-item4">
+                      <!--   This is where image 4 will be -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        
 
 
-
+        <script src="../js/main.js" type="module"></script>
+        <script src="../js/settings.js" type="module"></script>
+        <script src="../js/about.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
         <script src="../js/noodleOptions.js" type="module"></script>
     </body>
 </html>

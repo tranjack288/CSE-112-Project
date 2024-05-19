@@ -29,7 +29,7 @@ body {
 }
 
 main {
-	flex-grow: 1;
+	flex-grow: 1; 
 	text-align: center;
 	opacity: 0;
 	padding: 25px;
