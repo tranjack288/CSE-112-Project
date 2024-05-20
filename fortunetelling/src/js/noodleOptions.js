@@ -17,6 +17,7 @@ function init() {
     noodleImg3.src = surveyResultsJSON[2].path
     noodleImg4.src = surveyResultsJSON[3].path
 
+    //this block of code sets the names of the 4 grid items
     let noodleElement1 = document.getElementById("grid-item1")
     noodleElement1.appendChild(noodleImg1);
     noodleElement1.querySelector("h3").textContent = surveyResultsJSON[0].noodleName;
