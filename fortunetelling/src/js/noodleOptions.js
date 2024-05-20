@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', init);
 /** On load function */
 function init() {
     let surveyResults = localStorage.getItem('surveyResults')
-    console.log("opening noodleOptions with " + surveyResults);
+   // console.log("opening noodleOptions with " + surveyResults);
 
     let surveyResultsJSON = JSON.parse(surveyResults);
 
@@ -22,6 +22,16 @@ function init() {
     document.getElementById("grid-item3").appendChild(noodleImg3);
     document.getElementById("grid-item4").appendChild(noodleImg4);
 
+    noodleImg1.addEventListener("click", () => //we'd pass these in local storage to ingredients page
+        console.log("noodleImg1 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[0])));
+    noodleImg2.addEventListener("click", () =>
+         console.log("noodleImg2 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[1])));
+    noodleImg3.addEventListener("click", () =>
+         console.log("noodleImg3 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[2])));
+    noodleImg4.addEventListener("click", () =>
+         console.log("noodleImg4 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[3])));
+
+    
 
 }
 

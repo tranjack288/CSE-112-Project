@@ -1,7 +1,15 @@
 .grid-container {
     display: grid;
+    flex-wrap: wrap;
     grid-template-columns: repeat(2, 150px); /* Adjust as needed */
     grid-gap: 10px; /* Adjust the gap between grid items */
+    position: relative;
+    bottom: 25%;
+    left: 75%;
+    transform: scale(2);
+    grid-auto-rows: minmax(100px, auto);
+
+
 }
 .grid-item {
     width: 150px; /* Adjust as needed */

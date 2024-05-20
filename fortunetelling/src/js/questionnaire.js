@@ -206,7 +206,7 @@ function gradeQuiz() {
 		} else {
 			
 			const surveyResults = closestNoodleMatch();
-			console.log(surveyResults);
+		
 			localStorage.setItem('surveyResults',  JSON.stringify(surveyResults)); //we may use localstorage for currentscore later depending on architecture
 			
 			link.setAttribute('href', './noodleOptions.html'); 
