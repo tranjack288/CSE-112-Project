@@ -5,8 +5,8 @@
 	grid-template-rows: 1fr;
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
-	width:100%;
-    height: 100vh;
+	/* width:100%;
+    height: 100vh; */
 	
 
 	padding: 0;
@@ -28,20 +28,19 @@
     display: grid;
     grid-gap: 10px; 
     position: relative;
-    grid-template-rows: 0.5fr;
-    /* grid-auto-rows: minmax(100px, auto);
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));  experiment with*/ 
-
+    
 
 }
 .grid-item-4 {
-    /* width: 50%; /* Adjust as needed */
-  /*  height:  50%; Adjust as needed */
+    justify-content: center;
     position: relative;
     border: 1px solid #ccc; /* Add border for better visualization */
     background-color: #ffffff;
     border-radius: 10px;
-    transform: scale(0.5);
+    max-height: 50%;
+    max-width: 50%;
+    margin-left: 25%;
+    margin-top: 10%;
 }
 .grid-item-4:hover{
     background-color: #B93737;
@@ -49,5 +48,5 @@
 .grid-item-4 img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+    /*object-fit: cover; /* Maintain aspect ratio and cover the entire space */
 }

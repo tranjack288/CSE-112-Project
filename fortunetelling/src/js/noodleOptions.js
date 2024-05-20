@@ -17,10 +17,21 @@ function init() {
     noodleImg3.src = surveyResultsJSON[2].path
     noodleImg4.src = surveyResultsJSON[3].path
 
-    document.getElementById("grid-item1").appendChild(noodleImg1);
-    document.getElementById("grid-item2").appendChild(noodleImg2);
-    document.getElementById("grid-item3").appendChild(noodleImg3);
-    document.getElementById("grid-item4").appendChild(noodleImg4);
+    let noodleElement1 = document.getElementById("grid-item1")
+    noodleElement1.appendChild(noodleImg1);
+    noodleElement1.querySelector("h3").textContent = surveyResultsJSON[0].noodleName;
+
+    let noodleElement2 = document.getElementById("grid-item2")
+    noodleElement2.appendChild(noodleImg2);
+    noodleElement2.querySelector("h3").textContent = surveyResultsJSON[1].noodleName;
+
+    let noodleElement3 = document.getElementById("grid-item3");
+    noodleElement3.appendChild(noodleImg3);
+    noodleElement3.querySelector("h3").textContent = surveyResultsJSON[2].noodleName;
+
+    let noodleElement4 = document.getElementById("grid-item4")
+    noodleElement4.appendChild(noodleImg4);
+    noodleElement4.querySelector("h3").textContent = surveyResultsJSON[3].noodleName;
 
     noodleImg1.addEventListener("click", () => //we'd pass these in local storage to ingredients page
         console.log("noodleImg1 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[0])));
