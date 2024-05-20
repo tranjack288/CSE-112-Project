@@ -47,7 +47,7 @@ a:hover {
 .menu {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
 }
 .toggle {
@@ -98,7 +98,7 @@ a:hover {
 /* Tablet menu */
 @media all and (min-width: 468px) {
 	.menu {
-		justify-content: center;
+		/* justify-content: center; */
 	}
 
 	.logo {
