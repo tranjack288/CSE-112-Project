@@ -203,7 +203,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		
 		image.animate({ 
 			translate: currentTranslation, 
-		}, { duration: 750, fill: 'forwards', easing: 'ease' });
+		}, { 
+			duration: 750, fill: 'forwards', easing: 'ease' 
+		});
 	}
 
 	// Track mouse movement
@@ -227,8 +229,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		if(offsetX<1.1 && offsetY<1.1){
 			shift(eyesContainer, 20, offsetX, offsetY);
 			//shift(eyeOut, 5, rangeX, rangeY);
-			 console.log(offsetX);
-			 console.log(offsetX);
+			//console.log(offsetX);
+			//console.log(offsetX);
 		}
 	});
 });
