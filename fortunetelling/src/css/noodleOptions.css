@@ -1,24 +1,52 @@
-.grid-container {
+
+#page-content-container{
+	display: grid;
+	grid-template-columns: 0.74fr 1fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	width:100%;
+    height: 100vh;
+	
+
+	padding: 0;
+}
+
+#instructions{
+	background-color:#B93737;
+	position:relative;
+}
+
+#main-content{
+	background-color:#DFDAC9;
+	position:relative;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.grid-container-4 {
     display: grid;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(2, 150px); /* Adjust as needed */
-    grid-gap: 10px; /* Adjust the gap between grid items */
+    grid-gap: 10px; 
     position: relative;
-    bottom: 25%;
-    left: 75%;
-    transform: scale(2);
-    grid-auto-rows: minmax(100px, auto);
+    grid-template-rows: 0.5fr;
+    /* grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));  experiment with*/ 
 
 
 }
-.grid-item {
-    width: 150px; /* Adjust as needed */
-    height: 150px; /* Adjust as needed */
+.grid-item-4 {
+    /* width: 50%; /* Adjust as needed */
+  /*  height:  50%; Adjust as needed */
+    position: relative;
     border: 1px solid #ccc; /* Add border for better visualization */
     background-color: #ffffff;
     border-radius: 10px;
+    transform: scale(0.5);
 }
-.grid-item img {
+.grid-item-4:hover{
+    background-color: #B93737;
+}
+.grid-item-4 img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Maintain aspect ratio and cover the entire space */
