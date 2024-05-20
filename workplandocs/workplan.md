@@ -14,6 +14,7 @@ We were able to progress more onto the website, most of the websites webpages ar
 1. **IN PROGRESS:** 
     1. [Implement page to list and modify potential noodle ingredients](https://github.com/tranjack288/CSE-112-Project/issues/6): This is still a work in progress. The basic layout of this page is shared between multiple pages, so that was completed. The Div which has all the ingredients and allows modification needs to be done. So, this task will be split into two issues. The issue that needs to be completed is listen below
         - [Implement page to list and modify potential noodle ingredients](https://github.com/tranjack288/CSE-112-Project/issues/28): This needs to be done
+        - [Connect Front end and back end securely](https://github.com/tranjack288/CSE-112-Project/issues/30)Connect the front end and back end functionality to return the recipe based on the supplied ingredients.
 
 ## What to work on this week:
  
