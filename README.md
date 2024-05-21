@@ -1,1 +1,8 @@
-24SP CSE 112 Team 13
+# NoodleCraft
+NoodleCraft helps you decide what to cook by generating customizable noodle recipes. It helps filter a specific recipe of noodle like ramen, spaghetti, udon, pad thai, etc. based on attributes like your budget, time commitment, and any cultural preferences (ex. Italian vs Asian). For each noodle type, it will present you with a default list of ingredients that you are free to add or subtract from. Once the type of noodle and lists of ingredients are finalized, the website will leverage GenAI to generate a recipe conforming to your specifications. 
+
+### Background
+This website is a rework/extention of a previous project [NoodleHoroscope](https://github.com/cse110-sp23-group15/cse110-sp23-group15). We decided to replace the original functionality of the website, asking personality questions to assign the user a noodle, to instead help the user decide what noodle recipe to cook. 
+
+### About Us
+We are a group of UCSD students tasked to upgrade and enhance a pre-existing project.
