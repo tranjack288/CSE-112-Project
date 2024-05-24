@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', init);
 /** On load function */
 function init() {
     let surveyResults = localStorage.getItem('surveyResults')
-   // console.log("opening noodleOptions with " + surveyResults);
-
     let surveyResultsJSON = JSON.parse(surveyResults);
+
+    
 
     let noodleImg1 = document.createElement("img");
     let noodleImg2 = document.createElement("img");
@@ -34,15 +34,44 @@ function init() {
     noodleElement4.appendChild(noodleImg4);
     noodleElement4.querySelector("h3").textContent = surveyResultsJSON[3].noodleName;
 
-    noodleImg1.addEventListener("click", () => //we'd pass these in local storage to ingredients page
-        console.log("noodleImg1 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[0])));
-    noodleImg2.addEventListener("click", () =>
-         console.log("noodleImg2 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[1])));
-    noodleImg3.addEventListener("click", () =>
-         console.log("noodleImg3 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[2])));
-    noodleImg4.addEventListener("click", () =>
-         console.log("noodleImg4 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[3])));
+    //this initializes first box to be pre-selected - the function returns true if a box is currently selected
+    let noodleSelected = changeSelected(noodleElement1);
 
+
+    noodleImg1.addEventListener("click", () => {//we'd pass these in local storage to ingredients page 
+        console.log("noodleImg1 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[0]));
+          
+     })
+
+    noodleImg2.addEventListener("click", () =>{
+         console.log("noodleImg2 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[1]))});
+    noodleImg3.addEventListener("click", () => {
+         console.log("noodleImg3 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[2]))});
+    noodleImg4.addEventListener("click", () => {
+         console.log("noodleImg4 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[3]))});
+
+function changeSelected(gridItem){
+     if (typeof changeSelected.currentlySelected === 'undefined') {
+          // Initialize the first square to be pre-selected on init
+          //or change currentlySelected to just clicked one if no square is currently clicked
+          changeSelected.currentlySelected = gridItem;
+          gridItem.style.backgroundColor = 'red';
+          return true;}
+     else if (gridItem == changeSelected){
+          //if item is reclicked, set grid back to all unselected.
+          changeSelected.currentlySelected = undefined;
+          gridItem.style.backgroundColor = 'white';
+     return false;}
+     else { //this means one box is currently selected and we click on another box
+          changeSelected.currentlySelected.style.backgroundColor = 'white';
+          changeSelected.currentlySelected = gridItem;
+          gridItem.style.backgroundColor = "red";}
+          return true;
+}
+
+
+
+    //this makes it so the confirm button will only save chosen noodle to storage and switch pages if a noodle is currently selected
     
 
 }
