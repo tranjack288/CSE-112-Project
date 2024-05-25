@@ -38,35 +38,43 @@ function init() {
     let noodleSelected = changeSelected(noodleElement1);
 
 
-    noodleImg1.addEventListener("click", () => {//we'd pass these in local storage to ingredients page 
-        console.log("noodleImg1 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[0]));
-          
-     })
+    noodleElement1.addEventListener("click", () => {//we'd pass these in local storage to ingredients page 
+        console.log("noodleElement1 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[0]));
+        noodleSelected = changeSelected(noodleElement1);})
 
-    noodleImg2.addEventListener("click", () =>{
-         console.log("noodleImg2 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[1]))});
-    noodleImg3.addEventListener("click", () => {
-         console.log("noodleImg3 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[2]))});
-    noodleImg4.addEventListener("click", () => {
-         console.log("noodleImg4 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[3]))});
+    noodleElement2.addEventListener("click", () =>{
+         console.log("noodle element2 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[1]));
+         noodleSelected = changeSelected(noodleElement2);});
+
+    noodleElement3.addEventListener("click", () => {
+         console.log("noodleelement 3 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[2]));
+         noodleSelected = changeSelected(noodleElement3);});
+
+    noodleElement4.addEventListener("click", () => {
+         console.log("noodle element 4 was clicked, Noodle: " + JSON.stringify(surveyResultsJSON[3]));
+         noodleSelected = changeSelected(noodleElement4);});
 
 function changeSelected(gridItem){
      if (typeof changeSelected.currentlySelected === 'undefined') {
           // Initialize the first square to be pre-selected on init
           //or change currentlySelected to just clicked one if no square is currently clicked
           changeSelected.currentlySelected = gridItem;
-          gridItem.style.backgroundColor = 'red';
+          gridItem.style.backgroundColor = '#bb1212';
+          console.log("blank, selecting " + gridItem)
           return true;}
-     else if (gridItem == changeSelected){
+     else if (gridItem == changeSelected.currentlySelected){
           //if item is reclicked, set grid back to all unselected.
           changeSelected.currentlySelected = undefined;
           gridItem.style.backgroundColor = 'white';
+          console.log("unselecting" + gridItem);
      return false;}
      else { //this means one box is currently selected and we click on another box
           changeSelected.currentlySelected.style.backgroundColor = 'white';
           changeSelected.currentlySelected = gridItem;
-          gridItem.style.backgroundColor = "red";}
-          return true;
+          gridItem.style.backgroundColor = "#bb1212";
+          console.log("switching to " + gridItem)
+          return true;}
+          
 }
 
 
