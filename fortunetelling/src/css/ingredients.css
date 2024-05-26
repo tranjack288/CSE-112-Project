@@ -1,0 +1,126 @@
+/* Left column for instructions */
+#instruction-text{
+    display: flex;
+    flex-direction: column;
+}
+#instruction-text img{
+    max-width: 150px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+/* Right column for main content */
+#interactive-content{
+    height: calc(100vh - 58px - 88.5px);
+    height: calc(100svh - 58px - 88.5px);
+
+    overflow-y: scroll;
+
+}
+#edit-ingredients{
+    min-height: 800px;
+    max-width: 560px;
+    margin: 50px auto 50px auto;
+    padding: 70px 50px;
+
+    text-align: left;
+
+    background-color: #fff;
+    box-shadow: 13px 13px 1px rgba(0, 0, 0, 0.25);
+}
+
+#serving-counts{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #F8F6F0;
+    border-radius: 10px;
+    /* padding: 10px 20px; */
+
+}
+#serving-counts > p{
+    margin: 10px 20px;;
+}
+#quantitySelector{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    min-height: 54px;
+    border-radius: 0 10px 10px 0;
+    padding: 0 8px;
+
+    background-color: #F1EAD6;    
+}
+#quantitySelector p{
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+}
+#quantitySelector button{
+    font-family: sans-serif;
+    background: none;
+    box-shadow: none;
+    color: #000;
+
+    display: flex;
+}
+#quantitySelector #minus{
+    transition: 0.1s;
+}
+#quantitySelector #minus.disable{
+    opacity: 0.3;
+}
+
+
+
+
+#edit-ingredients hr{
+    border: none;
+    border-top: 1px solid #C6C6C6;
+
+    margin: 30px 0;
+}
+
+noodle-ingredient{
+    display: flex;
+    justify-content: space-between;
+    background-color: #F8F6F0;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    margin-bottom: 18px;
+
+    transition: 0.1s;
+}
+noodle-ingredient.grayedOut{
+    background-color: #ECECEC;
+}
+
+
+#addIngredientForm{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 3px solid #DFDAC9;
+    border-radius: 10px;
+}
+#addIngredientForm #addedIngredient{
+    border: none;
+    background: none;
+    border-radius: 10px;
+    
+    width: 100%;
+    height: 48.5px;
+    padding-left: 10px;
+}
+#addIngredientForm button{
+    /* aspect-ratio: 1/1; */
+    height: 100%;
+    box-shadow: none;
+    padding: 12px 10px;
+}

@@ -110,6 +110,7 @@
 	border: 2px solid #da0b0b;
 	background: none;
 	color: #000;
+	width: 100%;
 }
 #back-button:hover{
 	background-color: #AE3131;
