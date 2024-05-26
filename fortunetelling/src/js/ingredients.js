@@ -38,7 +38,7 @@ async function init() {
     /**
      * Helper function to create the custom element noodle-ingredient
      * @param {String} ingredientName name of the ingredient
-     * @returns NoodleIngredient a custom HTML element/a JS object
+     * @returns {Object} NoodleIngredient a custom HTML element/a JS object
      */
     function createNoodleIngredientEle(ingredientName){
         let NoodleIngredient = document.createElement('noodle-ingredient');
@@ -72,7 +72,9 @@ async function init() {
     // For each ingredient create a custom element in HTML, 
     // and add to the ingredients array
     for (let ingredient in allIngredients){
-        createNoodleIngredientEle(ingredient);
+        if (allIngredients.hasOwnProperty(ingredient)) {
+            createNoodleIngredientEle(ingredient);    
+        }
     }
 
     // Loop through all Custom components <noodle-ingredient> to apply event listeners
@@ -137,8 +139,6 @@ async function init() {
                 localStorage: \n 
                 ${localStorage.getItem('confirmedIngredients')}
             `);
-        }
-        
+        }        
     })
-
 }

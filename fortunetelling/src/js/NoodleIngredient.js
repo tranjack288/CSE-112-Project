@@ -5,7 +5,13 @@
 // - https://jsdoc.app/howto-es2015-modules.html
 // - https://jsdoc.app/howto-es2015-classes.html
 
+/**
+ * Define custom component <noodle-ingredient>
+ */
 class NoodleIngredient extends HTMLElement {
+    /**
+     * constructor of the custom component
+     */
     constructor() {
         super(); // Inheret everything from HTMLElement
     
@@ -51,11 +57,15 @@ class NoodleIngredient extends HTMLElement {
     }
 
 
+    /**
+     * @returns {String} data the name of the ingredient in String
+     */
     get data(){
         return this.getAttribute('data');
     }
 
     /**
+     * Setting the data attribute to be the ingredient name
      * @param {String} data
      */
     set data(data) {
@@ -76,6 +86,10 @@ class NoodleIngredient extends HTMLElement {
         textEle.innerText = ingredient;
     }
 
+    /**
+     * handle the trash/redo button click event
+     * switch the button icon, cross out name, gray out background
+     */
     handleClick() {
         // send out a custom event to trigger changes in ingredients.js
         this.dispatchEvent(new CustomEvent('toggleIngredient', {
