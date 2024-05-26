@@ -10,24 +10,30 @@ window.addEventListener('DOMContentLoaded', init);
 
 /** On load function */
 async function init() {
+    // read from localStorage to get the selected noodle
+    const noodleChosen = localStorage.getItem('noodleChosen');
+    const noodleChosenJSON = JSON.parse(noodleChosen);
+    const noodleChosenImg = noodleChosenJSON.path;
+    const noodleChosenName = noodleChosenJSON.noodleName;
+    const noodleChosenIngredients = noodleChosenJSON.ingredients;
+
     // The div container for all noodle ingredients
     let ingredientsContainer = document.getElementById('ingredients-container');
-    let ingredientElesArr = [];
+    let ingredientElesArr = []; // Array of noodle-ingredient custom elements
+    let allIngredients = {}; // Object(map) to keep track of all current ingredients
 
-    // for testing only
-    let allIngredients = {
-        'Chicken Broth': true,
-        'Ginger': true,
-        'Garlic': true,
-        'Green Onion': true,
-        'Soy Sauce': true,
-        'Sesame Oil': true,
-        'Ramen Noodles': true,
-        'Eggs': true,
-        'Chashu': true,
-        'Nori': true
-    };
-    console.log(allIngredients);
+    // read from the array of ingredients and populate the allIngredients Object(map)
+    for(let i = 0; i < noodleChosenIngredients.length; i++){
+        allIngredients[noodleChosenIngredients[i]] = true;
+    }
+
+    // Change the noodle Image and noodle name
+    const noodleImg = document.querySelector('#instruction-text img');
+    const noodleName = document.querySelector('#instruction-text h2');
+
+    noodleImg.src = noodleChosenImg;
+    noodleName.innerText = noodleChosenName;
+
 
     /**
      * Helper function to create the custom element noodle-ingredient
@@ -102,7 +108,7 @@ async function init() {
 
     // Add new ingredients
     let addIngredientForm = document.getElementById('addIngredientForm');
-    addIngredientForm.addEventListener("submit", function(event){
+    addIngredientForm.addEventListener('submit', function(event){
         event.preventDefault();
         let newIngredient = event.target.addedIngredient.value; // get input data
         allIngredients[newIngredient] = true; // add to allIngredients Obj
@@ -113,16 +119,24 @@ async function init() {
 
     // Confirm Button, when the confirm button is clicked,
     // store all the ingredients to localStorage
-    let comfirmBtn = document.getElementById('confirm-button');
-    comfirmBtn.addEventListener('click', function(){
-        if(window.confirm("Do you want to create a noodle recipe with all the current ingridents?")){
+    let confirmBtn = document.getElementById('confirm-button');
+    let confirmedIngredients = {}
+    confirmBtn.addEventListener('click', function(){
+        if(window.confirm('Do you want to create a noodle recipe with all the current ingridents?')){
             let validIngredientsArr = [];
             for(let ingredient in allIngredients){
                 if(allIngredients[ingredient] === true){
                     validIngredientsArr.push(ingredient);
                 }
             }
-            localStorage.setItem("validIngredientsArr", validIngredientsArr);    
+            confirmedIngredients.noodleName = noodleChosenName;
+            confirmedIngredients.servings = numServings;
+            confirmedIngredients.ingredients = validIngredientsArr;
+            localStorage.setItem('confirmedIngredients', JSON.stringify(confirmedIngredients));    
+            alert(`
+                localStorage: \n 
+                ${localStorage.getItem('confirmedIngredients')}
+            `);
         }
         
     })

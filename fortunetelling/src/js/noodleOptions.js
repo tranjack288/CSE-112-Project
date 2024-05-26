@@ -65,6 +65,7 @@ function init() {
                
                console.log("Noodle selected is " + JSON.stringify(confirmedNoodle));
                localStorage.setItem("noodleChosen",JSON.stringify(confirmedNoodle));
+               window.location.href = './ingredients.html';
           }
      });
 
