@@ -1,42 +1,31 @@
 [
 	{
 		"id": 0,
-		"description": "The main course is my favorite part of a three-course meal."
+		"description": "What is your budget for your noodles?"
 	},
 	{
 		"id": 1,
-		"description": "I like preparing/cooking my own meals."
+		"description": "How much time do you want to spend on your Noodles?"
 	},
 	{
 		"id": 2,
-		"description": "Yellow is one of my favorite colors."
+		"description": "Do you want your noodles to pair with meat more or veggies more?"
 	},
 	{
 		"id": 3,
-		"description": "I enjoy drinking caffeinated beverages."
+		"description": "How spicy do you want your noodles?"
 	},
 	{
 		"id": 4,
-		"description": "I like staying indoors and relaxing at home."
+		"description": "How difficult do you want the recipe to be?"
 	},
 	{
 		"id": 5,
-		"description": "I play video games on a regular basis."
+		"description": "How customizable do you want your noodles to be?"
 	},
 	{
 		"id": 6,
-		"description": "I don't mind overspending on new experiences."
-	},
-	{
-		"id": 7,
-		"description": "I enjoy eating fruits and/or vegetables."
-	},
-	{
-		"id": 8,
-		"description": "When making a bowl of cereal, I pour milk first, then cereal."
-	},
-	{
-		"id": 9,
-		"description": "Grades are very important to me, and consider “B's” bad."
+		"description": "Do you want the origin of your noodles to be more western or eastern?"
 	}
+	
 ]
