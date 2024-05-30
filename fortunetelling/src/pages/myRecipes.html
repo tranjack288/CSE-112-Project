@@ -40,10 +40,10 @@
 
 		<!-- Stylesheets -->
 		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
-		<!-- main.css. Page-specific styles should be in about.css. -->
+		<!-- main.css. Page-specific styles should be in questionnaire.css. -->
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
 		<link href="../css/navbar.css" rel="stylesheet" type="text/css" />
-		<link href="../css/about.css" rel="stylesheet" type="text/css" />
+		<link href="../css/questionnaire.css" rel="stylesheet" type="text/css" />
 		<!-- Font Awesome -->
 		<link
 			href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -67,8 +67,10 @@
 				<li class="logo">
 					<a id="noodleText" href="../../index.html"> Noodle Craft </a>
 				</li>
-				<li class="item current"><a href="./about.html">About Us</a></li>
-				<li class="item"><a href="./myRecipes.html">my Recipes</a></li>
+				<li class="item"><a href="./about.html">About Us</a></li>
+				<li class="item current">
+					<a href="./myRecipes.html">my Recipes</a>
+				</li>
 				<li class="item accessibility-container">
 					<label class="switch">
 						<input name="accessibility" type="checkbox" />
@@ -93,54 +95,6 @@
 
 		<!-- Main content -->
 		<main>
-			<div class="desktop-container">
-				<div id="member-name-dt" class="name speechify speechify-onload">
-					<h1>Member Name</h1>
-				</div>
-				<img id="current-member-dt" src="" alt="Current Member" />
-				<img id="member-noodle-dt" src="" alt="Member's Noodle" />
-				<div id="description-dt" class="description speechify speechify-onload">
-					<p>Description for Member</p>
-				</div>
-				<div class="member-menu">
-					<img src="../img/mark-icon.jpeg" alt="Mark" />
-					<img src="../img/hieu-icon.jpeg" alt="Hieu" />
-					<img src="../img/henry-icon.jpg" alt="Xinle" />
-					<img src="../img/aaron-icon.jpg" alt="Aaron" />
-					<img src="../img/steve-icon.jpg" alt="Steve" />
-					<img src="../img/darren-icon.jpg" alt="Darren" />
-					<img src="../img/holly-icon.png" alt="Holly" />
-					<img src="../img/anthony-icon.jpg" alt="Anthony" />
-					<img src="../img/hanson-icon.png" alt="Hanson" />
-				</div>
-			</div>
-
-			<div class="carousel-container">
-				<div class="carousel">
-					<img id="current-member" src="" alt="Current Member" />
-					<img id="member-noodle" src="" alt="Member's Noodle" />
-				</div>
-				<div id="member-name" class="name speechify">
-					<h1>Member Name</h1>
-				</div>
-				<div id="description" class="description speechify">
-					<p>Description for Member</p>
-				</div>
-				<button
-					class="carousel-control prev"
-					type="button"
-					onclick="prevMember()"
-				>
-					&#8249;
-				</button>
-				<button
-					class="carousel-control next"
-					type="button"
-					onclick="nextMember()"
-				>
-					&#8250;
-				</button>
-			</div>
 		</main>
 
 		<!-- Footer -->
@@ -161,7 +115,7 @@
 		<!-- remove the type="module" attribute. -->
 		<script src="../js/main.js" type="module"></script>
 		<script src="../js/settings.js" type="module"></script>
-		<script src="../js/about.js"></script>
+		<script src="../js/questionnaire.js" type="module"></script>
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
 	</body>
 </html>

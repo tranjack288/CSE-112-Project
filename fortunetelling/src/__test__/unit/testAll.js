@@ -5,8 +5,9 @@ import { dirname as _dirname, basename } from 'path';
 import { exec } from 'child_process';
 
 // Get absolute path to test directory
-const dirname = _dirname(new URL(import.meta.url).pathname);
 
+const dirname = _dirname(new URL(import.meta.url).pathname);
+console.log("path is " + dirname);
 // Get all files in the test directory that start with 'test' excluding this file
 const testFiles = readdirSync(dirname).filter(
 	(file) =>
