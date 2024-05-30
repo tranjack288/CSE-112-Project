@@ -18,16 +18,14 @@ exports.getLlama3Response = functions.https.onRequest(async (req, res) => {
     // TODO: is this the best way to get around CORS?
     res.set("Access-Control-Allow-Origin", "*");
 
-    // TODO: Sample parsing from testing out a form
-    // Will replace with whatever the frontend team comes up with
-
     // Handle ingredients from req here
     const body = JSON.parse(req.body);
     console.log(body);
 
-    const prompt = `Create a noodle dish from these ingredients:
-        ${body["ingredient"]}. Also give a short description including
-        the name and its ingredients`;
+    const prompt = `Create a ${body["noodleName"]} recipe 
+                    that makes ${body["servings"]} servings 
+                    strictly from the following ingredients and using only ingredients that are edible: ${body["ingredient"]}. 
+                    Also give a short description including the name of the recipe and its ingredients.`;
 
     try {
         // Send a request to Groq API
