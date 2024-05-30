@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	const noodlesContainer = document.querySelector('.noodles-container');
 	const userInputButton = document.getElementById('user-input-button');
 	const messageOutput = document.getElementById('message-output');
-	const toQuestions = document.getElementById('toQuestions');
-	const fortuneButton = document.getElementById('fortuneButton');
-	const flavorProfile = document.getElementById('flavorProf');
+	// const toQuestions = document.getElementById('toQuestions');
+	// const fortuneButton = document.getElementById('fortuneButton');
+	// const flavorProfile = document.getElementById('flavorProf');
 	let isFirstClick = true;
 
 	userInputButton.addEventListener('click', startConversation);
@@ -61,9 +61,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	function nextStep2() {
 		updateMessageWithAnimation('You will know in one sec. Come with me');
 
+		showButton('Chat again');
 		// Remove existing event listener
 		userInputButton.removeEventListener('click', nextStep2);
-		userInputButton.style.display = 'none';
+		//userInputButton.style.display = 'none';
+		userInputButton.addEventListener('click', startConversation);
+
 
 		// Animate the noodles
 		const noodles = [
@@ -124,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		];
 
+		
 		const noodlesContainer = document.querySelector('.noodles-container');
 
 		noodles.forEach((noodle, index) => {
@@ -138,13 +142,15 @@ document.addEventListener('DOMContentLoaded', function () {
 				image.addEventListener('animationend', () => {
 					noodlesContainer.removeChild(image);
 				});
-			}, index * 250);
+			}, (11 - index) * 250);
 		});
 
+		/*
 		// Show questionnaire and fortune button
 		toQuestions.style.display = 'initial';
 		fortuneButton.style.display = 'initial';
 		flavorProfile.style.display = 'initial';
+		*/
 	}
 
 	/**
@@ -184,39 +190,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Get the container element for the eyes
 	const eyesContainer = document.querySelector('.eyes-container');
-
-	// Get the front side element of the box
-	const frontSide = document.querySelector('.side.front');
-
-	// Calculate the maximum x position within the boundary
-	const maxX =
-		frontSide.offsetLeft + frontSide.offsetWidth - eyesContainer.offsetWidth;
-
-	// Calculate the maximum y position within the boundary
-	const maxY =
-		frontSide.offsetTop + frontSide.offsetHeight - eyesContainer.offsetHeight;
+	
+	/**
+	 * Shift the position of the eyes
+	 * @param {object} image - html object that will be shift.
+	 * @param {Number} maxTranslation - the multiplier to the distances shifted
+	 * @param {Number} rangeX - horizontal shift distance 
+	 * @param {Number} rangeY - vertical shift distance 
+	 */
+	function shift(image, maxTranslation, rangeX, rangeY) {		
+		const currentTranslation = `${maxTranslation * rangeX}% ${maxTranslation * rangeY}%`;
+		
+		image.animate({ 
+			translate: currentTranslation, 
+		}, { 
+			duration: 750, fill: 'forwards', easing: 'ease' 
+		});
+	}
 
 	// Track mouse movement
 	document.addEventListener('mousemove', function (event) {
+		const containerRect = eyesContainer.getBoundingClientRect();
+		const radius = 1000;
+
 		// Get the position of the mouse cursor
 		const mouseX = event.clientX;
 		const mouseY = event.clientY;
 
 		// Calculate the position relative to the eyes container
-		const containerRect = eyesContainer.getBoundingClientRect();
-		const containerX = containerRect.left;
-		const containerY = containerRect.top;
+		
+		const containerX = containerRect.left + (containerRect.width / 2);
+		const containerY = containerRect.top  + (containerRect.height / 2);
 
 		// Calculate the position of the eyes inside the container
-		const offsetX = mouseX - containerX;
-		const offsetY = mouseY - containerY;
+		const offsetX = (mouseX - containerX)/radius;
+		const offsetY = (mouseY - containerY)/radius;
 
-		// Restrict the position within the boundary
-		const restrictedX = Math.min(Math.max(offsetX, 0) - 30, maxX);
-		const restrictedY = Math.min(Math.max(offsetY, 0) - 50, maxY - 60);
-
-		// Update the position of the eyes
-		eyesContainer.style.transform =
-			'translate(' + restrictedX + 'px, ' + restrictedY + 'px)';
+		if(offsetX<1.1 && offsetY<1.1){
+			shift(eyesContainer, 20, offsetX, offsetY);
+			//shift(eyeOut, 5, rangeX, rangeY);
+			//console.log(offsetX);
+			//console.log(offsetX);
+		}
 	});
 });

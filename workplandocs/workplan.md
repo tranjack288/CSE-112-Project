@@ -7,7 +7,6 @@ Most of the work this week was catching up, a lot of work has been pushed to the
     1. [Implement page to list and modify potential noodle ingredients](https://github.com/tranjack288/CSE-112-Project/issues/6):
     2. [Implement page to pick one noodle from suggested](https://github.com/tranjack288/CSE-112-Project/issues/25): need to combine with the layout. Essentially just a copy paste.
 
-
 ## Plan for next week:
 
 Some tasks this week were pushed to the following week. Preparing the presentation and demo took longer than expected. Some of our team was also busy with other classes.
