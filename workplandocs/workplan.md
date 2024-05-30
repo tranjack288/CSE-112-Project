@@ -5,7 +5,7 @@ Most of the work this week was catching up, a lot of work has been pushed to the
 
 1. **DONE**
     1. [Implement page to list and modify potential noodle ingredients](https://github.com/tranjack288/CSE-112-Project/issues/6):
-    2. [Implement page to pick one noodle from suggested](https://github.com/tranjack288/CSE-112-Project/issues/25): need to combine with the layout. Essentially just a copy paste.
+    2. [Implement page to pick one noodle from suggested](https://github.com/tranjack288/CSE-112-Project/issues/25): need to combine with the layout. Essentially just a copy paste. Was combined with [this](https://github.com/tranjack288/CSE-112-Project/issues/6)
 
 ## Plan for next week:
 
