@@ -35,12 +35,20 @@ function init() {
  * Reset the questionnaire view
  */
 function resetQuestionnare() {
+
 	// Hide all questions except the first one.
 	const questions = document.querySelectorAll('.question');
+	const progress = document.querySelector('#barStatus');
+	const percent = document.querySelector('#progressPercent');
 
 	questions[0].style.display = 'block';
 	questions[0].classList.add('fade-in');
 	questions[0].classList.remove('fade-out');
+	percent.style.display = 'block';
+	percent.textContent = "";
+	var sourceWidth = window.getComputedStyle(questions[0]).width;
+	progressBar.style.width = sourceWidth;
+	percent.style.width = sourceWidth;
 
 	// Set the first question number to 1
 	questions[0].style.setProperty('--question-percent', "'0%'");
@@ -61,10 +69,7 @@ function resetQuestionnare() {
 	}
 
 	// Reset progress bar
-	const progressBar = document.querySelector('#progressBar');
 	progressBar.style.display = 'block';
-
-	const progress = document.querySelector('#barStatus');
 	progress.style.width = '0%';
 
 	// Hide submit button
@@ -74,8 +79,8 @@ function resetQuestionnare() {
 	for (let k = 0; k < questions.length; k++) {
 		if(questions[k].style.display != 'none'){
 			var sourceWidth = window.getComputedStyle(questions[k]).width;
-			console.log(sourceWidth)
 			progressBar.style.width = sourceWidth;
+			percent.style.width = sourceWidth;
 		}
 	}
 }
@@ -88,6 +93,7 @@ function questionsHandler() {
 	// Set an event listener for each .question to fade out and remove from display, and fade in the next adjacent question.
 	const questions = document.querySelectorAll('.question');
 	const progressBar = document.querySelector('#progressBar');
+	const percent = document.querySelector('#progressPercent');
 
 	for (let i = 0; i < questions.length; i++) {
 		const question = questions[i];
@@ -139,13 +145,14 @@ function questionsHandler() {
 						question.nextElementSibling.classList.remove('fade-in');
 					}, 1000);
 				}
+				percent.textContent = newWidth + "%";
 
-				
+
 				for (let k = 0; k < questions.length; k++) {
 					if(questions[k].style.display != 'none'){
 						var sourceWidth = window.getComputedStyle(questions[k]).width;
-						console.log(sourceWidth)
 						progressBar.style.width = sourceWidth;
+						percent.style.width = sourceWidth;
 					}
 				}
 			});
@@ -164,6 +171,7 @@ function questionsHandler() {
 		lastInput.addEventListener('click', function () {
 			submitButton.style.display = 'initial';
 			progress.style.display = 'none';
+			percent.style.display = 'none';
 		});
 	}
 }
