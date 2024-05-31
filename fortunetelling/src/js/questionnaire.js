@@ -28,6 +28,10 @@ function init() {
 	resetButton.addEventListener('click', function () {
 		resetQuestionnare();
 	});
+	let progressBar = document.querySelector('#progressBar');
+	let question = document.querySelector('.question');
+	var sourceWidth = window.getComputedStyle(question).width;
+    progressBar.style.width = sourceWidth;
 }
 
 /**
@@ -75,6 +79,7 @@ function resetQuestionnare() {
  * Fade-in Fade-out animation for the questions and update the progress bar
  */
 function questionsHandler() {
+	
 	// Set an event listener for each .question to fade out and remove from display, and fade in the next adjacent question.
 	const questions = document.querySelectorAll('.question');
 
