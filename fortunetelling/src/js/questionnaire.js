@@ -28,10 +28,7 @@ function init() {
 	resetButton.addEventListener('click', function () {
 		resetQuestionnare();
 	});
-	let progressBar = document.querySelector('#progressBar');
-	let question = document.querySelector('.question');
-	var sourceWidth = window.getComputedStyle(question).width;
-    progressBar.style.width = sourceWidth;
+
 }
 
 /**
@@ -73,6 +70,14 @@ function resetQuestionnare() {
 	// Hide submit button
 	const submitButton = document.querySelector('#submit');
 	submitButton.style.display = 'none';
+
+	for (let k = 0; k < questions.length; k++) {
+		if(questions[k].style.display != 'none'){
+			var sourceWidth = window.getComputedStyle(questions[k]).width;
+			console.log(sourceWidth)
+			progressBar.style.width = sourceWidth;
+		}
+	}
 }
 
 /**
@@ -82,6 +87,7 @@ function questionsHandler() {
 	
 	// Set an event listener for each .question to fade out and remove from display, and fade in the next adjacent question.
 	const questions = document.querySelectorAll('.question');
+	const progressBar = document.querySelector('#progressBar');
 
 	for (let i = 0; i < questions.length; i++) {
 		const question = questions[i];
@@ -101,9 +107,6 @@ function questionsHandler() {
 				let buttonIndex = input.value;
 				// trigger the function to increment scorecount in the other file (trackscore)
 				trackScore(formNumber,buttonIndex);
-
-				
-
 
 				// Incrementally update progress bar for the questionnaire after each question is answered with animation.
 				const progress = document.querySelector('#barStatus');
@@ -135,6 +138,15 @@ function questionsHandler() {
 					setTimeout(function () {
 						question.nextElementSibling.classList.remove('fade-in');
 					}, 1000);
+				}
+
+				
+				for (let k = 0; k < questions.length; k++) {
+					if(questions[k].style.display != 'none'){
+						var sourceWidth = window.getComputedStyle(questions[k]).width;
+						console.log(sourceWidth)
+						progressBar.style.width = sourceWidth;
+					}
 				}
 			});
 		}
