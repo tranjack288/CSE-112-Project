@@ -46,7 +46,7 @@ function resetQuestionnare() {
 	questions[0].classList.remove('fade-out');
 	percent.style.display = 'block';
 	percent.textContent = "";
-	var sourceWidth = window.getComputedStyle(questions[0]).width;
+	let sourceWidth = window.getComputedStyle(questions[0]).width;
 	progressBar.style.width = sourceWidth;
 	percent.style.width = sourceWidth;
 
@@ -78,7 +78,7 @@ function resetQuestionnare() {
 
 	for (let k = 0; k < questions.length; k++) {
 		if(questions[k].style.display != 'none'){
-			var sourceWidth = window.getComputedStyle(questions[k]).width;
+			sourceWidth = window.getComputedStyle(questions[k]).width;
 			progressBar.style.width = sourceWidth;
 			percent.style.width = sourceWidth;
 		}
@@ -150,7 +150,7 @@ function questionsHandler() {
 
 				for (let k = 0; k < questions.length; k++) {
 					if(questions[k].style.display != 'none'){
-						var sourceWidth = window.getComputedStyle(questions[k]).width;
+						let sourceWidth = window.getComputedStyle(questions[k]).width;
 						progressBar.style.width = sourceWidth;
 						percent.style.width = sourceWidth;
 					}
