@@ -1,135 +1,104 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
+    <head>
+        <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>About</title>
 		<link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
 
-		<!-- Prefetch asset files -->
-		<link rel="prefetch" href="../img/aaron-icon.jpg" />
-		<link rel="prefetch" href="../img/anthony-icon.jpg" />
-		<link rel="prefetch" href="../img/beef-noodle-soup-icon-1.png" />
-		<link rel="prefetch" href="../img/bread-icon-1.png" />
-		<link rel="prefetch" href="../img/chicken-noodle-soup-icon-1.png" />
-		<link rel="prefetch" href="../img/darren-icon.jpg" />
-		<link rel="prefetch" href="../img/favicon.ico" />
-		<link rel="prefetch" href="../img/hanson-icon.png" />
-		<link rel="prefetch" href="../img/henry-icon.jpg" />
-		<link rel="prefetch" href="../img/hieu-icon.jpeg" />
-		<link rel="prefetch" href="../img/holly-icon.png" />
-		<link rel="prefetch" href="../img/icon.png" />
-		<link rel="prefetch" href="../img/instant-noodles-icon-1.png" />
-		<link rel="prefetch" href="../img/landing-background.jpg" />
-		<link rel="prefetch" href="../img/lasagna-icon-1.png" />
-		<link rel="prefetch" href="../img/mac-and-cheese-icon-1.png" />
-		<link rel="prefetch" href="../img/mark-icon.jpeg" />
-		<link rel="prefetch" href="../img/noodle1.jpg" />
-		<link rel="prefetch" href="../img/noodle2.jpg" />
-		<link rel="prefetch" href="../img/noodle3.jpg" />
-		<link rel="prefetch" href="../img/pad-thai-icon-1.png" />
+        <!-- Prefetch asset files -->
+        <link rel="prefetch" href="../img/beef-noodle-soup-icon-1.png" />
+        <link rel="prefetch" href="../img/bread-icon-1.png" />
+        <link rel="prefetch" href="../img/chicken-noodle-soup-icon-1.png" />
+        <link rel="prefetch" href="../img/instant-noodles-icon-1.png" />
+        <link rel="prefetch" href="../img/lasagna-icon-1.png" />
+        <link rel="prefetch" href="../img/mac-and-cheese-icon-1.png" />
+        <link rel="prefetch" href="../img/pad-thai-icon-1.png" />
 		<link rel="prefetch" href="../img/pho-icon-1.png" />
 		<link rel="prefetch" href="../img/ramen-icon-1.png" />
 		<link rel="prefetch" href="../img/ravioli-icon-1.png" />
-		<link rel="prefetch" href="../img/smokeAnimation.gif" />
-		<link rel="prefetch" href="../img/spaghetti-icon-1.png" />
-		<link rel="prefetch" href="../img/steve-icon.jpg" />
-		<link rel="prefetch" href="../img/udon-icon-1.png" />
-		<link rel="prefetch" href="../sounds/bg-music.wav" />
-		<link rel="prefetch" href="../sounds/congratulations.wav" />
+        <link rel="prefetch" href="../img/spaghetti-icon-1.png" />
+        <link rel="prefetch" href="../img/udon-icon-1.png" />
 
-		<!-- Stylesheets -->
+
+        <!-- Stylesheets -->
 		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
 		<!-- main.css. Page-specific styles should be in questionnaire.css. -->
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
 		<link href="../css/navbar.css" rel="stylesheet" type="text/css" />
-		<link href="../css/noodlesResults.css" rel="stylesheet" type="text/css" />
-		<!-- Font Awesome -->
-		<link
-			href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-			rel="stylesheet"
-			integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-			crossorigin="anonymous"
-		/>
-	</head>
+		<link href="../css/questionnaire.css" rel="stylesheet" type="text/css" />
+        <link href="../css/contentPage.css" rel="stylesheet" type="text/css" />
+        <link href="../css/noodlesResults.css" rel="stylesheet" type="text/css" />
 
-	<body>
-		<audio id="bg-music" loop>
-			<source src="../sounds/congratulations.wav" type="audio/mpeg" />
-		</audio>
+        <link
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            rel="stylesheet"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+            crossorigin="anonymous"
+        />
+    </head>
 
-		<!-- Navigation bar -->
-		<nav id="navbar">
-			<ul class="menu">
-				<a href="../../index.html">
-					<img id="icon" src="../img/icon.png" />
-				</a>
-				<li class="logo">
-					<a id="noodleText" href="../../index.html"> Noodle Craft </a>
-				</li>
-				<li class="item"><a href="./about.html">About Us</a></li>
-				<li class="item"><a href="./myRecipes.html">my Recipes</a></li>
-				<li class="item accessibility-container">
-					<label class="switch">
-						<input name="accessibility" type="checkbox" />
-						<span class="slider round">
-							<i class="fas fa-assistive-listening-systems fa-lg"></i>
-						</span>
-					</label>
-				</li>
-				<li class="item button bg-music-toggle" id="bg-music-toggle">
-					<i class="fas fa-lg" id="bg-music-toggle-icon"></i>
-				</li>
-				<li class="toggle">
-					<input id="toggle" type="checkbox" />
-					<label class="hamburger" for="toggle">
-						<div class="top"></div>
-						<div class="middle"></div>
-						<div class="bottom"></div>
-					</label>
-				</li>
-			</ul>
-		</nav>
+    <body>
+        
+        <audio id="bg-music" loop>
+            <source src="../sounds/bg-music.wav" type="audio/mpeg" />
+        </audio>
 
-		<!-- Main content -->
-		<main>
-			<img
-				src=""
-				id="noodleImg"
-				class="rotate"
-				style="height: 250px; margin: 50px"
-			/>
-			<p id="quizResult" class="speechify speechify-onload">
-				Congratulations, your personality type is
-			</p>
-			<p id="noodleDescription" class="speechify speechify-onload">
-				Trust me, this is the result you wanted.
-			</p>
+        <!-- Main content -->
+        <main id= "page-content-container">
+            <section id = "instructions">
+                <div id = "top-logo">
+                    <a href="../../index.html">
+                        <img id="icon" src="../img/icon.png" />
+                    </a>
+                    <a id="logoText" href="../../index.html"> 
+                        Noodle Craft 
+                    </a>
+                </div>
+                <div id = "instruction-text">
+                    <h2> You Chose:</h2>
+                    <img id="chosenNoodleIMG" src="" alt="your noodle should appear here!">
+					<h4 id="chosenNoodleName"> </h4>
+                </div>
+            </section>
+            <section id = "main-content">
+                <nav id="navbar">
+                    <ul class="menu">
+                        <li class="item"><a href="./about.html">About Us</a></li>
+                        <li class="item"><a href="./myRecipes.html">my Recipes</a></li>
+                        <li class="item accessibility-container">
+                            <label class="switch">
+                                <input name="accessibility" type="checkbox" />
+                                <span class="slider round">
+                                    <i class="fas fa-assistive-listening-systems fa-lg"></i>
+                                </span>
+                            </label>
+                        </li>
+                        <li class="item button bg-music-toggle" id="bg-music-toggle">
+                            <i class="fas fa-lg" id="bg-music-toggle-icon"></i>
+                        </li>
+                        <li class="toggle">
+                            <input id="toggle" type="checkbox" />
+                            <label class="hamburger" for="toggle">
+                                <div class="top"></div>
+                                <div class="middle"></div>
+                                <div class="bottom"></div>
+                            </label>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="interactive-content">
+					<p> put backend response here</p>
+					<p> </p>
+                </div>
+                
+            </section>
+        </main>
 
-			<div class="buttons">
-				<a href="./profiles.html">
-					<button class="button">See Other Noodle Profiles</button>
-				</a>
 
-				<a href="fortune.html">
-					<button class="button">Reveal my Fortune</button>
-				</a>
-			</div>
-
-			<div class="smoke">
-				<!-- smoke effect in gif form -->
-				<img id="smokeImage" src="../img/smokeAnimation.gif" />
-			</div>
-		</main>
-
-		<!-- Footer -->
-		<footer class="footer">
-			<p>© Tasty Noodles</p>
-		</footer>
-
-		<script src="../js/main.js" type="module"></script>
-		<script src="../js/settings.js" type="module"></script>
-		<script src="../js/noodlesResults.js" type="module"></script>
-		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
-	</body>
+        <script src="../js/main.js" type="module"></script>
+        <script src="../js/settings.js" type="module"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
+        <script src="../js/noodlesResults.js" type="module"></script>
+    </body>
 </html>

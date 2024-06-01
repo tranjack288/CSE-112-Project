@@ -54,3 +54,13 @@ main {
 		font-size: 24px;
 	}
 }
+
+
+section {
+	display: flex;
+}
+
+#chosenNoodleIMG{
+	height: 75%;
+	width: 75%;	
+} 

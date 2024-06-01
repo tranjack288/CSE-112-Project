@@ -7,45 +7,54 @@
 
 window.addEventListener('DOMContentLoaded', init);
 
-import { getHoroscope, getNoodleData } from './genHoroscope.js';
+// import { getHoroscope, getNoodleData } from './genHoroscope.js';
 
-const smokeAnimationTime = 1840;
-const imageAnimationTime = 2900;
-const timeBeforeSmoke = 2000;
-const smokePeakCoverTime = 700;
-const totalImageCycles = 2;
-const imageExponentialPlier = 1.1;
+// const smokeAnimationTime = 1840;
+// const imageAnimationTime = 2900;
+// const timeBeforeSmoke = 2000;
+// const smokePeakCoverTime = 700;
+// const totalImageCycles = 2;
+// const imageExponentialPlier = 1.1;
 
-/**
- * On load function,
- * use localStorage to get the quiz result and display the corresponding noodle
- */
-async function init() {
-	const noodleDescription = document.getElementById('noodleDescription');
-	const quizResult = document.getElementById('quizResult');
-	const smoke = document.getElementById('smokeImage');
-	noodleDescription.style.opacity = 0;
-	quizResult.textContent = 'Your personality type is being calculated...';
-	smoke.style.display = 'none';
-
-	spinNoodleWheel();
-
-	setTimeout(() => {
-		doSmokeEffect();
-	}, timeBeforeSmoke);
-
-	setTimeout(() => {
-		noodleDescription.style.opacity = 1;
-		quizResult.style.opacity = 1;
-		setDescriptionAndResult();
-	}, timeBeforeSmoke + smokePeakCoverTime);
-
-	setTimeout(() => {
-		setImageCorrectly();
-	}, imageAnimationTime + 500);
-
-	bindButtons();
+// /**
+//  * On load function,
+//  * use localStorage to get the quiz result and display the corresponding noodle
+//  */
+async function init(){
+	console.log("INIT")
+	const noodleChosen = JSON.parse(localStorage.getItem("noodleChosen"));
+	console.log(noodleChosen);
+	const noodleChosenImg =  document.getElementById("chosenNoodleIMG");
+	noodleChosenImg.setAttribute("src",noodleChosen.path);
+	const noodleChosenText = document.getElementById("chosenNoodleName");
+	noodleChosenText.textContent = noodleChosen.noodleName;
 }
+// async function init() {
+// 	const noodleDescription = document.getElementById('noodleDescription');
+// 	const quizResult = document.getElementById('quizResult');
+// 	const smoke = document.getElementById('smokeImage');
+// 	noodleDescription.style.opacity = 0;
+// 	quizResult.textContent = 'Your personality type is being calculated...';
+// 	smoke.style.display = 'none';
+
+// 	spinNoodleWheel();
+
+// 	setTimeout(() => {
+// 		doSmokeEffect();
+// 	}, timeBeforeSmoke);
+
+// 	setTimeout(() => {
+// 		noodleDescription.style.opacity = 1;
+// 		quizResult.style.opacity = 1;
+// 		setDescriptionAndResult();
+// 	}, timeBeforeSmoke + smokePeakCoverTime);
+
+// 	setTimeout(() => {
+// 		setImageCorrectly();
+// 	}, imageAnimationTime + 500);
+
+// 	bindButtons();
+//}
 
 /**
  * Set the noodle image to the corresponding image of the user's quiz result
