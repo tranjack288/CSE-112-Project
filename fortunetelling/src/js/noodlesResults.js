@@ -23,13 +23,18 @@ window.addEventListener('DOMContentLoaded', init);
 async function init(){
 	console.log("INIT")
 	const noodleChosen = JSON.parse(localStorage.getItem("noodleChosen"));
-	console.log(noodleChosen);
+	
 	const noodleChosenImg =  document.getElementById("chosenNoodleIMG");
 	noodleChosenImg.setAttribute("src",noodleChosen.path);
 	const noodleChosenText = document.getElementById("chosenNoodleName");
 	noodleChosenText.textContent = noodleChosen.noodleName;
 
-	let backendRecipe = getBackendRecipe(noodleChosen);
+	let backendRecipe = await getBackendRecipe(noodleChosen);
+	
+	let recipeTextBackend =  backendRecipe["response"];
+	console.log(recipeTextBackend);
+	const recipeText = document.getElementById("recipe");
+	recipeText.textContent = recipeTextBackend;
 }
 // async function init() {
 // 	const noodleDescription = document.getElementById('noodleDescription');
@@ -119,12 +124,12 @@ function doSmokeEffect() {
 
 async function getBackendRecipe(nooldeOBJ)
 	{
-		fetch("https://us-central1-noodle-66d8d.cloudfunctions.net/getLlama3Response",
+		let  query = fetch("https://us-central1-noodle-66d8d.cloudfunctions.net/getLlama3Response",
 			{method: "POST",
 				body: JSON.stringify(nooldeOBJ),
 				mode: "cors"
 			})
 			.then(res => res.json())
-			.then(data => console.log(data))
-			.then(err => console.log(err))
+
+			return query;
 	}
