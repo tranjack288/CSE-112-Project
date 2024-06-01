@@ -28,6 +28,8 @@ async function init(){
 	noodleChosenImg.setAttribute("src",noodleChosen.path);
 	const noodleChosenText = document.getElementById("chosenNoodleName");
 	noodleChosenText.textContent = noodleChosen.noodleName;
+
+	let backendRecipe = getBackendRecipe(noodleChosen);
 }
 // async function init() {
 // 	const noodleDescription = document.getElementById('noodleDescription');
@@ -81,6 +83,7 @@ async function setDescriptionAndResult() {
 	noodleDescription.textContent =
 		noodleData[noodleId]['personalityDescription'];
 	quizResult.textContent = `Congratulations, your personality type is ${noodleData[noodleId]['noodleName']}!`;
+
 }
 
 /**
@@ -113,3 +116,15 @@ function doSmokeEffect() {
 	// img.src = img.src + "?";
 	smoke.style.display = 'block';
 }
+
+async function getBackendRecipe(nooldeOBJ)
+	{
+		fetch("https://us-central1-noodle-66d8d.cloudfunctions.net/getLlama3Response",
+			{method: "POST",
+				body: JSON.stringify(nooldeOBJ),
+				mode: "cors"
+			})
+			.then(res => res.json())
+			.then(data => console.log(data))
+			.then(err => console.log(err))
+	}
