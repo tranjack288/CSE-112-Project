@@ -124,3 +124,21 @@ noodle-ingredient.grayedOut{
     box-shadow: none;
     padding: 12px 10px;
 }
+
+/* Responsive Design for small screens */
+@media only screen and (max-width: 767px), 
+screen and (max-height: 480px){
+    #instruction-text-mobile img{
+        max-width: 100px;
+        background-color: #fff;
+        border-radius: 12px;
+    }
+    #interactive-content {
+        height: auto;
+        overflow-y: auto;
+    }
+    #edit-ingredients{
+        margin: 30px auto 140px auto;
+        padding: 30px 10px;
+    }
+}

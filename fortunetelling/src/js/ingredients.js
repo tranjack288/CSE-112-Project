@@ -139,6 +139,7 @@ async function init() {
                 localStorage: \n 
                 ${localStorage.getItem('confirmedIngredients')}
             `);
+            console.log(localStorage.getItem('confirmedIngredients'));
         }        
     })
 }

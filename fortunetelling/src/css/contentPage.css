@@ -1,6 +1,9 @@
 *{
 	/* border: 1px red solid; */
 }
+.menu{
+	justify-content: flex-end;
+}
 
 #page-content-container{
 	display: grid;
@@ -35,6 +38,10 @@
 	padding-left: 20px;
     width: 100%;
 }
+#top-logo a img{
+	width: 40px;
+    height: 40px;
+}
 
 #logoText{
 	color:white;
@@ -45,6 +52,7 @@
 
 #instruction-text{
 	margin-right: 30px;
+	margin-left: 20px;
 	/* height: calc(100vh - 54px) ; */
 }
 
@@ -77,6 +85,17 @@
 
 
 /* Right column for main content */
+.menu>a{
+	display: none;
+}
+.logo{
+	text-align: left;
+	display: none;
+}
+#instruction-text-mobile{
+	display: none;
+}
+
 #main-content{
 	background-color:#DFDAC9;
 	height: 100%;
@@ -84,6 +103,10 @@
 	display:flex;
 	flex-direction: column;
 	justify-content: space-between;
+}
+#interactive-content{
+    padding: 0 20px;
+
 }
 
 #button-container{
@@ -115,4 +138,57 @@
 #back-button:hover{
 	background-color: #AE3131;
 	color: #fff;
+}
+
+/* Responsive Design for small screens */
+@media only screen and (max-width: 767px), 
+screen and (max-height: 480px){
+	p{
+		font-size: 20px;
+	}
+
+	.menu>a{
+		display: block;
+	}
+	.logo{		
+		display: block;
+	}
+	#main-content{
+		display: block;
+		text-align: left;
+	}
+	#instructions{
+		display: none;
+	}
+	#page-content-container{
+		display: block;
+	}
+
+
+	#instruction-text-mobile{
+		display: block;
+		margin-top: 70px;
+		padding: 20px;
+
+		background-color:#B93737;
+		color: #fff;
+	}
+	#instruction-text-mobile-content{
+		max-width: 560px;
+		margin: 0px auto 0px auto;
+
+		display: flex;
+		align-items: flex-start;
+		gap: 20px;
+	}
+	#instruction-text-mobile h2 {
+		font-size: 1.5rem;
+		line-height: 40px;
+	}
+
+	#button-section{
+		position:fixed;
+		bottom: 0;
+		padding: 0 20px;
+	}
 }

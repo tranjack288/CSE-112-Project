@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	 */
 	function startConversation() {
 		if (isFirstClick) {
-			animateNoodle();
+			// animateNoodle();
 			isFirstClick = false;
 		}
 
@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	/**
 	 * Adds a CSS class to animate the noodle.
 	 */
-	function animateNoodle() {
-		noodlesContainer.classList.add('fly-to-center');
-	}
+	// function animateNoodle() {
+	// 	noodlesContainer.classList.add('fly-to-center');
+	// }
 
 	/**
 	 * Handles the second stage of the interaction.
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		];
 
 		
-		const noodlesContainer = document.querySelector('.noodles-container');
+		const noodlesContainer = document.querySelector('.side.front');
 
 		noodles.forEach((noodle, index) => {
 			const image = document.createElement('img');

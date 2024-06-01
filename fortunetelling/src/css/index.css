@@ -53,9 +53,6 @@ main{
 #frontpage-container{
 	display: grid;
 	grid-template-columns: 0.74fr 1fr;
-	grid-template-rows: 1fr;
-	grid-column-gap: 0px;
-	grid-row-gap: 0px;
 	width:100%;
 }
 
@@ -104,6 +101,9 @@ main{
 
 	margin-top: 30px;
 }
+#noodleBoxImg{
+	display: none;
+}
 .intro h1{	
 	color: #eee;
 	font-size: 60px;
@@ -123,4 +123,72 @@ main{
 	padding-left: 40px;
 	padding-right: 40px;
 	animation: 3.2s ease 0s infinite normal none running pulse;
+}
+
+
+/* Responsive Design for small screens */
+@media only screen and (max-width: 767px), 
+screen and (max-height: 480px){
+	main{
+		margin-top: 69px;
+		background-attachment: fixed;
+	}
+	#frontpage-container{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.intro{
+		height: calc(100vh - 69px);
+		height: calc(100svh - 69px);
+
+		align-items: flex-end;
+		max-width: 100vw;
+		overflow: hidden;
+	}
+	.intro h1{
+		font-size: 50px;
+	}
+	.intro p{
+		font-size: 1.3rem;
+	}
+
+	#intro-content-container{
+		/* justify-content: flex-end; */
+		/* gap: 20px; */
+		height: 100%;
+		position:relative;
+	}
+
+	#intro-content-container div{
+		margin-top: 38vh;
+		margin-top: 38svh;
+		z-index: 1;
+	}
+
+	#intro-content-container a{
+		margin-bottom: 20px;
+		z-index: 1;
+	}
+
+	#noodleBoxImg{
+		display: block;
+		width: 400px;
+		top: 0;
+		right: 0px;
+		position: absolute;
+		transform: translate(80px, 10px);		
+		clip-path: inset(0 0 0 0);
+	}
+
+
+	/* Button size */
+	#intro-content-container a{
+		width: 100%;
+	}
+	#generate-recipe{
+		width: 100%;
+	}
+	#user-input-button {
+		font-size: 18px;
+	}
 }

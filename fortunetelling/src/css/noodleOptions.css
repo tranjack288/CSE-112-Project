@@ -1,15 +1,3 @@
-
-#page-content-container{
-	display: grid;
-	grid-template-columns: 0.74fr 1fr;
-	grid-template-rows: 1fr;
-	grid-column-gap: 0px;
-	grid-row-gap: 0px;
-	
-
-	padding: 0;
-}
-
 #instructions{
 	background-color:#B93737;
 	position:relative;
@@ -53,4 +41,14 @@
 .grid-item-4 img {
     width: 70%;
     object-fit: contain; /* Maintain aspect ratio and cover the entire space */
+}
+
+/* Responsive Design for small screens */
+@media only screen and (max-width: 767px), 
+screen and (max-height: 480px){
+    .grid-container-4{
+        text-align: center;
+        margin: 30px auto 140px auto;
+    }
+
 }

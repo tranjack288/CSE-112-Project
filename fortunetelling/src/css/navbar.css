@@ -4,7 +4,15 @@
 nav {
 	background: #f8f6f0;
 	padding: 2px 20px;
+	position: fixed;
+	top: 0;
+    z-index: 2;
+	width: 100%;
 }
+.logo {
+	flex: 1;
+}
+
 ul {
 	list-style-type: none;
 }
@@ -34,6 +42,11 @@ a:hover {
 	width: 40px;
 	height: 40px;
 }
+#logoTitle{
+	display: flex;
+	align-items: center;
+}
+
 /*Styling for text in the header*/
 #noodleText {
 	font-family: 'Hi Melody';
@@ -47,7 +60,7 @@ a:hover {
 .menu {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-end;
+	justify-content: space-between;
 	align-items: center;
 }
 .toggle {
@@ -101,10 +114,6 @@ a:hover {
 		/* justify-content: center; */
 	}
 
-	.logo {
-		flex: 1;
-	}
-
 	.item.button {
 		width: auto;
 		order: 1;
@@ -140,6 +149,13 @@ a:hover {
 
 /* Desktop menu */
 @media all and (min-width: 768px) {
+	nav {
+		background: #f8f6f0;
+		padding: 2px 20px;
+		position: static;
+		z-index: 2;
+	}
+
 	.item {
 		display: block;
 		width: auto;
@@ -182,6 +198,9 @@ a:hover {
 
 /*Styling for hamburger menu*/
 @media (max-width: 767px) {
+	#noodleText {
+		font-size: 30px;
+	}
 	#toggle {
 		display: none;
 	}
@@ -207,6 +226,7 @@ a:hover {
 		margin-top: 7px;
 		-webkit-transition: all 0.2s ease-in-out;
 		transition: all 0.2s ease-in-out;
+		border-radius: 30px;
 	}
 
 	#toggle:checked + .hamburger .top {
