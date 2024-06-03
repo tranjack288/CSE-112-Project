@@ -44,9 +44,18 @@ function turnRecipeIntoHTML(backendText){
         backendText = backendText.substring(asteriskIndex);
     }
 
+	const matchFirst = backendText.match(/\S+/); // Find the first block of non-whitespace characters
+    if (matchFirst) {
+        const block = matchFirst[0];
+         backendText = backendText.replace(block, `<h2>${block.slice(2,-3)}</h2>`);
+    }
+    
+
 	backendText = backendText.replace(/\*\*Ingredients:\*\*/g, '<h2>Ingredients</h2>')
 	.replace(/\*\*Instructions:\*\*/g, '<h2>Instructions</h2>')
-	.replace(/\*\*Description:\*\*/g, '<h2>Description</h2>');
+	.replace(/\*\*Description:\*\*/g, '<h2>Description</h2>')
+	.replace(/\*\*Preparation:\*\*/g, '<h2>Preparation</h2>')
+	.replace(/\*\*Recipe:\*\*/g, '<h2>Recipe</h2>');
 
 	// Replace list items with HTML list items
     backendText = backendText.replace(/\* ([^\*]+)\n/g, '<li>$1</li>')
