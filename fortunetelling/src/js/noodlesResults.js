@@ -32,9 +32,37 @@ async function init(){
 	let backendRecipe = await getBackendRecipe(noodleChosen);
 	
 	let recipeTextBackend =  backendRecipe["response"];
-	console.log(recipeTextBackend);
-	const recipeText = document.getElementById("recipe");
-	recipeText.textContent = recipeTextBackend;
+	//console.log(recipeTextBackend);
+	recipeTextBackend = turnRecipeIntoHTML(recipeTextBackend);
+	const recipeText = document.getElementById("recipeText");
+	recipeText.innerHTML = recipeTextBackend;
+}
+function turnRecipeIntoHTML(backendText){
+
+	const asteriskIndex = backendText.indexOf('*');
+    if (asteriskIndex !== -1) {
+        backendText = backendText.substring(asteriskIndex);
+    }
+
+	backendText = backendText.replace(/\*\*Ingredients:\*\*/g, '<h2>Ingredients</h2>')
+	.replace(/\*\*Instructions:\*\*/g, '<h2>Instructions</h2>')
+	.replace(/\*\*Description:\*\*/g, '<h2>Description</h2>');
+
+	// Replace list items with HTML list items
+    backendText = backendText.replace(/\* ([^\*]+)\n/g, '<li>$1</li>')
+               .replace(/\* ([^\*]+)$/g, '<li>$1</li>'); // For the last list item
+
+	// Wrap Ingredients and Instructions items in <ul> tags
+    backendText = backendText.replace(/<h2>Ingredients<\/h2>([\s\S]*?)(?=<h2>|$)/, '<h2>Ingredients</h2><ul>$1</ul>')
+               .replace(/<h2>Instructions<\/h2>([\s\S]*?)(?=<h2>|$)/, '<h2>Instructions</h2><ol>$1</ol>');
+	// Wrap description text in <p> tags
+    backendText = backendText.replace(/<h2>Description<\/h2>([\s\S]*?)(?=<h2>|$)/, '<h2>Description</h2><p>$1</p>');
+
+    // Remove extra newline characters
+    backendText = backendText.replace(/\n/g, '');
+    
+	console.log(backendText);
+    return backendText;
 }
 // async function init() {
 // 	const noodleDescription = document.getElementById('noodleDescription');
