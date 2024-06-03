@@ -44,6 +44,7 @@
         <link href="../css/main.css" rel="stylesheet" type="text/css" />
         <link href="../css/navbar.css" rel="stylesheet" type="text/css" />
         <link href="../css/contentPage.css" rel="stylesheet" type="text/css" />
+        <link href="../css/ingredients.css" rel="stylesheet" type="text/css" />
         <!-- Font Awesome -->
         <link
             href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -70,10 +71,9 @@
                     </a>
                 </div>
                 <div id = "instruction-text">
-                    <h2> Choose <br> Your Noodle</h2>
-                    <p>Im a place holder! 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit Phasellus imperdiet libero sit amet ante facilisis
-                    </p>
+                    <img src="../img/ramen-icon-1.png" alt="Noodle icon image">
+                    <h2> No Noodle Found </h2>
+                    <p> Customize your noodle by editing its ingreingredients </p>
                 </div>
                 <footer class="footer">
                     <p>© Noodle Craft</p>
@@ -105,11 +105,48 @@
                         </li>
                     </ul>
                 </nav>
-                <div></div>
+                <div id="interactive-content">
+                    <div id="edit-ingredients">
+                        <h3>How Many Servings</h3>
+                        <div id="serving-counts">
+                            <p>Number of Servings</p> 
+                            <div id="quantitySelector" >
+                                <button id="minus" class="disable" disabled>
+                                    <svg width="20" height="4" viewBox="0 0 25 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M25 2C25 3.10457 24.1046 4 23 4H2C0.89543 4 0 3.10457 0 2V2C0 0.895431 0.89543 0 2 0H23C24.1046 0 25 0.895431 25 2V2Z" fill="black"/>
+                                    </svg>                                        
+                                </button>
+                                <p>1</p>
+                                <button id="plus">
+                                    <svg width="20" height="20" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M25 12.5C25 13.4862 24.2005 14.2857 23.2143 14.2857H14.2857V23.2143C14.2857 24.2005 13.4862 25 12.5 25V25C11.5138 25 10.7143 24.2005 10.7143 23.2143V14.2857H1.78571C0.79949 14.2857 0 13.4862 0 12.5V12.5C0 11.5138 0.799491 10.7143 1.78571 10.7143H10.7143V1.78571C10.7143 0.79949 11.5138 0 12.5 0V0C13.4862 0 14.2857 0.799491 14.2857 1.78571V10.7143H23.2143C24.2005 10.7143 25 11.5138 25 12.5V12.5Z" fill="black"/>
+                                    </svg>                                        
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                        <h3>Customize Ingredients</h3>
+                        <div id="ingredients-container"> 
+                            <!-- Custom component <noodle-ingredient> goes here -->
+                        </div>
+                        <form id="addIngredientForm" action="">
+                            <input type="text" id="addedIngredient" name="addedIngredient" 
+                            placeholder="+ Input Ingredient Here" maxlength="30" required>
+                            <div>
+                                <button type="submit">
+                                    ADD!                                       
+                                </button>
+                            </div>
+                        </form>
+                        <!-- <button id="addIngredientBtn">+ ADD Ingredient</button> -->
+                    </div>
+                </div>
                 <div id = "button-section">
                     <div id = button-container>
-                        <button id="back-button">Edit Response</button>
-                        <button>Confirm</button>    
+                        <a href="./noodleOptions.html">
+                            <button id="back-button">Select Noodle</button>    
+                        </a>                        
+                        <button id="confirm-button">Confirm</button>    
                     </div>
                 </div>
             </section>
@@ -130,8 +167,9 @@
         <!-- remove the type="module" attribute. -->
         <script src="../js/main.js" type="module"></script>
         <script src="../js/settings.js" type="module"></script>
-        <script src="../js/about.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
+        <script src="../js/NoodleIngredient.js" type="module"></script>
+        <script src="../js/ingredients.js" type="module"></script>
     </body>
 </html>
         
