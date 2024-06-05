@@ -14,6 +14,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	// const flavorProfile = document.getElementById('flavorProf');
 	let isFirstClick = true;
 
+	noodlesContainer.addEventListener('mousedown', ()=>{
+		noodlesContainer.classList.add('bouncing');
+	});
+	document.addEventListener('mouseup', ()=>{
+		noodlesContainer.classList.remove('bouncing');
+	});
+	
 	userInputButton.addEventListener('click', startConversation);
 
 	/**

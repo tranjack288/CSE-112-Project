@@ -25,7 +25,7 @@
 
 
 main {
-	background-image: url('../img/landing-background.jpg');
+	background-image: url('../img/landing-background.webp');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -88,19 +88,13 @@ main {
 
 
 
-@media screen and (max-width: 800px) {
-	main {
-		background-image: url('../img/landing-background.jpg');
-	}
+@media screen and (max-width: 767px) {
 	.chat-box {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
-	}
-
-	.noodles-container {
 	}
 
 	.user-input {
@@ -388,7 +382,7 @@ main {
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 767px) {
 	.noodles {
 		position: relative;
 		animation: 0.6s dance linear infinite;

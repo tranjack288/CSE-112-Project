@@ -20,7 +20,7 @@ a {
 	text-decoration: none;
 }
 a:hover {
-	text-decoration: underline;
+	/* text-decoration: underline; */
 }
 .logo a:hover {
 	text-decoration: none;
@@ -147,7 +147,7 @@ a:hover {
 }
 
 /* Desktop menu */
-@media all and (min-width: 768px) {
+@media all and (min-width: 768px){
 	nav {
 		background: #f8f6f0;
 		padding: 2px 20px;

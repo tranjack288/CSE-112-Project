@@ -11,7 +11,8 @@ function bgMusicController() {
 	const bgMusicToggle = document.getElementById('bg-music-toggle');
 	bgMusicToggle.addEventListener('click', toggleBgMusic);
 	if (localStorage.getItem('bg-music-enabled') == null) {
-		localStorage.setItem('bg-music-enabled', true);
+		//set music to be paused on default
+		localStorage.setItem('bg-music-enabled', false);
 	}
 	if (localStorage.getItem('bg-music-enabled') == 'true') {
 		playBgMusic();

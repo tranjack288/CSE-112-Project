@@ -80,6 +80,26 @@ main{
 	background-color: #bb1212ab;
 }
 
+.noodles-container{
+	cursor: grab;
+	transition: transform 0.5s ease; 
+}
+.bouncing{
+	transition: 0.5s;
+}
+.bouncing{
+	animation: bounce 0.35s infinite ease;
+}
+
+@keyframes bounce {
+	0%,100%{
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-23px);
+	}
+}
+
 /* Intro section */
 .intro{
 	display: flex;
@@ -89,7 +109,7 @@ main{
 	text-align: left;
 	background-color: #00000040;
 	backdrop-filter: blur(8px);
-	padding: 20px;
+	padding: 40px;
 }
 #intro-content-container{
 	max-width: 600px;
@@ -108,14 +128,14 @@ main{
 	color: #eee;
 	font-size: 60px;
 	text-shadow: 3px 2px 2px #000;
-	line-height: 40px;
+	line-height: 50px;
 
 }
 .intro p{
 	color: #eee;
 	text-shadow: 3px 2px 2px #000;
 	line-height: 25px;
-	margin-top: 20px;
+	margin: 20px 0;
 
 	font-size: 1.5rem;
 }
@@ -129,8 +149,12 @@ main{
 /* Responsive Design for small screens */
 @media only screen and (max-width: 767px), 
 screen and (max-height: 480px){
+	@media (orientation: portrait) {
+		main{
+			margin-top: 69px;
+		}
+	}
 	main{
-		margin-top: 69px;
 		background-attachment: fixed;
 	}
 	#frontpage-container{
@@ -138,15 +162,18 @@ screen and (max-height: 480px){
 		flex-direction: column-reverse;
 	}
 	.intro{
-		height: calc(100vh - 69px);
-		height: calc(100svh - 69px);
+		min-height: calc(100vh - 69px);
+		min-height: calc(100svh - 69px);
 
 		align-items: flex-end;
 		max-width: 100vw;
 		overflow: hidden;
+		padding: 20px;
 	}
 	.intro h1{
-		font-size: 50px;
+		font-size: 45px;
+        line-height: 40px;
+		/* margin-bottom: 10px; */
 	}
 	.intro p{
 		font-size: 1.3rem;
@@ -160,8 +187,8 @@ screen and (max-height: 480px){
 	}
 
 	#intro-content-container div{
-		margin-top: 38vh;
-		margin-top: 38svh;
+		margin-top: 36vh;
+		margin-top: 36svh;
 		z-index: 1;
 	}
 

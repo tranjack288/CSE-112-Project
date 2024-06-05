@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>About</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+		<title>Noodle Craft Noodle Options</title>
 		<link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
 
         <!-- Prefetch asset files -->
@@ -26,7 +26,6 @@
 		<!-- main.css. Page-specific styles should be in questionnaire.css. -->
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
 		<link href="../css/navbar.css" rel="stylesheet" type="text/css" />
-		<link href="../css/questionnaire.css" rel="stylesheet" type="text/css" />
         <link href="../css/contentPage.css" rel="stylesheet" type="text/css" />
         <link href="../css/noodleOptions.css" rel="stylesheet" type="text/css" />
 
@@ -97,34 +96,38 @@
                     </ul>
                 </nav>
                 <div id = "instruction-text-mobile">
-                    <h2> Choose Your Noodles</h2>
-                    <p>We've calculated a selection of noodles based on your preferences. Select which one you would like to make.</p>
+                    <div id = "instruction-text-mobile-content">
+                        <h2> Choose Your Noodles</h2>
+                        <p>We've calculated a selection of noodles based on your preferences. Select which one you would like to make.</p>
+                    </div>
                 </div>
                 <div id="interactive-content">
                     <div class="grid-container-4" id ="noodleGridContainer">
                         <div class="grid-item-4" id="grid-item1" data-value="1">
                         <!--  This is where image 1 will be -->
-                        <h3 class="noodleName">br</h3>
+                        <h3 class="noodleName">Noodle 1</h3>
                         </div>
                         <div class="grid-item-4" id="grid-item2" data-value="2">
                         <!--   This is where image 2 will be-->
-                        <h3 class="noodleName">eee</h3>
+                        <h3 class="noodleName">Noodle 2</h3>
                         </div>
                         <div class="grid-item-4" id="grid-item3" data-value="3">
                         <!--    This is where image 3 will be -->
-                        <h3 class="noodleName">rf</h3>
+                        <h3 class="noodleName">Noodle 3</h3>
                         </div>
                         <div class="grid-item-4" id="grid-item4" data-value="4">
                         <!--   This is where image 4 will be -->
-                        <h3 class="noodleName">fr34f</h3>
+                        <h3 class="noodleName">Noodle 4</h3>
                         </div>
                     </div>    
                 </div>
                 
                 <div id = "button-section">
                     <div id = button-container>
-                        <button id="back-button">Edit Response</button>
-                        <button id="confirmOption">Confirm</button>    
+                        <a href="./questionnaire.html">
+                            <button id="back-button">Edit Response</button>    
+                        </a>                        
+                        <button id="confirmOption" class="disabledBtn" disabled>Confirm</button>
                     </div>
                 </div>
             </section>
