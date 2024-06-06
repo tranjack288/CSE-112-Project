@@ -63,7 +63,7 @@
 					<a id="noodleText" href="../../index.html"> Noodle Craft </a>
 				</li>
 				<li class="item"><a href="./about.html">About Us</a></li>
-				<li class="item current">
+				<li class="item">
 					<a href="./myRecipes.html">my Recipes</a>
 				</li>
 				<li class="item accessibility-container">
@@ -94,7 +94,6 @@
 				<h1 class="title speechify speechify-onload">
 					Noodle Questionnaire
 				</h1>
-				<!-- <h2> Select your option where 1 is the least and 10 is the most</h2> -->
 			</div>
 
 			<!--Questions go here.-->
@@ -131,21 +130,8 @@
 							<div>
 								<input type="radio" name="qradio" value="10">
 								<label>Over $20</label>	
-							</div>
-							
+							</div>							
 						  </div>
-						  <!-- <div class="row">
-							<input type="radio" name="qradio" value="6">
-							<label>6</label>
-							<input type="radio" name="qradio" value="7">
-							<label>7</label>
-							<input type="radio" name="qradio" value="8">
-							<label>8</label>
-							<input type="radio" name="qradio" value="9">
-							<label>9</label>
-							<input type="radio" name="qradio" value="10">
-							<label>10</label>
-						  </div> -->
 						</div>
 						
 					  </form>
@@ -181,18 +167,6 @@
 								<label>Over 45 minutes</label>	
 							</div>
 						  </div>
-						  <!-- <div class="row">
-							<input type="radio" name="qradio" value="6">
-							<label>6</label>
-							<input type="radio" name="qradio" value="7">
-							<label>7</label>
-							<input type="radio" name="qradio" value="8">
-							<label>8</label>
-							<input type="radio" name="qradio" value="9">
-							<label>9</label>
-							<input type="radio" name="qradio" value="10">
-							<label>10</label>
-						  </div> -->
 						</div>
 						
 					  </form>
@@ -225,18 +199,6 @@
 								<label>Veggie-focused</label>	
 							</div>
 						  </div>
-						  <!-- <div class="row">
-							<input type="radio" name="qradio" value="6">
-							<label>6</label>
-							<input type="radio" name="qradio" value="7">
-							<label>7</label>
-							<input type="radio" name="qradio" value="8">
-							<label>8</label>
-							<input type="radio" name="qradio" value="9">
-							<label>9</label>
-							<input type="radio" name="qradio" value="10">
-							<label>10</label>
-						  </div> -->
 						</div>						
 					</form>
 				</div>
@@ -268,18 +230,6 @@
 								<label><strong>Very Spicy: </strong>Intense heat for the adventurous</label>	
 							</div>
 						  </div>
-						  <!-- <div class="row">
-							<input type="radio" name="qradio" value="6">
-							<label>6</label>
-							<input type="radio" name="qradio" value="7">
-							<label>7</label>
-							<input type="radio" name="qradio" value="8">
-							<label>8</label>
-							<input type="radio" name="qradio" value="9">
-							<label>9</label>
-							<input type="radio" name="qradio" value="10">
-							<label>10</label>
-						  </div> -->
 						</div>
 						
 					  </form>
@@ -312,18 +262,6 @@
 								<label><strong>Expert:</strong> Complex recipes for experienced cooks</label>	
 							</div>
 						  </div>
-						  <!-- <div class="row">
-							<input type="radio" name="qradio" value="6">
-							<label>6</label>
-							<input type="radio" name="qradio" value="7">
-							<label>7</label>
-							<input type="radio" name="qradio" value="8">
-							<label>8</label>
-							<input type="radio" name="qradio" value="9">
-							<label>9</label>
-							<input type="radio" name="qradio" value="10">
-							<label>10</label>
-						  </div> -->
 						</div>
 						
 					  </form>
@@ -356,18 +294,6 @@
 								<label><strong>Completely customizable: </strong>Create your own recipe with full flexibility</label>	
 							</div>
 						  </div>
-						  <!-- <div class="row">
-							<input type="radio" name="qradio" value="6">
-							<label>6</label>
-							<input type="radio" name="qradio" value="7">
-							<label>7</label>
-							<input type="radio" name="qradio" value="8">
-							<label>8</label>
-							<input type="radio" name="qradio" value="9">
-							<label>9</label>
-							<input type="radio" name="qradio" value="10">
-							<label>10</label>
-						  </div> -->
 						</div>
 						
 					  </form>
@@ -418,12 +344,14 @@
 				</div>
 				
 				<div id="buttons">
-					<a><button id="reset" class="button">Reset</button></a>
-					<a id="next"
-						><button id="submit" class="button">
+					<button id="back-button" class="button"> Back</button>						
+					<button id="reset" class="button">Reset</button>
+					
+					<a id="next">
+						<button id="submit" class="button disabledBtn" disabled>
 							Get Noodle Recipes!
-						</button></a
-					>
+						</button>
+					</a>
 				</div>
 			</section>
 		</main>

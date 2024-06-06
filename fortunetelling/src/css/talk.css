@@ -8,14 +8,12 @@
 	color: #eee;
 	font-size: 1.4rem;
 	font-weight: normal;
-	/* margin-top: 20px;
-	padding-left: 2vw;
-	padding-right: 2vw; */
+
 	text-shadow: 2px 2px 2px #000;
 	padding: 0px 15px 0px 15px;
 	margin: 0px 15px 0px 15px;
 	border-radius: 25px;
-	background-color: #00000020;
+	background-color: #00000035;
 }
 
 .noodles-container{
@@ -52,19 +50,6 @@ main {
 	display: flex;
 }
 
-/* .noodles-container.fly-to-center {
-	animation: 1s fly-to-center linear;
-	animation-fill-mode: forwards; 
-} */
-
-/* @keyframes fly-to-center {
-	0% {
-		transform: translate(0, 0);
-	}
-	100% {
-		transform: translate(10vh, 5vh);
-	}
-} */
 @keyframes fly-out {
 	0% {
 		opacity: 1;
@@ -80,7 +65,6 @@ main {
 	position: absolute;
 	left: 105px;
     top: 165px;
-	/* transform: translate(-50%, -50%); */
 	width: 55px; /* Adjust the image width as needed */
 	height: auto;
 }
@@ -100,15 +84,6 @@ main {
 	.user-input {
 		display: flex;
 	}
-
-	/* #user-input-button {
-		padding: 10px 20px;
-		background-color: #da0b0b;
-		color: white;
-		border: none;
-		cursor: pointer;
-		transition: background-color 0.3s ease;
-	} */
 
 	#user-input-button:hover {
 		background-color: #bb121254;

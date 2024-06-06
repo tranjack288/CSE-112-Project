@@ -123,11 +123,10 @@ nav .button {
 	margin: 20px auto 20px auto;
 }
 
+#button-container button{
+	width: 100%;
+}
 #button-section{
-	/* display:flex;
-	flex-direction: row;
-	justify-content: center;
-	background-color: #F8F6F0; */
 	width: 100%;
 	background-color: #F8F6F0;
 	box-shadow: 0px -9px 10px rgba(0, 0, 0, 0.25);
@@ -138,7 +137,6 @@ nav .button {
 	border: 2px solid #da0b0b;
 	background: none;
 	color: #000;
-	width: 100%;
 }
 #back-button:hover{
 	background-color: #AE3131;

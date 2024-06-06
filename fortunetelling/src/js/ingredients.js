@@ -137,11 +137,7 @@ async function init() {
             confirmedIngredients.servings = numServings;
             confirmedIngredients.ingredients = validIngredientsArr;
             localStorage.setItem('confirmedIngredients', JSON.stringify(confirmedIngredients));    
-            alert(`
-                localStorage: \n 
-                ${localStorage.getItem('confirmedIngredients')}
-            `);
-            console.log(localStorage.getItem('confirmedIngredients'));
+            window.location.href="./noodlesResults.html";
         }        
     })
 }
