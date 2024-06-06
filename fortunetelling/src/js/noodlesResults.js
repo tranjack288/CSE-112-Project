@@ -39,8 +39,8 @@ async function init(){
 
 /**
  * Turn backend text into HTML element
- * @param {String} backendText 
- * @returns 
+ * @param {String} backendText input backend text
+ * @returns {String} backendText 
  */
 function turnRecipeIntoHTML(backendText){
 
@@ -166,8 +166,8 @@ function doSmokeEffect() {
 
 /**
  * Get response from backend
- * @param {Object} nooldeOBJ 
- * @returns 
+ * @param {Object} nooldeOBJ input noodle Obj
+ * @returns {json} query
  */
 async function getBackendRecipe(nooldeOBJ){
 	console.log(nooldeOBJ);
