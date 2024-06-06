@@ -25,7 +25,12 @@ exports.getLlama3Response = functions.https.onRequest(async (req, res) => {
     const prompt = `Create a ${body["noodleName"]} recipe 
                     that makes ${body["servings"]} servings 
                     strictly from the following ingredients and using only ingredients that are edible: ${body["ingredient"]}. 
-                    Also give a short description including the name of the recipe and its ingredients.`;
+                    Also, give a short description including the name of the recipe and its ingredients. 
+                    Format the response strictly as: 
+                    Name: [Name of Bowl]
+                    Ingredients: [List of ingredients]
+                    Description: [Description]
+                    Directions: [Directions as a numbered list]`;
 
     try {
         // Send a request to Groq API
