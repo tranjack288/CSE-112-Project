@@ -28,6 +28,8 @@ async function init(){
     noodleNames[0].innerText = noodleChosenName;
     noodleNames[1].innerText = noodleChosenName;
 
+	// delete survey answers from local storage
+	localStorage.removeItem('surveyAnswers');
 
 	let backendRecipe = await getBackendRecipe(noodleChosen);	
 	let recipeTextBackend =  backendRecipe["response"];
