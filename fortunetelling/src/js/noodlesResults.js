@@ -36,6 +36,12 @@ async function init(){
 	const recipeText = document.getElementById("recipeText");
 	recipeText.innerHTML = recipeTextBackend;
 }
+
+/**
+ * Turn backend text into HTML element
+ * @param {String} backendText 
+ * @returns 
+ */
 function turnRecipeIntoHTML(backendText){
 
 	const asteriskIndex = backendText.indexOf('*');
@@ -158,6 +164,11 @@ function doSmokeEffect() {
 	smoke.style.display = 'block';
 }
 
+/**
+ * Get response from backend
+ * @param {Object} nooldeOBJ 
+ * @returns 
+ */
 async function getBackendRecipe(nooldeOBJ){
 	console.log(nooldeOBJ);
 	let  query = fetch("https://us-central1-noodle-66d8d.cloudfunctions.net/getLlama3Response",

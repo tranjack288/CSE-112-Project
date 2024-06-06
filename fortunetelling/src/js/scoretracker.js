@@ -1,5 +1,9 @@
 //import noodles from "./database/noodleDescriptions.json" assert {type: "json"}
 let noodles;
+
+/**
+ * load noodle json from local file
+ */
 async function loadNoodleJSON() {
 	try {
 		noodles = await fetch('../js/database/noodleDescriptions.json');
