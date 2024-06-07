@@ -26,7 +26,7 @@ async function init(){
 	//grab descrition and send to DALLE
 	let DescriptionsIndex = recipeJustText.indexOf("Description");
 	let DirectionsIndex = recipeJustText.indexOf("Directions");
-	recipeJustText = recipeJustText.slice(DescriptionsIndex,DirectionsIndex) + " Simple background just the noodles";
+	recipeJustText = " just the food " + recipeJustText.slice(DescriptionsIndex,DirectionsIndex);
 	
 	console.log(recipeJustText);
 	let generatedImage = await getGeneratedImage(recipeJustText);
