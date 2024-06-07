@@ -144,7 +144,18 @@ label strong{
 screen and (max-height: 480px){
 	h1.title{
 		margin-top: 69px;
-		font-size: 50px;
+		font-size: 40px;
+		
+	}
+
+	.question {
+		padding: 10px;
+	}
+	h2.question-prompt {
+		font-size: 30px;
+	}
+	.question label{
+		font-size: 18px;
 	}
 	input {
 		background-color: white;
