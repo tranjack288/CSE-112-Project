@@ -1,18 +1,18 @@
-//import noodles from "./database/noodleDescriptions.json" assert {type: "json"}
-let noodles;
+import noodles from "./database/noodleDescriptions.json" assert {type: "json"}
+//let noodles;
 
 /**
  * load noodle json from local file
  */
-async function loadNoodleJSON() {
-	try {
-		noodles = await fetch('../js/database/noodleDescriptions.json');
-		noodles = await noodles.json();	  
-	} catch (error) {
-		console.error('Error loading JSON file:', error);
-	}
-}
-loadNoodleJSON();
+// async function loadNoodleJSON() {
+// 	try {
+// 		noodles = await fetch('../js/database/noodleDescriptions.json');
+// 		noodles = await noodles.json();	  
+// 	} catch (error) {
+// 		console.error('Error loading JSON file:', error);
+// 	}
+// }
+// loadNoodleJSON();
 
 const QUESTIONS = 7;
 
