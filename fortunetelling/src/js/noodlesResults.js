@@ -21,7 +21,6 @@ window.addEventListener('DOMContentLoaded', init);
 //  * use localStorage to get the quiz result and display the corresponding noodle
 //  */
 async function init(){
-	console.log("INIT")
 	const noodleChosen = JSON.parse(localStorage.getItem("noodleChosen"));
 	
 	const noodleChosenImg =  document.getElementById("chosenNoodleIMG");
@@ -32,11 +31,29 @@ async function init(){
 	let backendRecipe = await getBackendRecipe(noodleChosen);
 	
 	let recipeTextBackend =  backendRecipe["response"];
+	let recipeJustText = recipeTextBackend;
 	//console.log(recipeTextBackend);
 	recipeTextBackend = turnRecipeIntoHTML(recipeTextBackend);
 	const recipeText = document.getElementById("recipeText");
 	recipeText.innerHTML = recipeTextBackend;
+	//grab descrition and send to DALLE
+	console.log(recipeJustText.slice(0,30));
+	let generatedImage = await getGeneratedImage(recipeJustText);
+	console.log(JSON.stringify(generatedImage));
+	noodleChosenImg.setAttribute("src", (generatedImage));
 }
+async function getGeneratedImage(descriptionInput){
+	let  query = fetch("https://us-central1-noodle-66d8d.cloudfunctions.net/getDallEResponse",
+			{method: "POST",
+				body: JSON.stringify({"description": `${descriptionInput.slice(0,30)}`}),
+				mode: "cors"
+			})
+			.then(res => res.json())
+			.then(data => { return data["url"];});
+
+			return query;
+}
+
 function turnRecipeIntoHTML(backendText){
 
 	const asteriskIndex = backendText.indexOf('*');
@@ -54,7 +71,7 @@ function turnRecipeIntoHTML(backendText){
 	backendText = backendText.replace(/\*\*Ingredients:\*\*/g, '<h2>Ingredients</h2>')
 	.replace(/\*\*Instructions:\*\*/g, '<h2>Instructions</h2>')
 	.replace(/\*\*Description:\*\*/g, '<h2>Description</h2>')
-	.replace(/\*\*Preparation:\*\*/g, '<h2>Preparation</h2>')
+	.replace(/\*\*Directions:\*\*/g, '<h2>Preparation</h2>')
 	.replace(/\*\*Recipe:\*\*/g, '<h2>Recipe</h2>');
 
 	// Replace list items with HTML list items
@@ -70,9 +87,10 @@ function turnRecipeIntoHTML(backendText){
     // Remove extra newline characters
     backendText = backendText.replace(/\n/g, '');
     
-	console.log(backendText);
+	//console.log(backendText);
     return backendText;
 }
+
 // async function init() {
 // 	const noodleDescription = document.getElementById('noodleDescription');
 // 	const quizResult = document.getElementById('quizResult');
