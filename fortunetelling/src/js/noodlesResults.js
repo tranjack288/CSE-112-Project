@@ -36,7 +36,7 @@ async function init(){
 async function getGeneratedImage(descriptionInput){
 	let  query = fetch("https://us-central1-noodle-66d8d.cloudfunctions.net/getDallEResponse",
 			{method: "POST",
-				body: JSON.stringify({"description": `${descriptionInput.slice(0,30)}`}),
+				body: JSON.stringify({"description": `${descriptionInput}`}),
 				mode: "cors"
 			})
 			.then(res => res.json())
