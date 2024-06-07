@@ -15,7 +15,6 @@ const openai = new OpenAI({apiKey: process.env.OPENAI_API_KEY});
 * using the ingredients specified in the user input
 */
 exports.getLlama3Response = functions.https.onRequest(async (req, res) => {
-    // TODO: is this the best way to get around CORS?
     res.set("Access-Control-Allow-Origin", "*");
 
     // Handle ingredients from req here
@@ -24,8 +23,10 @@ exports.getLlama3Response = functions.https.onRequest(async (req, res) => {
 
     const prompt = `Create a ${body["noodleName"]} recipe 
                     that makes ${body["servings"]} servings 
-                    strictly from the following ingredients and using only ingredients that are edible: ${body["ingredient"]}. 
-                    Also, give a short description including the name of the recipe and its ingredients. 
+                    strictly from the following ingredients and using only 
+                    ingredients that are edible: ${body["ingredient"]}. 
+                    Also, give a short description including the name of the 
+                    recipe and its ingredients. 
                     Format the response strictly as: 
                     Name: [Name of Bowl]
                     Ingredients: [List of ingredients]
@@ -50,7 +51,7 @@ exports.getLlama3Response = functions.https.onRequest(async (req, res) => {
     } catch (err) {
         console.log(err.response);
         console.log(err.message);
-        res.status(400).json({"error": "An error occurred"});
+        res.status(404).json({"error": "An error occurred"});
     }
 });
 
@@ -61,13 +62,9 @@ exports.getLlama3Response = functions.https.onRequest(async (req, res) => {
 exports.getDallEResponse = functions.https.onRequest(async (req, res) => {
     res.set("Access-Control-Allow-Origin", "*");
 
-    // TODO: Sample parsing of user input
-
     // Parse user input
     const body = JSON.parse(req.body);
     const description = body.description;
-
-    console.log(description);
 
     // Make the call to DallE API
     try {
@@ -83,6 +80,6 @@ exports.getDallEResponse = functions.https.onRequest(async (req, res) => {
     } catch (err) {
         console.log(err.response);
         console.log(err.message);
-        res.status(400).json({"error": "An error occurred"});
+        res.status(404).json({"error": "An error occurred"});
     }
 });
