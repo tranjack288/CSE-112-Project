@@ -89,7 +89,9 @@
 
 @media (max-width: 767px) {
 	.carousel-container {
-		display: block; /* Show the carousel on mobile devices */
+		display: flex;
+		flex-direction: column;
+		margin-top: 65px; /* Show the carousel on mobile devices */
 	}
 
 	.desktop-container {
@@ -127,7 +129,7 @@
 
 	.carousel-control {
 		position: absolute;
-		bottom: 30%;
+		bottom: 50%;
 		width: 50px;
 		font-size: 25px;
 	}
