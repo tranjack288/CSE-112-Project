@@ -48,6 +48,12 @@ async function init(){
 	noodleImgs[0].setAttribute("src", (generatedImage));
 	noodleImgs[1].setAttribute("src", (generatedImage));
 }
+
+/**
+ * Get AI image from Dalle
+ * @param {String} descriptionInput Image description
+ * @returns {Object} query
+ */
 async function getGeneratedImage(descriptionInput){
 	let  query = fetch("https://us-central1-noodle-66d8d.cloudfunctions.net/getDallEResponse",
 			{method: "POST",
@@ -60,7 +66,9 @@ async function getGeneratedImage(descriptionInput){
 			return query;
 }
 /**
- *  and converts the text from the backend recipe into the corresponding html.
+ * Converts the text from the backend recipe into the corresponding html.
+ * @param {String} backendText 
+ * @returns {String} backendText
  */
 function turnRecipeIntoHTML(backendText){
 
@@ -100,7 +108,9 @@ function turnRecipeIntoHTML(backendText){
 }
 
 /**
- * grbas the recipe from llama3 ednpoint
+ * Grbas the recipe from llama3 ednpoint
+ * @param {Object} nooldeOBJ input noodle object
+ * @returns {Object} query
  */
 async function getBackendRecipe(nooldeOBJ)
 	{

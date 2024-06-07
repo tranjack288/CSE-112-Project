@@ -68,7 +68,6 @@ function resetQuestionnare(manualReset) {
 	percent.style.display = 'block';
 	percent.textContent = "0%";
 	let sourceWidth = window.getComputedStyle(questions[0]).width;
-	//progressBar.style.width = sourceWidth;
 	percent.style.width = sourceWidth;
 
 	// Set the first question number to 1
@@ -113,7 +112,6 @@ function resetQuestionnare(manualReset) {
 	for (let k = 0; k < questions.length; k++) {
 		if(questions[k].style.display != 'none'){
 			sourceWidth = window.getComputedStyle(questions[k]).width;
-			//progressBar.style.width = sourceWidth;
 			percent.style.width = sourceWidth;
 		}
 	}
@@ -218,8 +216,6 @@ function questionsHandler() {
 		lastInput.addEventListener('click', function () {
 			submitButton.disabled = false;
 			submitButton.classList.remove('disabledBtn');
-			// progress.style.display = 'none';
-			// percent.style.display = 'none';
 		});
 	}
 
@@ -252,11 +248,7 @@ function questionsHandler() {
 			progressBar.style.width = sourceWidth;
 			percent.style.width = sourceWidth;
 
-			console.log(progressWidthNum);
-			console.log(newWidth);
-
 			// Update progress bar status
-			//document.getElementById('barStatus').style.width = newWidth + '%';
 			percent.textContent = newWidth + '%';
 			const shrink = setInterval(() => {
 				if (progressWidthNum <= newWidth) {
@@ -317,7 +309,6 @@ function gradeQuiz() {
 		// Makes sure the user has answered all the questions.
 		for (let i = 0; i < currentScore.length; i++){
 			if (currentScore[i] === 0) {
-				console.log(currentScore[i]);
 				answered = false;
 			}
 		}
