@@ -1,3 +1,4 @@
+// assert might be an issue in the future
 import noodles from "./database/noodleDescriptions.json" assert {type: "json"}
 
 const QUESTIONS = 7;

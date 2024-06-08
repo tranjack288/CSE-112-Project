@@ -8,49 +8,73 @@ main {
 	padding-left: 25%;
 	padding-right: 25%;
 }
-
-#noodleDescription {
-	font-size: 32px;
+#instruction-text {
+    display: flex;
+    flex-direction: column;
+}
+#instruction-text img {
+    max-width: 150px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 12px;
 }
 
-#quizResult {
-	font-size: 40px;
-	font-weight: bold;
-	color: #da0b0b;
+
+#interactive-content{
+    height: calc(100vh - 66px - 88.5px);
+    height: calc(100svh - 66px - 88.5px);
+
+    overflow-y: scroll;
+
+}
+#recipe-content{
+    min-height: 800px;
+    max-width: 560px;
+    margin: 50px auto 50px auto;
+    padding: 70px 50px;
+
+    text-align: left;
+
+    background-color: #fff;
+    box-shadow: 13px 13px 1px rgba(0, 0, 0, 0.25);
 }
 
-.buttons {
-	margin-top: 20px;
-	margin-bottom: 20px;
+#recipe-content > h2{
+	font-size: 45px;
 }
 
-.button {
-	margin: 10px;
+#recipeText h2{
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-size: 33px;
 }
 
-.smoke img {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	/* background: #000; */
-	left: 0px;
-	top: 196px;
-}
-
-@media screen and (max-width: 600px) {
-	main {
-		padding-right: 10%;
-		padding-left: 10%;
-		min-width: 80%;
+/* Responsive Design for small screens */
+@media only screen and (max-width: 767px), 
+screen and (max-height: 480px){
+    #instruction-text-mobile img{
+        max-width: 100px;
+        background-color: #fff;
+        border-radius: 12px;
+    }
+    #instruction-text-mobile-content{
+		display: flex;
+		align-items: flex-start;
+		gap: 20px;
 	}
-
-	#noodleDescription {
+	#interactive-content {
+        height: auto;
+        overflow-y: auto;
+    }
+    #recipe-content{
+        margin: 30px auto 140px auto;
+        padding: 30px 10px;
+		
+    }
+	#recipeText{
 		font-size: 20px;
 	}
-}
-
-@media screen and (min-width: 601px) and (max-width: 1000px) {
-	#noodleDescription {
-		font-size: 24px;
+	#recipeText li{
+		font-size: 20px;
 	}
 }

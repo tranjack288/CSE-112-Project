@@ -2,38 +2,34 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Noodle Horoscope</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+		<title>Noodle Craft</title>
 		<link rel="icon" type="image/x-icon" href="src/img/favicon.ico" />
 
 		<!-- Prefetch asset files -->
+		<link rel="prefetch" href="src/img/favicon.ico" />
+		<link rel="prefetch" href="src/img/icon.png" />
+		<link rel="prefetch" href="src/img/landing-background.webp" />
 		<link rel="prefetch" href="src/img/aaron-icon.jpg" />
 		<link rel="prefetch" href="src/img/anthony-icon.jpg" />
-		<link rel="prefetch" href="src/img/beef-noodle-soup-icon-1.png" />
-		<link rel="prefetch" href="src/img/bread-icon-1.png" />
-		<link rel="prefetch" href="src/img/chicken-noodle-soup-icon-1.png" />
 		<link rel="prefetch" href="src/img/darren-icon.jpg" />
-		<link rel="prefetch" href="src/img/favicon.ico" />
 		<link rel="prefetch" href="src/img/hanson-icon.png" />
 		<link rel="prefetch" href="src/img/henry-icon.jpg" />
 		<link rel="prefetch" href="src/img/hieu-icon.jpeg" />
 		<link rel="prefetch" href="src/img/holly-icon.png" />
-		<link rel="prefetch" href="src/img/icon.png" />
+		<link rel="prefetch" href="src/img/mark-icon.jpeg" />
+		<link rel="prefetch" href="src/img/steve-icon.jpg" />
+		<link rel="prefetch" href="src/img/beef-noodle-soup-icon-1.png" />
+		<link rel="prefetch" href="src/img/chicken-noodle-soup-icon-1.png" />
+		<link rel="prefetch" href="src/img/bread-icon-1.png" />
 		<link rel="prefetch" href="src/img/instant-noodles-icon-1.png" />
-		<link rel="prefetch" href="src/img/landing-background.jpg" />
 		<link rel="prefetch" href="src/img/lasagna-icon-1.png" />
 		<link rel="prefetch" href="src/img/mac-and-cheese-icon-1.png" />
-		<link rel="prefetch" href="src/img/mark-icon.jpeg" />
-		<link rel="prefetch" href="src/img/noodle1.jpg" />
-		<link rel="prefetch" href="src/img/noodle2.jpg" />
-		<link rel="prefetch" href="src/img/noodle3.jpg" />
 		<link rel="prefetch" href="src/img/pad-thai-icon-1.png" />
 		<link rel="prefetch" href="src/img/pho-icon-1.png" />
 		<link rel="prefetch" href="src/img/ramen-icon-1.png" />
 		<link rel="prefetch" href="src/img/ravioli-icon-1.png" />
-		<link rel="prefetch" href="src/img/smokeAnimation.gif" />
 		<link rel="prefetch" href="src/img/spaghetti-icon-1.png" />
-		<link rel="prefetch" href="src/img/steve-icon.jpg" />
 		<link rel="prefetch" href="src/img/udon-icon-1.png" />
 		<link rel="prefetch" href="src/sounds/bg-music.wav" />
 		<link rel="prefetch" href="src/sounds/congratulations.wav" />
@@ -66,18 +62,11 @@
 				</a>
 				<li class="logo">
 					<a id="noodleText" href="."> Noodle Craft </a>
-				</li>
+				</li>	
+				
 				<li class="item"><a href="./src/pages/about.html">About Us</a></li>
 				<li class="item">
 					<a href="./src/pages/myRecipes.html">My Recipes</a>
-				</li>
-				<li class="item accessibility-container">
-					<label class="switch">
-						<input name="accessibility" type="checkbox" />
-						<span class="slider round">
-							<i class="fas fa-assistive-listening-systems"></i>
-						</span>
-					</label>
 				</li>
 				<li class="item button bg-music-toggle" id="bg-music-toggle">
 					<i class="fas fa-2x" id="bg-music-toggle-icon"></i>
@@ -119,7 +108,7 @@
 							</div>
 						</div>
 						<h2 id="message-output" class="speechify">
-							Welcome to the Noodle Shop!
+							Welcome to Noodle Craft!
 						</h2>
 						<div class="user-input">
 							<button id="user-input-button">Start Conversation</button>
@@ -129,9 +118,10 @@
 
 				<section class = "intro">
 					<div id="intro-content-container">
+						<img id="noodleBoxImg" src="./src/img/noodlebox.webp" alt="noodlebox picture">
 						<div>
-							<h1>Don't Know <br>
-								What Noodle to Cook?
+							<h1>Discover Your <br>
+								Perfect Noodle Recipe!
 							</h1>
 							<p>Answer a few questions, and Noodle Craft will generate the best noodle recipe for you!</p>	
 						</div>

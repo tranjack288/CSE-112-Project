@@ -12,8 +12,8 @@
 
 /* Right column for main content */
 #interactive-content{
-    height: calc(100vh - 58px - 88.5px);
-    height: calc(100svh - 58px - 88.5px);
+    height: calc(100vh - 66px - 88.5px);
+    height: calc(100svh - 66px - 88.5px);
 
     overflow-y: scroll;
 
@@ -42,6 +42,8 @@
 }
 #serving-counts > p{
     margin: 10px 20px;;
+    font-size: 20px;
+    font-family: 'Fredoka', 'Montserrat', sans-serif;
 }
 #quantitySelector{
     display: flex;
@@ -89,7 +91,6 @@ noodle-ingredient{
     justify-content: space-between;
     background-color: #F8F6F0;
     align-items: center;
-    padding: 10px 20px;
     border-radius: 10px;
 
     margin-bottom: 18px;
@@ -123,4 +124,30 @@ noodle-ingredient.grayedOut{
     height: 100%;
     box-shadow: none;
     padding: 12px 10px;
+}
+
+/* Responsive Design for small screens */
+@media only screen and (max-width: 767px), 
+screen and (max-height: 480px){
+    #instruction-text-mobile img{
+        max-width: 100px;
+        background-color: #fff;
+        border-radius: 12px;
+    }
+    #instruction-text-mobile-content{
+		display: flex;
+		align-items: flex-start;
+		gap: 20px;
+	}
+    #interactive-content {
+        height: auto;
+        overflow-y: auto;
+    }
+    #serving-counts > p {
+		font-size: 16px;
+	}
+    #edit-ingredients{
+        margin: 30px auto 140px auto;
+        padding: 30px 10px;
+    }
 }

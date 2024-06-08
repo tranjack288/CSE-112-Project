@@ -28,11 +28,13 @@ async function init() {
     }
 
     // Change the noodle Image and noodle name
-    const noodleImg = document.querySelector('#instruction-text img');
-    const noodleName = document.querySelector('#instruction-text h2');
+    const noodleImgs = document.querySelectorAll('.noodleImg');
+    const noodleNames = document.querySelectorAll('.noodleName');
 
-    noodleImg.src = noodleChosenImg;
-    noodleName.innerText = noodleChosenName;
+    noodleImgs[0].src = noodleChosenImg;
+    noodleImgs[1].src = noodleChosenImg;
+    noodleNames[0].innerText = noodleChosenName;
+    noodleNames[1].innerText = noodleChosenName;
 
 
     /**
@@ -135,10 +137,7 @@ async function init() {
             confirmedIngredients.servings = numServings;
             confirmedIngredients.ingredients = validIngredientsArr;
             localStorage.setItem('confirmedIngredients', JSON.stringify(confirmedIngredients));    
-            alert(`
-                localStorage: \n 
-                ${localStorage.getItem('confirmedIngredients')}
-            `);
+            window.location.href="./noodlesResults.html";
         }        
     })
 }

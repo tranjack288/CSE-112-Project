@@ -31,12 +31,20 @@ class NoodleIngredient extends HTMLElement {
         `;
         styleEle.innerHTML = `
             p{
+                font-size: 20px;
+                font-family: 'Fredoka', 'Montserrat', sans-serif;
+                font-weight: 400;
                 margin: 0;
+                margin-left: 20px;
+
             }
             button{
                 display: flex;
                 background: none;
                 border: none;
+                cursor: pointer;
+                padding: 10px 20px;
+                border-radius: 10px;
             }
             button:hover{
                 background-color: #F1EAD6;
@@ -49,7 +57,15 @@ class NoodleIngredient extends HTMLElement {
             .crossedOut{
                 text-decoration: line-through;
             }
-            
+            @media only screen and (max-width: 767px), 
+            screen and (max-height: 480px){
+                p{
+                    font-size: 18px;
+                }
+            }   
+            button:hover{
+                background-color: none;
+            }         
         `;
 
         buttonEle.addEventListener('click', this.handleClick.bind(this));

@@ -1,8 +1,16 @@
+*{
+	/* border: 1px solid red; */
+}
 /* questionnaire.html css styling */
 main{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+h1.title{
+	line-height: 40px;
+	font-size: 45px;
 }
 #questionnaire {
 	display: flex;
@@ -13,28 +21,69 @@ main{
 
 h2.question-prompt {
 	font-size: 1.3em;
-	margin-bottom: 20px;
+	margin: 20px;
 	text-shadow: 0px 2px 3px #eee;
+
+	text-align: left;
+	line-height: 28px;
 }
 
 .question {
 	background-color: #ffff97;
 	border-radius: 10px;
-	padding: 0px 30px 30px 30px;
+	padding: 10px 30px 30px 30px;
 	box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+
+	max-width: 500px;
+	min-height: 385px;
 }
 
-#progressPercent {
-	text-align: right;
-	font-size: 1.3em;
-}
 
+/* Buttons */
 #buttons {
+	display: grid;
+	grid-template-columns: repeat(2, 0.5fr) 1fr;
+	gap: 10px;
+
+	width: 100%;
+	max-width: 500px;
+
 	margin-top: 20px;
+}
+#buttons #next {
+	display: block;
+	grid-area: 1 / 3 / 2 / 4; 
 }
 
 .button {
-	margin: 10px;
+	width: 100%;
+}
+
+#back-button, #reset{
+	border: 2px solid #da0b0b;
+	background: none;
+	color: #000;
+}
+#back-button:hover, #reset:hover{
+	background-color: #AE3131;
+	color: #fff;
+}
+
+#submit{
+	padding: 12px;
+}
+#submit.disabledBtn{
+    background-color: #BBBBB9;    
+}
+#submit.disabledBtn:hover{
+    background-color: #BBBBB9;    
+}
+
+
+/* Progress Bar */
+#progressPercent {
+	text-align: right;
+	font-size: 1.3em;
 }
 
 #progressBar {
@@ -53,6 +102,7 @@ h2.question-prompt {
 }
 
 input {
+	cursor: pointer;
 	background-color: white;
 	margin: 3px 6px 3px 6px;
 }
@@ -60,119 +110,53 @@ input {
 form {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 }
 
-.negative {
-	/*remove default appearance*/
-	appearance: none;
-	-webkit-appearance: none;
-
-	/*custom styling*/
-	height: 30px;
-	width: 30px;
-	border: 4px solid rgb(237, 169, 169);
-	border-radius: 50%;
+.row {
+	display: flex;
+    flex-direction: column;
 }
 
-.slightlyNegative {
-	/*remove default appearance*/
-	appearance: none;
-	-webkit-appearance: none;
-
-	/*custom styling*/
-	position: static;
-	height: 30px;
-	width: 30px;
-	border-radius: 50%;
-	border: 4px solid rgb(237, 169, 169);
+.row > div{
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
 }
 
-.negative:hover,
-.slightlyNegative:hover {
-	border: 4px solid rgb(243, 72, 72);
-	background-color: rgb(243, 72, 72);
+.row label{
+	text-align: left;
+	line-height: 22px;
+	font-size: 20px;
+	font-family: 'Fredoka';
+	font-weight: 200;
+}
+label strong{
+	font-size: 20px;
+	font-family: 'Fredoka';
+	font-weight: 400;
 }
 
-.negative:checked,
-.slightlyNegative:checked {
-	background-color: red;
-	border: 4px solid red;
-}
 
-.positive {
-	/*remove default appearance*/
-	appearance: none;
-	-webkit-appearance: none;
 
-	/*custom styling*/
-	height: 30px;
-	width: 30px;
-	border: 4px solid rgb(123, 230, 123);
-	border-radius: 50%;
-}
+/* Responsive Design for small screens */
+@media only screen and (max-width: 767px), 
+screen and (max-height: 480px){
+	h1.title{
+		margin-top: 69px;
+		font-size: 40px;
+		
+	}
 
-.slightlyPositive {
-	/*remove default appearance*/
-	appearance: none;
-	-webkit-appearance: none;
-
-	/*custom styling*/
-	top: 0;
-	left: 0;
-	height: 30px;
-	width: 30px;
-	border: 4px solid rgb(123, 230, 123);
-	border-radius: 50%;
-}
-
-.positive:hover,
-.slightlyPositive:hover {
-	background-color: rgb(120, 202, 120);
-	border: 4px solid rgb(120, 202, 120);
-}
-
-.positive:checked,
-.slightlyPositive:checked {
-	background-color: rgb(72, 165, 72);
-	border: 4px solid rgb(72, 165, 72);
-}
-.neutral {
-	/*remove default appearance*/
-	appearance: none;
-	-webkit-appearance: none;
-
-	/*custom styling*/
-	top: 0;
-	left: 0;
-	height: 30px;
-	width: 30px;
-	border: 4px solid #a7a7a7;
-	border-radius: 50%;
-}
-
-/*change color to grey on hover*/
-.neutral:hover {
-	background-color: #a7a7a7;
-	border: 3px solid #a7a7a7;
-}
-
-.neutral:checked {
-	background-color: #828282;
-	border: 3px solid #828282;
-}
-
-a.agree {
-	font-size: large;
-	padding-left: 2%;
-}
-
-a.disagree {
-	font-size: large;
-	padding-right: 2%;
-}
-
-@media (min-width: 700px) {
+	.question {
+		padding: 10px;
+	}
+	h2.question-prompt {
+		font-size: 30px;
+	}
+	.question label{
+		font-size: 18px;
+	}
 	input {
 		background-color: white;
 		margin: 10px 20px 10px 20px;
@@ -187,104 +171,12 @@ a.disagree {
 		padding-right: 2%;
 	}
 
-	.negative {
-		/*remove default appearance*/
-		appearance: none;
-		-webkit-appearance: none;
-
-		/*custom styling*/
-		height: 60px;
-		width: 60px;
-		border: 4px solid rgb(237, 169, 169);
-		border-radius: 50%;
+	#back-button:hover, #reset:hover{
+		background: none;
+		color: #000;
 	}
 
-	.slightlyNegative {
-		/*remove default appearance*/
-		appearance: none;
-		-webkit-appearance: none;
 
-		/*custom styling*/
-		position: static;
-		height: 50px;
-		width: 50px;
-		border-radius: 50%;
-		border: 4px solid rgb(237, 169, 169);
-	}
-
-	.negative:hover,
-	.slightlyNegative:hover {
-		border: 4px solid rgb(243, 72, 72);
-		background-color: rgb(243, 72, 72);
-	}
-
-	.negative:checked,
-	.slightlyNegative:checked {
-		background-color: red;
-		border: 4px solid red;
-	}
-
-	.positive {
-		/*remove default appearance*/
-		appearance: none;
-		-webkit-appearance: none;
-
-		/*custom styling*/
-		height: 60px;
-		width: 60px;
-		border: 4px solid rgb(123, 230, 123);
-		border-radius: 50%;
-	}
-
-	.slightlyPositive {
-		/*remove default appearance*/
-		appearance: none;
-		-webkit-appearance: none;
-
-		/*custom styling*/
-		top: 0;
-		left: 0;
-		height: 45px;
-		width: 45px;
-		border: 4px solid rgb(123, 230, 123);
-		border-radius: 50%;
-	}
-
-	.positive:hover,
-	.slightlyPositive:hover {
-		background-color: rgb(120, 202, 120);
-		border: 4px solid rgb(120, 202, 120);
-	}
-
-	.positive:checked,
-	.slightlyPositive:checked {
-		background-color: rgb(72, 165, 72);
-		border: 4px solid rgb(72, 165, 72);
-	}
-	.neutral {
-		/*remove default appearance*/
-		appearance: none;
-		-webkit-appearance: none;
-
-		/*custom styling*/
-		top: 0;
-		left: 0;
-		height: 40px;
-		width: 40px;
-		border: 4px solid #a7a7a7;
-		border-radius: 50%;
-	}
-
-	/*change color to grey on hover*/
-	.neutral:hover {
-		background-color: #a7a7a7;
-		border: 3px solid #a7a7a7;
-	}
-
-	.neutral:checked {
-		background-color: #828282;
-		border: 3px solid #828282;
-	}
 }
 
 /* fade animations for questions and remove from display after */

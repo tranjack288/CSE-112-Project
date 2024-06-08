@@ -2,38 +2,34 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>About</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+		<title>Noodle Craft questionnaire</title>
 		<link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
 
-		<!-- Prefetch asset files -->
+		<!-- Prefetch asset files -->		
+		<link rel="prefetch" href="../img/favicon.ico" />
+		<link rel="prefetch" href="../img/icon.png" />
+		<link rel="prefetch" href="../img/landing-background.webp" />
 		<link rel="prefetch" href="../img/aaron-icon.jpg" />
 		<link rel="prefetch" href="../img/anthony-icon.jpg" />
-		<link rel="prefetch" href="../img/beef-noodle-soup-icon-1.png" />
-		<link rel="prefetch" href="../img/bread-icon-1.png" />
-		<link rel="prefetch" href="../img/chicken-noodle-soup-icon-1.png" />
 		<link rel="prefetch" href="../img/darren-icon.jpg" />
-		<link rel="prefetch" href="../img/favicon.ico" />
 		<link rel="prefetch" href="../img/hanson-icon.png" />
 		<link rel="prefetch" href="../img/henry-icon.jpg" />
 		<link rel="prefetch" href="../img/hieu-icon.jpeg" />
 		<link rel="prefetch" href="../img/holly-icon.png" />
-		<link rel="prefetch" href="../img/icon.png" />
+		<link rel="prefetch" href="../img/mark-icon.jpeg" />
+		<link rel="prefetch" href="../img/steve-icon.jpg" />
+		<link rel="prefetch" href="../img/beef-noodle-soup-icon-1.png" />
+		<link rel="prefetch" href="../img/chicken-noodle-soup-icon-1.png" />
+		<link rel="prefetch" href="../img/bread-icon-1.png" />
 		<link rel="prefetch" href="../img/instant-noodles-icon-1.png" />
-		<link rel="prefetch" href="../img/landing-background.jpg" />
 		<link rel="prefetch" href="../img/lasagna-icon-1.png" />
 		<link rel="prefetch" href="../img/mac-and-cheese-icon-1.png" />
-		<link rel="prefetch" href="../img/mark-icon.jpeg" />
-		<link rel="prefetch" href="../img/noodle1.jpg" />
-		<link rel="prefetch" href="../img/noodle2.jpg" />
-		<link rel="prefetch" href="../img/noodle3.jpg" />
 		<link rel="prefetch" href="../img/pad-thai-icon-1.png" />
 		<link rel="prefetch" href="../img/pho-icon-1.png" />
 		<link rel="prefetch" href="../img/ramen-icon-1.png" />
 		<link rel="prefetch" href="../img/ravioli-icon-1.png" />
-		<link rel="prefetch" href="../img/smokeAnimation.gif" />
 		<link rel="prefetch" href="../img/spaghetti-icon-1.png" />
-		<link rel="prefetch" href="../img/steve-icon.jpg" />
 		<link rel="prefetch" href="../img/udon-icon-1.png" />
 		<link rel="prefetch" href="../sounds/bg-music.wav" />
 		<link rel="prefetch" href="../sounds/congratulations.wav" />
@@ -67,16 +63,8 @@
 					<a id="noodleText" href="../../index.html"> Noodle Craft </a>
 				</li>
 				<li class="item"><a href="./about.html">About Us</a></li>
-				<li class="item current">
+				<li class="item">
 					<a href="./myRecipes.html">my Recipes</a>
-				</li>
-				<li class="item accessibility-container">
-					<label class="switch">
-						<input name="accessibility" type="checkbox" />
-						<span class="slider round">
-							<i class="fas fa-assistive-listening-systems fa-lg"></i>
-						</span>
-					</label>
 				</li>
 				<li class="item button bg-music-toggle" id="bg-music-toggle">
 					<i class="fas fa-lg" id="bg-music-toggle-icon"></i>
@@ -96,15 +84,14 @@
 		<main>
 			<div>
 				<h1 class="title speechify speechify-onload">
-					Noodle Personality Questionnaire
+					Noodle Questionnaire
 				</h1>
-				<h2> Select your option where 1 is the least and 10 is the most</h2>
 			</div>
 
 			<!--Questions go here.-->
 			<section id="questionnaire">
 				<!-- Progress bar from 1 through 10 -->
-				<div id = "progressPercent"></div>
+				<div id = "progressPercent">0%</div>
 				<div id="progressBar">
 					<div id="barStatus"></div>
 				</div>
@@ -116,28 +103,26 @@
 					<form id="surveyQuestion1">
 						<div class="radio-group">
 						  <div class="row">
-							<input type="radio" name="qradio" value="1">
-							<label>1</label>
-							<input type="radio" name="qradio" value="2">
-							<label>2</label>
-							<input type="radio" name="qradio" value="3">
-							<label>3</label>
-							<input type="radio" name="qradio" value="4">
-							<label>4</label>
-							<input type="radio" name="qradio" value="5">
-							<label>5</label>
-						  </div>
-						  <div class="row">
-							<input type="radio" name="qradio" value="6">
-							<label>6</label>
-							<input type="radio" name="qradio" value="7">
-							<label>7</label>
-							<input type="radio" name="qradio" value="8">
-							<label>8</label>
-							<input type="radio" name="qradio" value="9">
-							<label>9</label>
-							<input type="radio" name="qradio" value="10">
-							<label>10</label>
+							<div>
+								<input type="radio" name="qradio" value="1">
+								<label>Under $5</label>	
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="2.5">
+								<label>$5 - $10</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="5">
+								<label>$10 - $15</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="7.5">
+								<label>$15 - $20</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="10">
+								<label>Over $20</label>	
+							</div>							
 						  </div>
 						</div>
 						
@@ -153,28 +138,26 @@
 					<form id="surveyQuestion2">
 						<div class="radio-group">
 						  <div class="row">
-							<input type="radio" name="qradio" value="1">
-							<label>1</label>
-							<input type="radio" name="qradio" value="2">
-							<label>2</label>
-							<input type="radio" name="qradio" value="3">
-							<label>3</label>
-							<input type="radio" name="qradio" value="4">
-							<label>4</label>
-							<input type="radio" name="qradio" value="5">
-							<label>5</label>
-						  </div>
-						  <div class="row">
-							<input type="radio" name="qradio" value="6">
-							<label>6</label>
-							<input type="radio" name="qradio" value="7">
-							<label>7</label>
-							<input type="radio" name="qradio" value="8">
-							<label>8</label>
-							<input type="radio" name="qradio" value="9">
-							<label>9</label>
-							<input type="radio" name="qradio" value="10">
-							<label>10</label>
+							<div>
+								<input type="radio" name="qradio" value="1">
+								<label>Less than 10 minutes</label>	
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="2.5">
+								<label>10 - 20 minutes</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="5">
+								<label>20 - 30 minutes</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="7.5">
+								<label>30 - 45 minutes</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="10">
+								<label>Over 45 minutes</label>	
+							</div>
 						  </div>
 						</div>
 						
@@ -187,32 +170,29 @@
 					<form id="surveyQuestion3">
 						<div class="radio-group">
 						  <div class="row">
-							<input type="radio" name="qradio" value="1">
-							<label>1</label>
-							<input type="radio" name="qradio" value="2">
-							<label>2</label>
-							<input type="radio" name="qradio" value="3">
-							<label>3</label>
-							<input type="radio" name="qradio" value="4">
-							<label>4</label>
-							<input type="radio" name="qradio" value="5">
-							<label>5</label>
+							<div>
+								<input type="radio" name="qradio" value="1">
+								<label>Meat-focused</label>	
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="2.5">
+								<label>More meat</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="5">
+								<label>Balanced</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="7.5">
+								<label>More veggie</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="10">
+								<label>Veggie-focused</label>	
+							</div>
 						  </div>
-						  <div class="row">
-							<input type="radio" name="qradio" value="6">
-							<label>6</label>
-							<input type="radio" name="qradio" value="7">
-							<label>7</label>
-							<input type="radio" name="qradio" value="8">
-							<label>8</label>
-							<input type="radio" name="qradio" value="9">
-							<label>9</label>
-							<input type="radio" name="qradio" value="10">
-							<label>10</label>
-						  </div>
-						</div>
-						
-					  </form>
+						</div>						
+					</form>
 				</div>
 				<div class="question">
 					<h2 class="question-prompt speechify speechify-onload">
@@ -221,28 +201,26 @@
 					<form id="surveyQuestion4">
 						<div class="radio-group">
 						  <div class="row">
-							<input type="radio" name="qradio" value="1">
-							<label>1</label>
-							<input type="radio" name="qradio" value="2">
-							<label>2</label>
-							<input type="radio" name="qradio" value="3">
-							<label>3</label>
-							<input type="radio" name="qradio" value="4">
-							<label>4</label>
-							<input type="radio" name="qradio" value="5">
-							<label>5</label>
-						  </div>
-						  <div class="row">
-							<input type="radio" name="qradio" value="6">
-							<label>6</label>
-							<input type="radio" name="qradio" value="7">
-							<label>7</label>
-							<input type="radio" name="qradio" value="8">
-							<label>8</label>
-							<input type="radio" name="qradio" value="9">
-							<label>9</label>
-							<input type="radio" name="qradio" value="10">
-							<label>10</label>
+							<div>
+								<input type="radio" name="qradio" value="1">
+								<label><strong>Not spicy: </strong>No heat, mild flavors</label>	
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="2.5">
+								<label><strong>Mildly spicy: </strong>Just a hint of spice</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="5">
+								<label><strong>Medium spicy: </strong>Noticeable heat but not overwhelming</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="7.5">
+								<label><strong>Spicy: </strong>Significant heat for spice lovers</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="10">
+								<label><strong>Very Spicy: </strong>Intense heat for the adventurous</label>	
+							</div>
 						  </div>
 						</div>
 						
@@ -255,28 +233,26 @@
 					<form id="surveyQuestion5">
 						<div class="radio-group">
 						  <div class="row">
-							<input type="radio" name="qradio" value="1">
-							<label>1</label>
-							<input type="radio" name="qradio" value="2">
-							<label>2</label>
-							<input type="radio" name="qradio" value="3">
-							<label>3</label>
-							<input type="radio" name="qradio" value="4">
-							<label>4</label>
-							<input type="radio" name="qradio" value="5">
-							<label>5</label>
-						  </div>
-						  <div class="row">
-							<input type="radio" name="qradio" value="6">
-							<label>6</label>
-							<input type="radio" name="qradio" value="7">
-							<label>7</label>
-							<input type="radio" name="qradio" value="8">
-							<label>8</label>
-							<input type="radio" name="qradio" value="9">
-							<label>9</label>
-							<input type="radio" name="qradio" value="10">
-							<label>10</label>
+							<div>
+								<input type="radio" name="qradio" value="1">
+								<label><strong>Very easy:</strong> no special skills needed</label>	
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="2.5">
+								<label><strong>Easy:</strong> Basic cooking skills required</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="5">
+								<label><strong>Moderate:</strong> Some cooking experience helpful</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="7.5">
+								<label><strong>Challenging:</strong> Requires good cooking skills</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="10">
+								<label><strong>Expert:</strong> Complex recipes for experienced cooks</label>	
+							</div>
 						  </div>
 						</div>
 						
@@ -289,28 +265,26 @@
 					<form id="surveyQuestion6">
 						<div class="radio-group">
 						  <div class="row">
-							<input type="radio" name="qradio" value="1">
-							<label>1</label>
-							<input type="radio" name="qradio" value="2">
-							<label>2</label>
-							<input type="radio" name="qradio" value="3">
-							<label>3</label>
-							<input type="radio" name="qradio" value="4">
-							<label>4</label>
-							<input type="radio" name="qradio" value="5">
-							<label>5</label>
-						  </div>
-						  <div class="row">
-							<input type="radio" name="qradio" value="6">
-							<label>6</label>
-							<input type="radio" name="qradio" value="7">
-							<label>7</label>
-							<input type="radio" name="qradio" value="8">
-							<label>8</label>
-							<input type="radio" name="qradio" value="9">
-							<label>9</label>
-							<input type="radio" name="qradio" value="10">
-							<label>10</label>
+							<div>
+								<input type="radio" name="qradio" value="1">
+								<label><strong>Not customizable: </strong>Follow the recipe exactly</label>	
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="2.5">
+								<label><strong>Slightly customizable: </strong>Few options for minor adjustments</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="5">
+								<label><strong>Moderately customizable: </strong>Some ingredients can be swapped or adjusted</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="7.5">
+								<label><strong>Highly customizable: </strong>Most ingredients and steps can be altered</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="10">
+								<label><strong>Completely customizable: </strong>Create your own recipe with full flexibility</label>	
+							</div>
 						  </div>
 						</div>
 						
@@ -323,48 +297,60 @@
 					<form id="surveyQuestion7">
 						<div class="radio-group">
 						  <div class="row">
-							<input type="radio" name="qradio" value="1">
-							<label>1</label>
-							<input type="radio" name="qradio" value="2">
-							<label>2</label>
-							<input type="radio" name="qradio" value="3">
-							<label>3</label>
-							<input type="radio" name="qradio" value="4">
-							<label>4</label>
-							<input type="radio" name="qradio" value="5">
-							<label>5</label>
+							<div>
+								<input type="radio" name="qradio" value="1">
+								<label><strong>Western: </strong>e.g. Italian, America</label>	
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="2.5">
+								<label><strong>Westernish: </strong>Inspired by Western cuisines</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="5">
+								<label><strong>Fusion: </strong>A blend of both culinary traditions</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="7.5">
+								<label><strong>Easternish: </strong>Inspired by Eastern cuisines</label>
+							</div>
+							<div>
+								<input type="radio" name="qradio" value="10">
+								<label><strong>Eastern: </strong>e.g., Chinese, Japanese, Thai</label>	
+							</div>
 						  </div>
-						  <div class="row">
+						  <!-- <div class="row">
 							<input type="radio" name="qradio" value="6">
 							<label>6</label>
 							<input type="radio" name="qradio" value="7">
 							<label>7</label>
-							<input type="radio" name="qradio" value="8">
+							<input type="radio" name="qradio" value="7.5">
 							<label>8</label>
 							<input type="radio" name="qradio" value="9">
 							<label>9</label>
 							<input type="radio" name="qradio" value="10">
 							<label>10</label>
-						  </div>
+						  </div> -->
 						</div>
 						
 					  </form>
 				</div>
 				
 				<div id="buttons">
-					<a><button id="reset" class="button">Reset</button></a>
-					<a id="next"
-						><button id="submit" class="button">
-							Order Noodle Personality!
-						</button></a
-					>
+					<button id="back-button" class="button"> Back</button>						
+					<button id="reset" class="button">Reset</button>
+					
+					<a id="next">
+						<button id="submit" class="button disabledBtn" disabled>
+							Get Noodle Recipes!
+						</button>
+					</a>
 				</div>
 			</section>
 		</main>
 
 		<!-- Footer -->
 		<footer class="footer">
-			<p>© Tasty Noodles</p>
+			<p>© Noodle Craft</p>
 		</footer>
 
 		<!-- Scripts -->
