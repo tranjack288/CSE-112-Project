@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', init);
 
-/** On load function */
 function init() {
      let surveyResults = localStorage.getItem('surveyResults')
      let surveyResultsJSON = JSON.parse(surveyResults);
