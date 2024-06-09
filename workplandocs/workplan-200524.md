@@ -1,4 +1,4 @@
-# Workplan for Thursday, May 20 2024
+# Workplan for May 20 2024
 
 ## What we worked on last week:
 We were able to progress more onto the website, most of the websites webpages are done. Although some webpages need to combined and pushed. 

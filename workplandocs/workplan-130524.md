@@ -1,4 +1,4 @@
-# Workplan for Thursday, May 13 2024
+# Workplan for May 13 2024
 
 ## What we worked on this week:
 Most of the work done this week was setting up and getting used to our codebase. The backend team explored ways to host this somwhere else we can have a backend. The frontend team started working on making changes to the website.
