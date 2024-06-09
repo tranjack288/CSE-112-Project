@@ -14,9 +14,11 @@ window.addEventListener('DOMContentLoaded', init);
  */
 async function init(){
 	const noodleChosen = JSON.parse(localStorage.getItem("noodleChosen"));
-	
+	noodleChosen.ingredients = JSON.parse(localStorage.getItem("confirmedIngredients"))["ingredients"];
     const noodleChosenImg = noodleChosen.path;
     const noodleChosenName = noodleChosen.noodleName;
+	
+
 
 	// Change the noodle Image and noodle name
 	const noodleImgs = document.querySelectorAll('.noodleImg');
@@ -30,6 +32,7 @@ async function init(){
 	// delete survey answers from local storage
 	localStorage.removeItem('surveyAnswers');
 
+	//console.log(noodleChosen);
 	let backendRecipe = await getBackendRecipe(noodleChosen);	
 	let recipeTextBackend =  backendRecipe["response"];
 	let recipeJustText = recipeTextBackend;
