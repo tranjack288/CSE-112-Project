@@ -1,4 +1,4 @@
-# Workplan for Thursday, May 2 2024
+# Workplan for May 6 2024
 
 ## Our Definition of a Sprint
 Due to the time constraints of having 5-6 weeks to complete this project, we are planning on having **weekly sprints**. This duration strikes a balance between providing enough time for meaningful progress and keeping the momentum high.
