@@ -8,36 +8,36 @@
 let memberIndex = 0;
 const members = [
 	{
-		name: 'Mark Lucernas',
-		memberImage: '../img/mark-icon.jpeg',
+		name: 'Daniel Carrascoza',
+		memberImage: '../img/Daniel1.webp',
 		memberNoodleImg: '../img/ramen-icon-1.png',
 		memberNoodleName: 'Ramen',
 		description:
-			'Mark is a third year studying computer science and is one of the team leads for our team.'
+			'Daniel is a 4th year Computer Engineering student from LA and was a developer on the back-end team.'
 	},
 	{
-		name: 'Hieu Pham',
-		memberImage: '../img/hieu-icon.jpeg',
+		name: 'Jack Tran',
+		memberImage: '../img/Jack_Tran.webp',
 		memberNoodleImg: '../img/ravioli-icon-1.png',
 		memberNoodleName: 'Ravioli',
 		description:
-			'Hieu is another one of our team leads and is currently a second year studying computer science.'
+			'Jack is a 4th year student studying computer engineering and was one of the team leads for our team.'
 	},
 	{
-		name: 'Xinle Yu',
-		memberImage: '../img/henry-icon.jpg',
+		name: 'Abishek Siva',
+		memberImage: '../img/abishek.webp',
 		memberNoodleImg: '../img/beef-noodle-soup-icon-1.png',
 		memberNoodleName: 'Beef Noodle Soup',
 		description:
-			'Xinle (Henry) is a sophomore majoring in computer science, and he is a developer on the team.'
+			'Abishek is a 4th year Math-CS student from the Bay Area and was a developer on the back-end team.'
 	},
 	{
-		name: 'Aaron Kann',
-		memberImage: '../img/aaron-icon.jpg',
+		name: 'Ruthvivcsai Sivakumar',
+		memberImage: '../img/Ruthvic.webp',
 		memberNoodleImg: '../img/mac-and-cheese-icon-1.png',
 		memberNoodleName: 'Mac and Cheese',
 		description:
-			"Aaron's role on the team is a developer, and he is a second year studying math and computer science."
+			"Ruthvic is a 4th year computer science student, and was one of the team leads for this project."
 	},
 	{
 		name: 'Steve Yin',
@@ -45,39 +45,39 @@ const members = [
 		memberNoodleImg: '../img/udon-icon-1.png',
 		memberNoodleName: 'Udon',
 		description:
-			'Steve is a developer on our team, and he is currently a second year majoring in computer engineering.'
+			'Steve is a 3rd year Computer Engineering student and was a frontend developer.'
 	},
 	{
-		name: 'Darren Yu',
-		memberImage: '../img/darren-icon.jpg',
+		name: 'Albert Chen',
+		memberImage: '../img/albert.webp',
 		memberNoodleImg: '../img/instant-noodles-icon-1.png',
 		memberNoodleName: 'Instant Noodles',
 		description:
-			'Darren is a second year computer science major, and he is the planner as well as developer for the team.'
+			'Albert is a 4th year Computer Engineering student from Seattle and was a backend developer and CI/CD manager.'
 	},
 	{
-		name: 'Holly Zhu',
-		memberImage: '../img/holly-icon.png',
+		name: 'Jason Chen',
+		memberImage: '../img/Jason.webp',
 		memberNoodleImg: '../img/spaghetti-icon-1.png',
 		memberNoodleName: 'Spaghetti',
 		description:
-			'Holly is a computer science major with a design minor, and she is the designer and a developer on our team.'
+			'Jason is a 4th year CS minor student from Shanghai. He was a front-end developer and designer for this project.'
 	},
 	{
-		name: 'Anthony Yao',
-		memberImage: '../img/anthony-icon.jpg',
+		name: 'Tyler Le',
+		memberImage: '../img/tyler.webp',
 		memberNoodleImg: '../img/pho-icon-1.png',
 		memberNoodleName: 'Pho',
 		description:
-			"Anthony's role on the team is a developer, and he is currently a sophomore majoring in computer science."
+			'Tyler is a third year Math-CS major and is a back-end developer on the team.'
 	},
 	{
-		name: 'Hanson Wang',
-		memberImage: '../img/hanson-icon.png',
+		name: 'Gonzalo Allen-Peres',
+		memberImage: '../img/gonzalo.webp',
 		memberNoodleImg: '../img/pad-thai-icon-1.png',
 		memberNoodleName: 'Pad Thai',
 		description:
-			'Hanson is a math and computer science in his second year, and serves as a developer on the team.'
+			'Gonzalo is a 2nd year CS student from San Diego and was a front-end developer on this project.'
 	}
 ];
 
