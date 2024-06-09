@@ -70,10 +70,12 @@ function init() {
           }
      });
 
-     // this function takes in a grid item, checks if/which box is selected, and selects/unselects boxes accordingly
-     // gridItem this is a div of a grid ityem
-     // {[boolean,HTMLDivElement]}[if a box is selected (boolean),gridItem altered]
-     
+     //this function takes in a grid item, checks if/which box is selected, and selects/unselects boxes accordingly
+     /**
+      * 
+      * @param {*} gridItem this is a div of a grid ityem
+      * @returns {[boolean,HTMLDivElement]}[if a box is selected (boolean),gridItem altered]
+      */
      function changeSelected(gridItem){
           if (typeof changeSelected.currentlySelected === 'undefined') {
                // Initialize the first square to be pre-selected on init
