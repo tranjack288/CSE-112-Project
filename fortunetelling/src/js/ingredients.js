@@ -16,6 +16,7 @@ async function init() {
     const noodleChosenImg = noodleChosenJSON.path;
     const noodleChosenName = noodleChosenJSON.noodleName;
     const noodleChosenIngredients = noodleChosenJSON.ingredients;
+    
 
     // The div container for all noodle ingredients
     let ingredientsContainer = document.getElementById('ingredients-container');
@@ -65,7 +66,6 @@ async function init() {
                 allIngredients[NoodleIngredientEle.data] = true;
             }
             NoodleIngredientEle.classList.toggle('grayedOut');
-            //console.log(allIngredients);
         });
     }
 

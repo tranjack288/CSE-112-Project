@@ -51,6 +51,7 @@ jobs:
         working-directory: ./fortunetelling
         # Remove node_modules right after because jekyll will include it in build and return error
         run: npm run docgen && rm -r node_modules
+     
 
       # Build pages and jekyll
       - name: Setup Pages

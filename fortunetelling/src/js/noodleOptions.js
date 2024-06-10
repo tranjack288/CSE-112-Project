@@ -74,7 +74,7 @@ function init() {
      /**
       * 
       * @param {*} gridItem this is a div of a grid ityem
-      * @returns {[boolean,HTMLDivElement]}[if a box is selected (boolean),gridItem altered]
+      * @returns {Array.<boolean, HTMLDivElement>}
       */
      function changeSelected(gridItem){
           if (typeof changeSelected.currentlySelected === 'undefined') {
