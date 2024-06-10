@@ -5,6 +5,8 @@
 // - https://jsdoc.app/howto-es2015-modules.html
 // - https://jsdoc.app/howto-es2015-classes.html
 
+
+// import { v4 as uuidv4 } from 'uuid';
 window.addEventListener('DOMContentLoaded', init);
 
 
@@ -29,24 +31,152 @@ async function init(){
 
 	// delete survey answers from local storage
 	localStorage.removeItem('surveyAnswers');
+	localStorage.removeItem('confirmedIngredients');
 
+	// Add event listener to my recipe and front page button
+	let saved = false; // Recipe saved is false on default
+	let leavePage = false; // Determines whether or not to leave noodleResults page when button is clicked
+	let generatedImage = null;
+	let recipeTextBackend = null;
+
+	const myRecipesButton = document.getElementById('my-recipes-button');
+	const frontPageButton = document.getElementById('front-page-button');
+	const myRecipesLink = document.querySelector('a[href="./myRecipes.html"]');
+	const aboutPageLink = document.querySelector('a[href="./about.html"]');
+
+	myRecipesButton.addEventListener('click', ()=>{		
+		if(saved == false){
+			let saveRecipeStatus = saveRecipe(noodleChosenName, generatedImage, noodleChosenImg, recipeTextBackend);
+			leavePage = saveRecipeStatus[0];
+			saved = saveRecipeStatus[1];
+		}
+		if (leavePage == true || saved == true){
+			window.location.href="./myRecipes.html";	
+		}		
+	});
+
+	frontPageButton.addEventListener('click', ()=>{
+		let leavePage = false
+		if(saved == false){
+			let saveRecipeStatus = saveRecipe(noodleChosenName, generatedImage, noodleChosenImg, recipeTextBackend);
+			leavePage = saveRecipeStatus[0];
+			saved = saveRecipeStatus[1];
+		}	
+		if (leavePage == true || saved == true){
+			window.location.href="../../index.html";
+		}
+	});
+
+	myRecipesLink.addEventListener('click', (event)=>{	
+		event.preventDefault();
+		if(saved == false){
+			let saveRecipeStatus = saveRecipe(noodleChosenName, generatedImage, noodleChosenImg, recipeTextBackend);
+			leavePage = saveRecipeStatus[0];
+			saved = saveRecipeStatus[1];
+		}
+		if (leavePage == true || saved == true){
+			window.location.href="./myRecipes.html";	
+		}		
+	});
+
+	aboutPageLink.addEventListener('click', (event)=>{	
+		event.preventDefault();
+		if(saved == false){
+			let saveRecipeStatus = saveRecipe(noodleChosenName, generatedImage, noodleChosenImg, recipeTextBackend);
+			leavePage = saveRecipeStatus[0];
+			saved = saveRecipeStatus[1];
+		}
+		if (leavePage == true || saved == true){
+			window.location.href="./about.html";	
+		}		
+	});
+
+
+
+	// Recipe Text
 	let backendRecipe = await getBackendRecipe(noodleChosen);	
-	let recipeTextBackend =  backendRecipe["response"];
+	recipeTextBackend =  backendRecipe["response"];
 	let recipeJustText = recipeTextBackend;
 	//console.log(recipeTextBackend);
 	recipeTextBackend = turnRecipeIntoHTML(recipeTextBackend);
 	const recipeText = document.getElementById("recipeText");
-	recipeText.innerHTML = recipeTextBackend;
-	//grab descrition and send to DALLE
+	recipeText.innerHTML = recipeTextBackend; 
+
+	// AI Noodle Image
+	// Grab descrition and send to DALLE
 	let DescriptionsIndex = recipeJustText.indexOf("Description");
 	let DirectionsIndex = recipeJustText.indexOf("Directions");
 	recipeJustText = " just the food " + recipeJustText.slice(DescriptionsIndex,DirectionsIndex);
 	
 	console.log(recipeJustText);
-	let generatedImage = await getGeneratedImage(recipeJustText);
+	generatedImage = await getGeneratedImage(recipeJustText);
 	console.log(JSON.stringify(generatedImage));
 	noodleImgs[0].setAttribute("src", (generatedImage));
 	noodleImgs[1].setAttribute("src", (generatedImage));
+
+	// Saving fully generated recipe to localstorage
+	if(saved == false){
+		let saveRecipeStatus = saveRecipe(noodleChosenName, generatedImage, noodleChosenImg, recipeTextBackend);
+		leavePage = saveRecipeStatus[0];
+		saved = saveRecipeStatus[1];
+	}
+	
+
+}
+/**
+ * Saving current recipe to localstorage
+ * @param {String} noodleChosenName 
+ * @param {String} generatedImage 
+ * @param {String} defaultImage 
+ * @param {String} recipeTextBackend 
+ * @returns {Array.<boolean,boolean>} leave page, save recipe
+ */
+function saveRecipe(noodleChosenName, generatedImage, defaultImage, recipeTextBackend){
+	let myRecipesMap = new Map();
+	let currRecipe = {};
+	currRecipe['noodleName'] = noodleChosenName;
+
+	// Check generated text status (recipeTextBackend)
+	if(recipeTextBackend != null){ // Recipe is generated 
+		currRecipe['recipe'] = recipeTextBackend;
+	}else{ // Recipe is not generated 
+		if(window.confirm('Your recipe is not ready yet, do you really wish to leave?')){
+			console.log('leave');
+			return [true, false]; // leave the page immediately
+		}else{
+			console.log('stay');
+			return [false, false]; // not leaving, wait for recipe generation
+		}
+	}
+
+	// Check generated Image status (generatedImage)
+	if(generatedImage != null){ // AI image is generated 
+		currRecipe['imgPath'] = generatedImage;
+	}else{ // AI image is not generated yet
+		if(window.confirm('Your noodle image is not ready yet, but you can still save your recipe with the default image. Do you really wish to leave?')){
+			// Use default noodle image
+			currRecipe['imgPath'] = defaultImage;
+		}else{
+			console.log('stay');
+			return [false, false]; // not leaving, wait for AI image generation
+		}
+	}
+	currRecipe['defaultImgPath'] = defaultImage;
+
+	
+	// Update or add myRecipes entry to local storage
+	if (localStorage.getItem('myRecipes') !== null){
+		let myRecipesMapArr = JSON.parse(localStorage.getItem('myRecipes'));
+		myRecipesMap = new Map(myRecipesMapArr);
+	}
+	let uniqueNoodleID =  uuid.v4();
+	// update map by adding current recipe
+	myRecipesMap.set(uniqueNoodleID, currRecipe);
+	let myRecipesMapArr = Array.from(myRecipesMap);
+	localStorage.setItem('myRecipes', JSON.stringify(myRecipesMapArr));
+
+	// true to leave the page, and true to save recipe
+	return [true, true];
 }
 
 /**

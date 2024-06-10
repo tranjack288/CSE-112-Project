@@ -62,7 +62,7 @@ nav .button {
 
 #instruction-text > h2{
 	color: white;
-	font-size: 3.5rem;
+	font-size: 3.2rem;
 	line-height: 60px;
 	text-align: left;
 	margin-bottom: 20px;
@@ -133,12 +133,12 @@ nav .button {
 	padding: 0 20px;
 }
 
-#back-button{
+#back-button, #my-recipes-button{
 	border: 2px solid #da0b0b;
 	background: none;
 	color: #000;
 }
-#back-button:hover{
+#back-button:hover, #my-recipes-button:hover{
 	background-color: #AE3131;
 	color: #fff;
 }

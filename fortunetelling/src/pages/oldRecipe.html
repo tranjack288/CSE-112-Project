@@ -87,7 +87,7 @@
                             <a id="noodleText" href="."> Noodle Craft </a>
                         </li>	
 
-                        <li class="item"><a href="./myRecipes.html">My Recipes</a></li>
+                        <li class="item"><a href="./myRecipes.html">my Recipes</a></li>
                         <li class="item"><a href="./about.html">About Us</a></li>
                         <li class="item button bg-music-toggle" id="bg-music-toggle">
                             <i class="fas fa-lg" id="bg-music-toggle-icon"></i>
@@ -105,7 +105,7 @@
 
                 <div id = "instruction-text-mobile">
                     <div id = "instruction-text-mobile-content">
-                        <img class="noodleImg" src="../img/ramen-icon-1.webp" alt="Noodle icon image">
+                        <img class="noodleImg" src="../img/ramen-icon-1.png" alt="Noodle icon image">
                         <div>
                             <h2 class="noodleName"> No Noodle Found </h2>
                             <p> Your custom noodle recipe, tailored perfectly to your preferences! </p>        
@@ -122,8 +122,12 @@
 				
                 <div id = "button-section">
                     <div id = button-container>
-                        <button id="my-recipes-button">My Recipes</button>    
-                        <button id="front-page-button">Front Page</button>                        
+                        <a href="./myRecipes.html">
+                            <button id="my-recipes-button">My Recipes</button> 
+                        </a>
+                        <a href="../../index.html">
+                            <button id="front-page-button">Front Page</button> 
+                        </a>
                     </div>
                 </div>
                 
@@ -134,7 +138,7 @@
         <script src="../js/main.js" type="module"></script>
         <script src="../js/settings.js" type="module"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuid.min.js"></script>
-        <script src="../js/noodlesResults.js" type="module"></script>
+        <!-- <script src="../js/noodlesResults.js" type="module"></script> -->
+        <script src="../js/oldRecipe.js"></script>
     </body>
 </html>
