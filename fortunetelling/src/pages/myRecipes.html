@@ -18,7 +18,7 @@
 		<link rel="prefetch" href="../img/henry-icon.jpg" />
 		<link rel="prefetch" href="../img/hieu-icon.jpeg" />
 		<link rel="prefetch" href="../img/holly-icon.png" />
-		<link rel="prefetch" href="../img/icon.png" />
+		<link rel="prefetch" href="../img/icon.webp" />
 		<link rel="prefetch" href="../img/instant-noodles-icon-1.png" />
 		<link rel="prefetch" href="../img/landing-background.webp" />
 		<link rel="prefetch" href="../img/lasagna-icon-1.png" />
@@ -43,7 +43,6 @@
 		<!-- main.css. Page-specific styles should be in questionnaire.css. -->
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
 		<link href="../css/navbar.css" rel="stylesheet" type="text/css" />
-		<link href="../css/questionnaire.css" rel="stylesheet" type="text/css" />
 		<link href="../css/myRecipes.css" rel="stylesheet" type="text/css" />
 		<!-- Font Awesome -->
 		<link
@@ -63,15 +62,15 @@
 		<nav id="navbar">
 			<ul class="menu">
 				<a href="../../index.html">
-					<img id="icon" src="../img/icon.png" />
+					<img id="icon" src="../img/icon.webp" />
 				</a>
 				<li class="logo">
 					<a id="noodleText" href="../../index.html"> Noodle Craft </a>
 				</li>
-				<li class="item"><a href="./about.html">About Us</a></li>
 				<li class="item current">
-					<a href="./myRecipes.html">my Recipes</a>
+					<a href="./myRecipes.html">My Recipes</a>
 				</li>
+				<li class="item"><a href="./about.html">About Us</a></li>
 				<li class="item button bg-music-toggle" id="bg-music-toggle">
 					<i class="fas fa-lg" id="bg-music-toggle-icon"></i>
 				</li>
@@ -88,30 +87,30 @@
 
 		<!-- Main content -->
 		<main>
-			<h2 class = "title">My Recipes</h2>
-			<div id = "recipes-container">
-				<div id = "recipes-grid">
-					<a href = "./questionnaire.html" class="recipes-button" data-value="1">
-						<h3 id = "addnew">+ add new</h3>
-					</a>
-					<a href = "./noodlesResults.html" class="recipes-button" data-value="2">
-					<!--   This is where image 2 will be-->
-						<image alt = "image"></image>
-						<h3>Noodle name </h3>
-						<svg id="trash" width="25" height="28" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M8.41346 0V1.66667H0V5H1.68269V26.6667C1.68269 27.5507 2.03726 28.3986 2.66839 29.0237C3.29952 29.6488 4.15552 30 5.04808 30H21.875C22.7676 30 23.6236 29.6488 24.2547 29.0237C24.8858 28.3986 25.2404 27.5507 25.2404 26.6667V5H26.9231V1.66667H18.5096V0H8.41346ZM5.04808 5H21.875V26.6667H5.04808V5ZM8.41346 8.33333V23.3333H11.7788V8.33333H8.41346ZM15.1442 8.33333V23.3333H18.5096V8.33333H15.1442Z" fill="black"></path>
-						</svg>
-					</a>
-					<div class="recipes-button" data-value="3">
-					<!--    This is where image 3 will be -->
-						<h3 class="noodleName">Noodle 3</h3>
+			<section id="main-content">
+				<h2 class = "title">My Recipes</h2>
+				<div id = "recipes-container">
+					<div id = "recipes-grid">
+						<a href = "./questionnaire.html" id="add-new-button" class="recipes-button">
+							<h3 id = "add-new-text">+ ADD Recipe</h3>
+						</a>
+
+						<!-- <a href = "./noodlesResults.html" class="recipes-button">
+							<div>
+								<img src="../img/ramen-icon-1.webp" alt = "noodle image"></img>
+								<h3>Noodle Name </h3>
+							</div>
+							<button class="delete-button">
+								<svg width="25" height="28" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8.41346 0V1.66667H0V5H1.68269V26.6667C1.68269 27.5507 2.03726 28.3986 2.66839 29.0237C3.29952 29.6488 4.15552 30 5.04808 30H21.875C22.7676 30 23.6236 29.6488 24.2547 29.0237C24.8858 28.3986 25.2404 27.5507 25.2404 26.6667V5H26.9231V1.66667H18.5096V0H8.41346ZM5.04808 5H21.875V26.6667H5.04808V5ZM8.41346 8.33333V23.3333H11.7788V8.33333H8.41346ZM15.1442 8.33333V23.3333H18.5096V8.33333H15.1442Z" fill="black"></path>
+								</svg>	
+							</button>						
+						</a> -->
+
 					</div>
-					<div class="recipes-button" data-value="4">
-					<!--   This is where image 4 will be -->
-						<h3 class="noodleName">Noodle 4</h3>
-					</div>
-				</div>
-			</div>
+				</div>	
+			</section>
+			
 		</main>
 
 		<!-- Footer -->
@@ -132,7 +131,7 @@
 		<!-- remove the type="module" attribute. -->
 		<script src="../js/main.js" type="module"></script>
 		<script src="../js/settings.js" type="module"></script>
-		<script src="../js/questionnaire.js" type="module"></script>
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
+		<script src="../js/myRecipes.js" type="module"></script>
 	</body>
 </html>
