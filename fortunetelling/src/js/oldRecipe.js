@@ -7,6 +7,7 @@
 
 window.addEventListener('DOMContentLoaded', init);
 
+/** On load function */
 function init() {
     // Get noodle Id from the query string
     const queryString = window.location.search;

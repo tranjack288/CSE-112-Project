@@ -7,6 +7,7 @@
 
 window.addEventListener('DOMContentLoaded', init);
 
+/** On load function */
 function init() {
     // Read from localStorage to get myRecipes
     const myRecipesMapArr = JSON.parse(localStorage.getItem('myRecipes'));
