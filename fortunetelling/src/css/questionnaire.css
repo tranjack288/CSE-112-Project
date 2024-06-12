@@ -59,11 +59,11 @@ h2.question-prompt {
 	width: 100%;
 }
 
-#back-button, #reset{
+/* #back-button, #reset{
 	border: 2px solid #da0b0b;
 	background: none;
 	color: #000;
-}
+} */
 #back-button:hover, #reset:hover{
 	background-color: #AE3131;
 	color: #fff;
