@@ -1,21 +1,29 @@
 main{
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     height:  calc(100vh - 69px - 34px);
-    padding: 0 80px 0 80px
+    padding: 0 80px 0 80px;
+    overflow: scroll;
 }
 
 h2{
     text-align: left;
-    height: 20%;
+    
+}
+
+#main-content{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+
+    margin-top: 40px;
 }
 
 #recipes-grid{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(262px, 1fr));
+    gap: 8px;
 }
 
 #recipes-container{
@@ -23,16 +31,74 @@ h2{
 }
 
 .recipes-button{
-    border-style: solid;
-    border-color: black;
-    border-radius: 4px;
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 5px 5px 5px 5px;
+    padding: 5px 10px;
+    height: 90px;
+    border-radius: 10px;
+    background-color: #F8F6F0;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+.recipes-button:hover{
+    /* background-color: #D66666; */
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
+.recipes-button > div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+}
+.recipes-button img{
+    height: 100%;
+    max-height: 70px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.recipes-button h3{
+    text-align: left;
+    line-height: 20px;
+}
+.delete-button{
+    background: none;
+    box-shadow: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 45px;
+    max-height: 45px;
+
+    padding: 11px;
+    border-radius: 50px;
 }
 
-#addnew{
+
+
+#add-new-button{
+    border: 4px solid #D66666;
+    justify-content: center;
+
+}
+#add-new-button:hover{    
+    border: 4px solid #B93737;
+    background-color: #B93737;
+    color: #fff;
+    border: none;
+}
+#add-new-text{
     text-align: center;
+
+}
+
+@media only screen and (max-width: 767px), 
+screen and (max-height: 480px){
+    main{
+        padding: 50px 10px;
+
+    }
 }

@@ -2,12 +2,12 @@
 
 /* Import fonts */
 /* @import url('https://fonts.googleapis.com/css?family=Montserrat'); */
-@import url('https://fonts.googleapis.com/css?family=Hi+Melody');
+@import url('https://fonts.googleapis.com/css?family=Hi+Melody&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=M+PLUS+Rounded+1c:wght@500;900&display=swap');
 
 /* Global styling */
 * {
-	font-family: 'Hi Melody';
+	font-family: 'Hi Melody', sans-serif;
 	font-size: 1.3rem;
 	box-sizing: border-box;
 	padding: 0;
@@ -47,7 +47,7 @@ main {
 
 /*Styling for text in the header*/
 #noodleText {
-	font-family: 'Hi Melody';
+	font-family: 'Hi Melody', sans-serif;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 40px;
@@ -66,7 +66,7 @@ button{
 @media (min-width: 767px) {
 	.navButtons a {
 		font-size: 15px;
-		font-family: 'Fredoka', 'Montserrat', sans-serif;
+		font-family: 'Fredoka', sans-serif;
 		padding: 15px;
 		border-radius: 8px;
 		position: relative;
@@ -137,7 +137,7 @@ button{
 	}
 
 	.dropdown {
-		font-family: 'Fredoka', 'Montserrat', sans-serif;
+		font-family: 'Fredoka', sans-serif;
 		background-color: #da0b0b;
 		color: white;
 		width: 100%;
@@ -156,7 +156,7 @@ button{
 
 	.navLink {
 		font-size: 15px;
-		font-family: 'Fredoka', 'Montserrat', sans-serif;
+		font-family: 'Fredoka', sans-serif;
 		padding: 15px;
 
 		display: flex;
@@ -176,7 +176,7 @@ button{
 }
 
 button {
-	font-family: 'Fredoka', 'Montserrat', sans-serif;
+	font-family: 'Fredoka', sans-serif;
 	border: none;
 	font-size: 20px;
 	border-radius: 8px;

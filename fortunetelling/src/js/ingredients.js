@@ -66,7 +66,6 @@ async function init() {
                 allIngredients[NoodleIngredientEle.data] = true;
             }
             NoodleIngredientEle.classList.toggle('grayedOut');
-            
         });
     }
 
@@ -125,7 +124,7 @@ async function init() {
     // Confirm Button, when the confirm button is clicked,
     // store all the ingredients to localStorage
     let confirmBtn = document.getElementById('confirm-button');
-    let confirmedIngredients = {}
+    let confirmedIngredients = {};
     confirmBtn.addEventListener('click', function(){
         if(window.confirm('Do you want to create a noodle recipe with all the current ingridents?')){
             let validIngredientsArr = [];
@@ -140,5 +139,5 @@ async function init() {
             localStorage.setItem('confirmedIngredients', JSON.stringify(confirmedIngredients));    
             window.location.href="./noodlesResults.html";
         }        
-    })
+    });
 }
