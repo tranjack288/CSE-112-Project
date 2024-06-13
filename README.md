@@ -12,4 +12,5 @@ You will then likely need to edit names in `noodleResults.js` and `genHoroscope.
 ### About Us
 We are a group of UCSD students tasked to upgrade and enhance a pre-existing project. Learn more about us [here](https://noodlecraft.web.app/src/pages/about.html)!
 
-Check out a video about the making of this project [here](https://youtu.be/9eJtKIJAeLo)
+Check out a fun video about the project [here](https://www.youtube.com/watch?v=E149dMClt88)
+Check out a more honest video about the making of this project [here](https://youtu.be/9eJtKIJAeLo)
