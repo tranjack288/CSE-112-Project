@@ -1,4 +1,4 @@
- [
+const noodles = [
 	{
 		"noodleName": "Ravioli",
 		"noodleID": 0,
@@ -115,6 +115,6 @@
 		"ingredients": ["bread"]
 
 	} 
- ]
+];
 
-
+export default noodles;
